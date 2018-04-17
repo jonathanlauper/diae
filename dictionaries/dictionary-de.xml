@@ -1,0 +1,684 @@
+<Dictionary xmlns="http://oppidoc.com/oppidum/site">
+    <Translations lang="de">
+        <!--*********************************************************-->
+        <!-- Common terms (form fields labels, column headers, etc.) -->
+        <!--*********************************************************-->
+        <Translation key="term.no">Nr.</Translation>
+        <Translation key="term.enterprise.no">Unternehmens ID</Translation>
+        <Translation key="term.case.nb">Fall ID</Translation>
+        <Translation key="term.activity.nb">Coaching ID</Translation>
+        <Translation key="term.sender">Von</Translation>
+        <Translation key="term.addressees">Empfänger</Translation>
+        <Translation key="term.date">Datum</Translation>
+        <Translation key="term.startDate">Erstellungsdatum</Translation>
+        <Translation key="term.creationDate">Datum Aufdatierung</Translation>
+        <Translation key="term.numberOfHours">Anzahl Std</Translation>
+        <Translation key="term.enterprise">Unternehmen</Translation>
+        <Translation key="term.npa">PLZ</Translation>
+        <Translation key="term.town">Ort</Translation>
+        <Translation key="term.region">Kanton</Translation>
+        <Translation key="term.country">Land</Translation>
+        <Translation key="term.service">Coaching Service</Translation>
+        <Translation key="term.phase">Phase</Translation>
+        <Translation key="term.initiator">Initiiert von</Translation>
+        <Translation key="term.responsibleCoach">Verantwortlicher Coach</Translation>
+        <Translation key="term.currentStatus">Aktueller Status</Translation>
+        <Translation key="term.activityDesc">Hauptaktivitäten</Translation>
+        <Translation key="term.case">Fall</Translation>
+        <Translation key="term.cases">Fälle</Translation>
+        <Translation key="term.coach">Coach</Translation>
+        <Translation key="term.phoneAbbrev">Tel.</Translation>
+        <Translation key="term.mobile">Mobil</Translation>
+        <Translation key="term.enterpriseSize">Unternehmensgrösse</Translation>
+        <Translation key="term.domainActivity">Nace</Translation>
+        <Translation key="term.targetedMarkets">Märkte</Translation>
+        <Translation key="term.innovationVectors">Vektoren</Translation>
+        <Translation key="term.ideaSources">Ideenquellen</Translation>
+        <Translation key="term.resources">Interne Ressourcen</Translation>
+        <Translation key="term.partnerships">Partnerschaften</Translation>
+        <Translation key="term.partners">Partner</Translation>
+        <Translation key="term.statusRange">Initiiert</Translation>
+        <Translation key="term.from">zwischen</Translation>
+        <Translation key="term.to">und</Translation>
+        <Translation key="term.status">Status</Translation>
+        <Translation key="term.caseStatus">Fall-Status</Translation>
+        <Translation key="term.coachingStatus">Coaching Status</Translation>
+        <Translation key="term.name">Name</Translation>
+        <Translation key="term.person">Person</Translation>
+        <Translation key="term.surname">Nachname</Translation>
+        <Translation key="term.abbrev">Abkürzung</Translation>
+        <Translation key="term.box">Postfach</Translation>
+        <Translation key="term.co">c/o</Translation>
+        <Translation key="term.establishment">Gründungsjahr</Translation>
+        <Translation key="term.email">E-Mail</Translation>
+        <Translation key="term.phone">Tel.</Translation>
+        <Translation key="term.postalCode">PLZ</Translation>
+        <Translation key="term.role">Rolle</Translation>
+        <Translation key="term.streetNameAndNo">Strasse und Nr.</Translation>
+        <Translation key="term.title">Titel</Translation>
+        <Translation key="term.webSite">Internetseite</Translation>
+        <Translation key="term.function">Funktion</Translation>
+        <Translation key="term.collaborativeEntity">Zugehörige Antenne des Coachs</Translation>
+        <Translation key="term.administrativeEntity">Administrative Einheit</Translation>
+        <Translation key="term.contactSource">Kontaktquelle</Translation>
+        <Translation key="term.type">Typ</Translation>
+        <Translation key="term.subject">Thema</Translation>
+        <Translation key="term.comment">Kommentar</Translation>
+        <Translation key="term.alert">Fehlermeldung</Translation>
+        <Translation key="term.persons">Personen</Translation>
+        <Translation key="term.loading">Suchvorgang….</Translation>
+        <Translation key="term.saving">Kommunikation mit dem Server…</Translation>
+        <Translation key="term.description">Beschreibung</Translation>
+        <Translation key="term.sex">Geschlecht</Translation>
+        <Translation key="term.civility">Titel</Translation>
+        <Translation key="term.firstName">Vorname</Translation>
+        <Translation key="term.lastName">Nachname</Translation>
+        <Translation key="term.details">Details</Translation>
+        <Translation key="term.submissionOrigin">Finanzierungsantrag eingereicht durch</Translation>
+        <Translation key="term.total">Gesamtbetrag</Translation>
+        <Translation key="term.funding">Finanzierung</Translation>
+        <Translation key="term.fundingSource">Finanzierungsquelle</Translation>
+        <Translation key="term.balance">Saldo</Translation>
+        <Translation key="term.opinion">Meinung</Translation>
+        <Translation key="term.position">Meinung</Translation>
+        <Translation key="term.author">Autor</Translation>
+        <Translation key="term.decisionMakingAuthority">Entscheidungsorgan</Translation>
+        <Translation key="term.expenses">Spesen</Translation>
+        <Translation key="term.activityStatus">Status der Aktivität</Translation>
+        <Translation key="term.nbOfHours">Anzahl Arbeitsstunden</Translation>
+        <Translation key="term.recipient">An</Translation>
+        <Translation key="term.message">Nachricht</Translation>
+        <Translation key="term.fixedContent">Automatisch generiert</Translation>
+        <Translation key="term.filename">Dokumentname</Translation>
+        <Translation key="term.kam">KAM</Translation>
+        <Translation key="term.comments">Bemerkungen</Translation>
+        <Translation key="term.download">Downloaden</Translation>
+        <Translation key="term.evaluation">Bewertung</Translation>
+        <Translation key="term.action">Action</Translation>
+        <Translation key="term.pending">in Bearbeitung</Translation>
+        <!--**************************************-->
+        <!-- Commands exact terms (button labels) -->
+        <!--**************************************-->
+        <Translation key="action.close">Schliessen</Translation>
+        <Translation key="action.search">Suchen</Translation>
+        <Translation key="action.reset">Löschen</Translation>
+        <Translation key="action.save">Speichern</Translation>
+        <Translation key="action.submit">Abspeichern und übermitteln</Translation>
+        <Translation key="action.edit">Ändern</Translation>
+        <Translation key="action.correct">Korrigieren</Translation>
+        <Translation key="action.cancel">Annulieren</Translation>
+        <Translation key="action.clear">Löschen</Translation>
+        <Translation key="action.delete">Löschen</Translation>
+        <Translation key="action.print">Drucken</Translation>
+        <Translation key="action.email">E-Mail senden</Translation>
+        <Translation key="action.save.submission">Standardfilter speichern</Translation>
+        <Translation key="action.load.submission">Standardfilter aktivieren</Translation>
+        <Translation key="action.create.activity">Aktivität hinzufügen</Translation>
+        <Translation key="action.edit.enterprise">Unternehmensdaten ändern</Translation>
+        <Translation key="action.create.enterprise">Neues Unternehmen eingeben</Translation>
+        <Translation key="action.create.case">Neuen Fall eingeben</Translation>
+        <Translation key="action.add.annex">Anhang hinzufügen</Translation>
+        <Translation key="action.add.message">Nachricht hinzufügen</Translation>
+        <Translation key="action.add.specialist">Coaching Antrag hinzufügen</Translation>
+        <Translation key="action.add.enterprise">Unternehmen hinzufügen</Translation>
+        <Translation key="action.add.person">Person hinzufügen</Translation>
+        <Translation key="action.update.opinion">Eingabe des Kommentars</Translation>
+        <Translation key="action.create.opinion">Geben Sie einen Kommentar ein</Translation>
+        <Translation key="action.add.logbookItem">Eintrag hinzufügen</Translation>
+        <Translation key="action.importFrom.logbook">Importieren der Daten aus dem Logbuch</Translation>
+        <Translation key="action.terminate">Beenden</Translation>
+        <Translation key="action.send">Senden</Translation>
+        <Translation key="action.dontSend">Fortfahren ohne Versand</Translation>
+        <Translation key="action.status.change">Status ändern</Translation>
+        <Translation key="action.status.forward">TRADUIRE : Advance to</Translation>
+        <Translation key="action.status.backward">TRADUIRE : Return to</Translation>
+        <Translation key="action.back">Zurück</Translation>
+        <Translation key="action.continue">Fortfahren</Translation>
+        <Translation key="action.new.pwd">Neues Passwort</Translation>
+        <Translation key="action.submit.pwd">Neues Passwort eingeben</Translation>
+        <Translation key="action.status.yes">Ja, ich bestätige den Statuswechsel</Translation>
+        <Translation key="action.status.no">Nein, ich ändere den Status später</Translation>
+        <Translation key="action.create.yes">Ja, bitte jetzt hinzufügen</Translation>
+        <Translation key="action.create.no">Nein danke, bitte später hinzufügen</Translation>
+        <Translation key="action.printfr">Drucken (FR)</Translation>
+        <Translation key="action.printde">Drucken (DE)</Translation>
+        <!--*************************-->
+        <!-- Primary navigation menu -->
+        <!--*************************-->
+        <Translation key="app.nav.stage">Home</Translation>
+        <Translation key="app.nav.enterprises">Unternehmen</Translation>
+        <Translation key="app.nav.persons">Personen</Translation>
+        <Translation key="app.nav.communities">Netzwerk</Translation>
+        <Translation key="app.nav.platforms">Plattformen</Translation>
+        <Translation key="app.nav.CM">CoachMatch</Translation>
+        <Translation key="app.nav.matchInvest">matchINVEST</Translation>
+        <Translation key="app.nav.KP">KnowledgePortal</Translation>
+        <Translation key="app.nav.finance">Finanzen</Translation>
+        <Translation key="app.nav.case">Eingabe Fall</Translation>
+        <Translation key="app.nav.guidelines">Direktiven</Translation>
+        <Translation key="app.nav.stats">Statistiken</Translation>
+        <Translation key="app.nav.cases">Fälle</Translation>
+        <Translation key="app.nav.activities">Aktivitäten</Translation>
+        <Translation key="app.nav.kpi">KPI</Translation>
+        <Translation key="app.nav.admin">Admin</Translation>
+        <Translation key="app.nav.forms">Supergrid</Translation>
+        <!--******************************************************-->
+        <!-- Application level titles, labels, hints and messages -->
+        <!--******************************************************-->
+        <Translation key="app.title.noResults">Kein Resultat</Translation>
+        <Translation key="app.message.noResults">Keine Resultate mit dieses Suchkriterien</Translation>
+        <Translation key="app.message.js">Aktivieren Sie Javascript</Translation>
+        <Translation key="app.message.loading">Formular wird geladen</Translation>
+        <!--***************-->
+        <!-- Generic hints -->
+        <!--***************-->
+        <Translation key="hint.experiences">Beschreiben Sie Ihre Erfahrungen</Translation>
+        <Translation key="hint.mandatory">Dieses Feld ist obligatorisch vor dem Statuswechsel</Translation>
+        <Translation key="hint.reuters">Klassifizierung nach Thomson Reuters</Translation>
+        <Translation key="hint.noResults">Wählen Sie ein oder mehrere Selektionskriterien vor Aktivierung der Suche</Translation>
+        <Translation key="hint.saveSearch">Sie können die Suchkriterien durch „Standardfilter speichern“ abspeichern. Standardfilter werden beim Öffnen der Seite automatisch aktiviert. Sie können durch "Standardfilter aktivieren" erneut geladen werden</Translation>
+        <!--**********************-->
+        <!-- Confirmation dialogs -->
+        <!--**********************-->
+        <Translation key="confirm.logbookItem.delete">Sind Sie sicher, dass Sie die Zeile löschen möchten? Das Löschen kann nicht rückgängig gemacht werden</Translation>
+        <Translation key="confirm.annex.delete">Sind Sie sicher, dass Sie den Anhang '%s' löschen möchten ? Das Löschen kann nicht rückgängig gemacht werden</Translation>
+        <Translation key="confirm.plan.delete">Supprimer la demande de coaching supprimera l'activité</Translation>
+        <Translation key="confirm.status.change">Sind Sie sicher, dass Sie den Status der Aktivität ändern möchten ?</Translation>
+        <!--*********************-->
+        <!-- Transclusion errors -->
+        <!--*********************-->
+        <Translation key="augment.noContactPerson">Die Aktivität hat noch keine Kontaktperson</Translation>
+        <Translation key="augment.noClientEnterprise">Die Aktivität hat kein Kundenunternehmen</Translation>
+        <Translation key="augment.noPartnerEnterpriseYet">Sie müssen zuerst ein Partnerunternehmen selektionieren, bevor Sie dieses abändern können</Translation>
+        <Translation key="augment.noContactPersonYet">Sie müssen zuerst eine Kontaktperson selektionieren, bevor Sie diese abändern können</Translation>
+        <!--*********************-->
+        <!-- Validation messages -->
+        <!--*********************-->
+        <Translation key="validation.integer">Geben Sie bitte nur Zahlen ein</Translation>
+        <Translation key="validation.hours">Geben Sie bitte nur ganze Zahlen oder 1/4 Stden ein (.25, .5, .75)</Translation>
+        <Translation key="validation.decimal">Geben Sie nur ganze oder Dezimalbeträge (maximal 2 Dezimalziffern nach dem Komma oder Dezimalpunkt)</Translation>
+        <Translation key="validation.email">Die E-Mail Adresse wurde nicht korrekt geschrieben (name@server.domain).</Translation>
+        <Translation key="validation.phone">Die Zahlen müssen durch Leerzeichen getrennt werden, ein + am Anfang ist möglich</Translation>
+        <Translation key="validation.login">Geben Sie mindestens 5 Zeichen ein (Buchstaben oder Zahlen), einschliesslich des Zeichens "–". Leerzeichen sind nicht erlaubt</Translation>
+        <Translation key="validation.year">Bitte geben Sie eine vierstellige Ziffer für das Jahr ein</Translation>
+        <Translation key="validation.length.1000">Limitiert auf maximal 1000 Zeichen</Translation>
+        <!--***************************************-->
+        <!-- Generic forms (titles, legends, etc.) -->
+        <!--***************************************-->
+        <Translation key="form.title.enterprise.contact">Kontaktperson Unternehmen</Translation>
+        <Translation key="form.title.enterprise.search">Suche Unternehmen</Translation>
+        <Translation key="form.title.persons.search">Suche Personen</Translation>
+        <Translation key="form.title.coaches.search">Suche akkreditierte Coaches in der CoachMatch Datenbank</Translation>
+        <Translation key="form.title.regions.search">Search EEN/KAM members</Translation>
+        <Translation key="form.title.activity.create">Informationen über die Aktivität des Falles</Translation>
+        <Translation key="form.legend.enterpriseContext">Kontext Unternehmenszyklus</Translation>
+        <Translation key="form.legend.intentionalImpact">Herausforderungen Geschäftsinnovation</Translation>
+        <Translation key="form.legend.address">Adresse</Translation>
+        <Translation key="form.legend.objectives">Ziele der Aktivität</Translation>
+        <Translation key="form.needsAnalysis.date">Datum der Bedürfnisanalyse</Translation>
+        <Translation key="form.title.currentContext">In welcher Lebenszyklusphase befindet sich das Unternehmen heute?</Translation>
+        <Translation key="form.title.targetContext">Welche Lebenszyklusphase wird vom Unternehmen angestrebt?</Translation>
+        <Translation key="form.title.nextMove">Beschreiben Sie den aktuellen sowie den angestrebten Unternehmenskontext</Translation>
+        <Translation key="form.title.innovationVectors">Vektoren der Geschäftsinnovation</Translation>
+        <Translation key="form.title.ideaSources">Ideenquellen für Geschäftsinnovation</Translation>
+        <Translation key="form.title.resources">Interne Ressourcen</Translation>
+        <Translation key="form.title.partnerships">Partnerschaften</Translation>
+        <Translation key="form.title.challenges">Beschreiben Sie die wichtigsten Herausforderungen</Translation>
+        <!--*******************-->
+        <!-- Rich text options -->
+        <!--*******************-->
+        <Translation key="option.parag">Para</Translation>
+        <Translation key="option.list">Liste</Translation>
+        <Translation key="option.title">Titel</Translation>
+        <!--**************************-->
+        <!-- Form pre-filled content  -->
+        <!--**************************-->
+        <Translation key="content.indifferent">unbestimmt</Translation>
+        <Translation key="content.any">alle</Translation>
+        <Translation key="content.any.f">alle</Translation>
+        <Translation key="content.choose">Selektionieren Sie….</Translation>
+        <Translation key="content.parag">Klicken zur Eingabe eines Paragraphen</Translation>
+        <Translation key="content.listHeader">Klicken zur Eingabe einer Überschrift</Translation>
+        <Translation key="content.listItem">Klicken zur Eingabe eines Begriffs</Translation>
+        <Translation key="content.title">Klicken zur Eingabe eines Titels</Translation>
+        <Translation key="content.unseen">Nicht berücksichtigt</Translation>
+        <Translation key="content.noFill">Bitte nicht ausfüllen</Translation>
+        <!--**********************-->
+        <!-- Enterprise / Partner -->
+        <!--**********************-->
+        <Translation key="modal.title.enterprise">Unternehmen</Translation>
+        <Translation key="modal.title.enterprise.create">Eingabe eines Unternehmens</Translation>
+        <Translation key="modal.title.enterprise.update">Modifizierung eines Unternehmens</Translation>
+        <Translation key="modal.title.partner.create">Eingabe Partnerunternehmen</Translation>
+        <Translation key="modal.title.partner.update">Ändern Partnerunternehmen</Translation>
+        <Translation key="modal.legend.establishment">Gründungsjahr</Translation>
+        <Translation key="enterprise.name.hint">Geben Sie den einzutragenden Firmennamen ein. Die Scrolliste zeigt Ihnen bereits existierende Firmen mit ähnlichem Namen an.</Translation>
+        <Translation key="enterprise.create.info">Zur Vermeidung von Doppelteinträgen werden im Eingabefeld des Unternehmens ähnliche Firmennamen in der Datenbank angezeigt</Translation>
+        <Translation key="partner.name.hint">Geben Sie den Partner ein. Das System zeigt Ihnen bereits aufdatierte Partner mit ähnlichem Namen an.</Translation>
+        <Translation key="partner.repeat.hint">Plus anklicken zur Eingabe eines neuen Partners, minus anklicken zum Desaktivieren eines Partners</Translation>
+        <Translation key="enterprise.search.result.message1">Ergebnisse</Translation>
+        <Translation key="enterprise.search.result.message2">Unternehmen</Translation>
+        <!--********-->
+        <!-- Person -->
+        <!--********-->
+        <Translation key="modal.title.person">Netzwerkmitglied</Translation>
+        <Translation key="modal.title.person.create">Eingabe Person</Translation>
+        <Translation key="modal.title.person.update">Aenderung Person</Translation>
+        <Translation key="modal.legend.email.missing">Unbekannte E-Mail</Translation>
+        <Translation key="modal.term.unknown">unbekannt</Translation>
+        <Translation key="modal.term.for">für</Translation>
+        <Translation key="person.name.hint">Geben Sie bitte den Namen der Person ein, welche Sie kreieren möchten. In der Auswahlliste wird ersichtlich, ob ein ähnlicher Name bereits existiert.</Translation>
+        <Translation key="person.search.result.message1">Ergebnisse</Translation>
+        <Translation key="person.search.result.message2">Person(en)</Translation>
+        <Translation key="personSearch.hint.country">Suche im Personenprofil, Rückgang zu Suche falls die Person verantwortlich für eine Coaching Aktivität ist oder als KAM oder KAM Koordinator in einem von den selektionierten Ländern registriert ist</Translation>
+        <!--*******-->
+        <!-- Login -->
+        <!--*******-->
+        <Translation key="login.hold">Zur Zeit führen wir Wartungsarbeiten aus. Versuchen Sie es erneut in einigen Minuten. Wir danken für Ihr Verständnis...</Translation>
+        <Translation key="login.title">Identifizierung</Translation>
+        <Translation key="login.user">Benutzername</Translation>
+        <Translation key="login.pwd">Passwort</Translation>
+        <Translation key="login.forgotten">Passwort vergessen</Translation>
+        <Translation key="login.forgotten.hint">Versand eines neuen Passwortes via E-Mail</Translation>
+        <!--*****************-->
+        <!-- Password tunnel -->
+        <!--*****************-->
+        <Translation key="pwd.title">Passwort vergessen</Translation>
+        <Translation key="pwd.hint">Um ein neues Passwort zu erhalten, geben Sie bitte im unteren Feld Ihren Benutzernamen ein sowie die Adresse unter der Sie im System registriert sind.</Translation>
+        <Translation key="pwd.email">E-Mail-Adresse</Translation>
+        <Translation key="pwd.sentByEmail">Ihr neues Passwort wurde geschickt an</Translation>
+        <Translation key="account.title">Verwaltung des Benutzerkontos</Translation>
+        <Translation key="account.pwd.hint">Sie können Ihr Passwort gemäss dem unten angezeigten Formular abändern. Achtung, das Passwort sollte mindestens 8 Zeichen beinhalten. Leerzeichen am Anfang oder Ende des Wortes werden nicht berücksichtigt.</Translation>
+        <Translation key="account.pwd">Neues Passwort</Translation>
+        <Translation key="account.pwd.bis">Geben Sie das Passwort erneut ein</Translation>
+        <Translation key="account.identity1">Sie sind eingeloggt als</Translation>
+        <Translation key="account.identity2">und Sie sind identifiziert als</Translation>
+        <Translation key="pwd.updated">Ihr neues Passwort wurde registriert</Translation>
+        <Translation key="account.continue.hint">Sie können Ihre Navigation fortsetzen. Benutzen Sie Ihr neues Passwort beim nächsten Einloggen</Translation>
+        <!--*******-->
+        <!-- Stage -->
+        <!--*******-->
+        <Translation key="stage.context.current">aktuell</Translation>
+        <Translation key="stage.context.target">angestrebt</Translation>
+        <Translation key="stage.message.noCase">Es gibt keinen Fall, der diesen Suchkriterien entspricht</Translation>
+        <Translation key="stage.search.title">Homepage</Translation>
+        <Translation key="stage.search.hint">Die verschiedenen Suchkriterien sind kumulatif</Translation>
+        <Translation key="stage.legend.enterprises">Unternehmen</Translation>
+        <Translation key="stage.legend.cases">Fall</Translation>
+        <Translation key="stage.legend.activities">Coaching Aktivität</Translation>
+        <Translation key="stage.results.head">Resultate</Translation>
+        <Translation key="stage.story.coach">Erfolgsstory Coach</Translation>
+        <Translation key="stage.story.kam">Erfolgsstory KAM</Translation>
+        <Translation key="stage.results.middle">Fall/Fälle mit insgesamt</Translation>
+        <Translation key="stage.results.tail">Aktivität(en)</Translation>
+        <Translation key="stage.results.tail.one">Aktivität(en)</Translation>
+        <Translation key="stage.results.tail.many">Aktivität(en)</Translation>
+        <Translation key="stage.request.empty">Ihre Suche beinhaltet kein Selektionskriterium, daher werden alle in der Datenbank enthaltenen Fälle und Aktivitäten angezeigt werden. Dieser Vorgang kann etwas Zeit beanspruchen. Bestätigen Sie Ihre Suche?</Translation>
+        <!--*******************************-->
+        <!-- Related cases table (headers) -->
+        <!--*******************************-->
+        <Translation key="related-cases.case">Fall</Translation>
+        <Translation key="related-cases.activities">Coaching Aktivitäten</Translation>
+        <Translation key="related-cases.targetContext">angestrebter Kontext Unternehmenszyklus</Translation>
+        <Translation key="related-cases.creationDate">Erstellungsdatum</Translation>
+        <Translation key="related-cases.service">Coaching Service</Translation>
+        <!--***************-->
+        <!-- Case creation -->
+        <!--***************-->
+        <Translation key="case-creation.window.title">Eingabe neuer Fall</Translation>
+        <Translation key="case-creation.title.1">Eingabe Fall (erster Schritt)</Translation>
+        <Translation key="case-creation.title.2">Eingabe Fall (letzter Schritt)</Translation>
+        <Translation key="case-creation.title.selection">Auswahl Unternehmen</Translation>
+        <Translation key="case-creation.title.verification">Überprüfung bereits existierender Fälle</Translation>
+        <Translation key="case-creation.validation.hint">Selektionieren Sie zuerst das Unternehmen</Translation>
+        <!--*****************************-->
+        <!-- Case/Activity workflow menu -->
+        <!--*****************************-->
+        <Translation key="workflow.group.enterprise">Unternehmen</Translation>
+        <Translation key="workflow.tab.case.related">Zugehörige Fälle</Translation>
+        <Translation key="workflow.group.case">Fall</Translation>
+        <Translation key="workflow.tab.case.info">Fall</Translation>
+        <Translation key="workflow.tab.case.messages">Nachrichten</Translation>
+        <Translation key="workflow.tab.activities">Zugehörige Aktivitäten</Translation>
+        <Translation key="workflow.tab.new.activity">Coaching Aktivität hinzufügen</Translation>
+        <Translation key="workflow.group.activity">Aktivität</Translation>
+        <Translation key="workflow.tab.activity.info">Aktivität</Translation>
+        <Translation key="workflow.tab.activity.messages">Nachrichten</Translation>
+        <Translation key="workflow.tab.annexes">Anhänge</Translation>
+        <Translation key="workflow.name.contract">Vertrag</Translation>
+        <!--**********************************************************-->
+        <!-- Document titles inside worklfow Tab panels and Accordion -->
+        <!--**********************************************************-->
+        <Translation key="workflow.title.case.related">Zugehörige Fälle mit dem Unternehmen</Translation>
+        <Translation key="workflow.title.case.messages">Nachrichten bezüglich Fall</Translation>
+        <Translation key="workflow.title.activities">Liste der Coaching Aktivitäten</Translation>
+        <Translation key="workflow.title.new.activity">Hinzufügen einer neuen Coaching Aktivität</Translation>
+        <Translation key="workflow.title.case.attachments">Anhänge Dokument des Falles</Translation>
+        <Translation key="workflow.title.case">Fall</Translation>
+        <Translation key="workflow.title.coaching-assignment">Coach Wahl</Translation>
+        <Translation key="workflow.title.coaching-plan">Coaching Antrag</Translation>
+        <Translation key="workflow.title.consultation">Stellungnahme</Translation>
+        <Translation key="workflow.title.opinion">Stellungnahme Netzwerkpartner</Translation>
+        <Translation key="workflow.title.coach-contracting">Entscheidung Coaching Antrag</Translation>
+        <Translation key="workflow.title.logbook">Logbuch</Translation>
+        <Translation key="workflow.title.coaching-report">Abschlussbericht</Translation>
+        <Translation key="workflow.title.report-approval">Genehmigung des Abschlussberichtes</Translation>
+        <Translation key="workflow.title.feedbacks">Feedback Management</Translation>
+        <Translation key="workflow.title.evaluations">Bewertungen</Translation>
+        <Translation key="workflow.title.contract">Vertrag</Translation>
+        <Translation key="workflow.title.reports">Erstellen von Berichten</Translation>
+        <Translation key="workflow.title.annexes">Anhänge bezüglich Aktivität</Translation>
+        <Translation key="workflow.title.activity.messages">Nachrichten bezüglich Aktivität</Translation>
+        <Translation key="workflow.title.activity.attachments">Anhänge Coaching Aktivität</Translation>
+        <!--***************************-->
+        <!-- Mail messages composition -->
+        <!--***************************-->
+        <Translation key="modal.title.mail.transition">Versand und Archivieren der Nachricht</Translation>
+        <Translation key="modal.legend.mail.transition">Der Status wurde erfolgreich verändert. Sie können nun die Nachricht an die betreffenden Personen im Zusammenhang mit dem neuen Status senden oder fortfahren ohne Versand.</Translation>
+        <Translation key="mail.hint.recipients">Auf der automatisch generierten Liste können Sie Empfänger eingeben und löschen.</Translation>
+        <Translation key="mail.hint.subject">Sie können den E-Mail Titel verändern und individuell gestalten.</Translation>
+        <Translation key="mail.hint.message">Sie können die automatisch generierte E-Mail verändern und individuell gestalten.</Translation>
+        <Translation key="mail.separator.en">Englische Version</Translation>
+        <Translation key="mail.separator.fr">Französische Version</Translation>
+        <Translation key="mail.separator.de">Deutsche Version</Translation>
+        <Translation key="mail.move.forward">nun folgenden Status angenommen hat:</Translation>
+        <Translation key="mail.move.back">zurückversetzt wurde zum Status:</Translation>
+        <!--*********-->
+        <!-- Annexes -->
+        <!--*********-->
+        <Translation key="app.noAnnex">Kein Anhang</Translation>
+        <Translation key="annex.hint.1">Klicken Sie auf auf das Feld "Hinzufügen Anhang" und selektionieren Sie die Datei, welche Sie downloaden möchten</Translation>
+        <Translation key="annex.hint.2">Ändern Sie den Namen der Datei :</Translation>
+        <Translation key="annex.hint.2.1">es handelt sich um den Namen, der als Link zum Laden des Dokumentes erscheint</Translation>
+        <Translation key="annex.hint.2.2">es muss ein klar definierter Name sein innerhalb der diversen Anhänge, welcher weder Leerzeilen noch spezifische Zeichen erhalten darf</Translation>
+        <Translation key="annex.hint.3">Senden Sie die Datei an den Server durch Abspeichern</Translation>
+        <Translation key="annex.hint.4">Wiederholen Sie den Vorgang (klicken Sie auf das Symbol rechts neben der Nachricht)</Translation>
+        <Translation key="annex.hint.5">Klicken Sie auf Beenden sobald Sie mit der Eingabe fertig sind</Translation>
+        <Translation key="annex.hint.6">Wir machen Sie darauf aufmerksam, dass Sie ausschliesslich Dokumente im PDF-Format oder Microsoft Office uploaden dürfen.</Translation>
+        <!--***************-->
+        <!-- externalService  -->
+        <!--***************-->
+        <Translation key="workflow.title.externalservices">Externe Service</Translation>
+        <Translation key="workflow.title.new.external-service">Externen Service hinzufügen</Translation>
+        <Translation key="workflow.tab.externalservices">Externe Service</Translation>
+        <Translation key="workflow.tab.new.external-service">Externen Service hinzufügen</Translation>
+        <Translation key="externalService.legend.requester">Antragsteller</Translation>
+        <Translation key="externalService.legend.company-name">Einheit</Translation>
+        <Translation key="externalService.legend.requester-name">Name</Translation>
+        <Translation key="externalService.legend.requester-phone">Tel.</Translation>
+        <Translation key="externalService.legend.targetEnterprise">Zielunternehmen</Translation>
+        <Translation key="externalService.legend.contact-phone">Tel.</Translation>
+        <Translation key="externalService.legend.contact-mail">E-Mail</Translation>
+        <Translation key="externalService.legend.requester-mail">E-Mail</Translation>
+        <Translation key="externalService.legend.name">Name</Translation>
+        <Translation key="externalService.legend.company-website">Website</Translation>
+        <Translation key="externalService.legend.requested-name">Name</Translation>
+        <Translation key="workflow.tab.externalservice">Externer Service</Translation>
+        <Translation key="workflow.title.externalservice">Externer Service</Translation>
+        <Translation key="externalService.requestedProvider.title">Externer Leistungserbringer</Translation>
+        <Translation key="externalService.contactPers.title">Kontaktperson</Translation>
+        <Translation key="externalService.legend.applicant">Antragsteller</Translation>
+        <Translation key="externalservice.title.create">Antrag Externer Service</Translation>
+        <Translation key="externalService.contractorfeedback.title">Feedback des externen Leistungserbringers</Translation>
+        <Translation key="externalservice.dialog.confirm">Bestätigen Sie den Versand des Antrages für einen externen Service?</Translation>
+        <Translation key="term.requested-contact-name">Kontaktperson</Translation>
+        <Translation key="term.city">Stadt</Translation>
+        <Translation key="term.externalservice">Externer Service</Translation>
+        <Translation key="term.request">Betreff:</Translation>
+        <Translation key="term.contractor">Externer Leistungserbringer</Translation>
+        <Translation key="term.requestDate">Datum Antrag</Translation>
+        <Translation key="term.feedbackDate">Datum des Feedbacks</Translation>
+        <Translation key="term.impact">Erzielte Resultate</Translation>
+        <Translation key="term.requestComment">Beschreibung/Bemerkungen</Translation>
+        <Translation key="term.contactPersons">Kontaktpersonen</Translation>
+        <Translation key="term.noFeedback">Kein Feedback</Translation>
+        
+        <!--*******************-->
+        <!-- Case Information  -->
+        <!--*******************-->
+        <Translation key="case.legend.intervention">Betreffender Fall</Translation>
+        <Translation key="case.legend.enterprise">Unternehmen</Translation>
+        <Translation key="case.legend.intentionalImpact">Herausforderungen Geschäftsinnovation</Translation>
+        <Translation key="case.feedback.management">Die Unternehmensleitung erkennt den Nutzen des Coachings</Translation>
+        <Translation key="case.legend.experiences">Beschreiben Sie Ihre Erfahrungen</Translation>
+        <Translation key="case.feedback.needsAnalysis">Ich schätzte die methodische Vorgehensweise bei der Bedürfnisanalyse</Translation>
+        <Translation key="case.hint.mandatory">Dieses Feld ist obligatorisch für das Öffnen einer neuen Aktivität.</Translation>
+        <Translation key="case.legend.conflict">Meldung möglicher Interessenkonflikte</Translation>
+        <Translation key="case.hint.conflict">Mit dieser Frage soll verhindert werden, dass der KAM aufgrund einer persönlichen Beziehung mit dem Unternehmen in der Bedürfnisanalyse sowie bei der Wahl des Coaches nicht neutral handeln könnte. Ein Konflikt bedeutet nicht zwangsläufig, dass dem KAM eine Zusammenarbeit mit dem Unternehmen untersagt wird.</Translation>
+        <Translation key="case.question.affiliation">Hat der KAM eine persönliche Beziehung mit dem Unternehmen?</Translation>
+        <Translation key="case.validation.ethical1">Erste ethische Frage</Translation>
+        <Translation key="case.question.financial">Hat der KAM irgendwelche finanziellen Interessen am Unternehmen?</Translation>
+        <Translation key="case.validation.ethical2">Zweite ethische Frage</Translation>
+        <Translation key="case.legend.needsAnalysis">Resultate der Bedürfnisanalyse</Translation>
+        <Translation key="case.hint.needsAnalysis.method">Der KAM ist bei der Wahl seiner Methode für die Bedürfnisanalyse grundsätzlich frei. Die Ergebnisse sollten hingegen in der vom Case Tracker vorgegebenen Struktur aufdatiert werden. Diese Struktur ist jedoch nicht gedacht als Fragebogen für die Bedürfnisanalyse.</Translation>
+        <Translation key="case.hint.needsAnalysis.goal">Die Ergebnisse der Bedürfnisanalyse sollen dazu beitragen, einen geeigneten Coach zu finden und diesem die nötigen Informationen für ein Erstgespräch mit dem Unternehmen zu liefern.</Translation>
+        <Translation key="case.hint.lifeCycle">Der KAM soll die aktuelle sowie die angstrebte Lebenszyklusphase des Unternehmens angeben. Das Methodenhandbuch gibt dazu nähere Informationen.</Translation>
+        <Translation key="case.anchor.handbook">Methodenhandbuch</Translation>
+        <Translation key="case.hint.intentionalImpact">Kreuzen Sie die eigentlichen Engpassbereiche an (hohe Bedeutung bei gleichzeitig ungenügenden Ressourcen). Nähere Informationen zum Geschäftsinnovationsmodell entnehmen Sie dem Methodenhandbuch.</Translation>
+        <Translation key="case.hint.innovationVectors">Die Vektoren der Geschäftsinnovation zeigen die wesentlichen Wertschöpfungsmöglichkeiten im Rahmen einer Geschäftsinnovation auf.</Translation>
+        <!--*********************-->
+        <!-- Coaching Assignment -->
+        <!--*********************-->
+        <Translation key="assignment.expectations">Erwartungen des Unternehmens in bezug auf das Coaching</Translation>
+        <Translation key="assignment.service">Welches ist der geeignete Coaching Service?</Translation>
+        <Translation key="assignment.phase">Welche Coaching Phase soll eingeleitet werden?</Translation>
+        <Translation key="assignment.legend.coachProfile">Erforderliches Coachprofil</Translation>
+        <Translation key="assignment.legend.priorities">Prioritäten für diese Coaching Aktivität</Translation>
+        <Translation key="assignment.hint.noChallenge">Keine Herausforderungen ersichtlich aus der Bedürfnisanalyse</Translation>
+        <Translation key="assignment.legend.coachAssignment">Coach Wahl</Translation>
+        <Translation key="assignment.legend.assignee">Zugewiesener Coach</Translation>
+        <Translation key="assignment.hint.assignee">Wählen Sie den mit dem Unternehmen vereinbarten Coach aus.</Translation>
+        <Translation key="assignment.legend.assigner">Zugewiesen durch</Translation>
+        <Translation key="assignment.question.coachFit">Ich konnte geeignete Coaches in der Coach Datenbank ausfindig machen.</Translation>
+        <Translation key="assignment.autoexec.confirmation">Möchten Sie nun zum Status Coaching Antrag übergehen?</Translation>
+        <!--***************-->
+        <!-- Coaching Plan -->
+        <!--***************-->
+        <Translation key="plan.legend.clientEnterprise">Kundenunternehmen</Translation>
+        <Translation key="plan.contactPers.title">Kontaktperson beim Unternehmen</Translation>
+        <Translation key="plan.legend.partners">Partnerschaften</Translation>
+        <Translation key="plan.legend.partner">Partner</Translation>
+        <Translation key="plan.legend.partnerType">Partnerschaften</Translation>
+        <Translation key="plan.legend.budget">Budget</Translation>
+        <Translation key="plan.legend.tasksDesc">Aufgabenbeschreibung</Translation>
+        <Translation key="plan.legend.expensesDesc">Beschreibung der Spesen</Translation>
+        <Translation key="plan.task.nbOfHours">Anzahl Std.</Translation>
+        <Translation key="plan.totalTasks">Coaching Budget (ohne MWST)</Translation>
+        <Translation key="plan.expenseAmount">Betrag ohne MWST</Translation>
+        <Translation key="plan.totalExpenses">Budget Spesen (ohne MWST)</Translation>
+        <Translation key="plan.totalBudget">Budget (ohne MWST)</Translation>
+        <Translation key="plan.fundingSourceAmount">Betrag ohne MWST</Translation>
+        <Translation key="plan.totalFunding">Budget Finanzierung (ohne MWST)</Translation>
+        <Translation key="plan.budgetBalance">Finanzierung ./. Budget</Translation>
+        <Translation key="plan.legend.responsibleCoachComment">Zusätzliche Bemerkung des Coachs für die Entscheidungsträger</Translation>
+        <Translation key="plan.contactPers.create">Hinzufügen</Translation>
+        <Translation key="plan.contactPers.update">Ändern</Translation>
+        <Translation key="plan.partner.create">Hinzufügen</Translation>
+        <Translation key="plan.partner.update">Ändern</Translation>
+        <Translation key="plan.legend.noConflict">Meldung möglicher Interessenkonflikte</Translation>
+        <Translation key="plan.question.personal">Haben Sie eine persönliche Beziehung mit dem Unternehmen?</Translation>
+        <Translation key="plan.validation.ethical1">Erste ethische Frage</Translation>
+        <Translation key="plan.question.financial">Haben Sie finanzielle Interessen in irgendeiner Form am Unternehmen?</Translation>
+        <Translation key="plan.validation.ethical2">Zweite ethische Frage</Translation>
+        <Translation key="plan.question.professional">Sehen Sie einen möglichen Interessenkonflikt mit diesem Unternehmen?</Translation>
+        <Translation key="plan.validation.ethical3">Dritte ethische Frage</Translation>
+        <!-- hints -->
+        <Translation key="plan.clientEnt.hint">Das Kundenunternehmen ist an den Fall gebunden und kann daher nicht abgeändert werden. Jedoch können die Firmenangaben durch Anklicken des Feldes "Ändern des Unternehmens" modifiziert werden. Die Daten werden im Coaching Antrag sowie im Adressverzeichnis aktualisiert.</Translation>
+        <Translation key="plan.contactPers.hint">Wählen Sie eine Kontaktperson in der Auswahlliste "Name". Sie können nun die Daten sowohl im Coaching Antrag als auch im Adressverzeichnis aktualisieren, indem Sie auf das Feld „Aendern der Person“ klicken. Sollte die Person nicht in der Liste sein, können Sie diese hinzufügen, indem Sie auf das Feld "Eingabe einer Person" klicken.</Translation>
+        <Translation key="plan.partnerEnt.hint">Selektionieren Sie einen Partner in der Liste. Die Daten werden in den Antrag übertragen. Über "Ändern" können Sie die Daten verändern. Diese werden dann auch in der Datenbank aktualisiert. Falls ein Partner noch nicht in der Datenbank ist, können Sie eine neue Adresse über "Eingabe eines Partners" hinzufügen.</Translation>
+        <Translation key="plan.taskRepeat.hint">Klicken Sie auf das Plus (bzw. Minus) um eine Aufgabe hinzuzufügen (bzw. zu löschen).</Translation>
+        <Translation key="plan.expenseRepeat.hint">Klicken Sie auf das Plus (bzw. Minus) um Spesen hinzuzufügen (bzw. zu löschen).</Translation>
+        <Translation key="plan.fundingSourceRepeat.hint">Klicken Sie auf das Plus (bzw. Minus) um eine Finanzierungsquelle hinzuzufügen (bzw. zu löschen).</Translation>
+        <!--**************-->
+        <!-- Consultation -->
+        <!--**************-->
+        <Translation key="position.modal.title">Stellungnahme auf dem eingereichten Coaching Antrag</Translation>
+        <Translation key="position.legend.responsibleCoach">Verantwortlicher Coach</Translation>
+        <Translation key="position.legend.serviceResponsible">Service Verantwortlicher</Translation>
+        <Translation key="position.legend.cantonalAntenna">Kantonale Antenne</Translation>
+        <Translation key="position.legend.otherOpinions">Stellungnahme Netzwerkpartner</Translation>
+        <!--*******************-->
+        <!-- Coach Contracting -->
+        <!--*******************-->
+        <Translation key="contracting.legend.request">Finanzierungsentscheid</Translation>
+        <Translation key="contracting.requestedAmount">beantragt (ohne MWST)</Translation>
+        <Translation key="contracting.approvedAmount">genehmigt (ohne MWST)</Translation>
+        <Translation key="contracting.legend.totals">Gesamtbetrag</Translation>
+        <Translation key="contracting.fundingSourceRepeat.hint">Klicken Sie auf das Plus (bzw. Minus) um eine Finanzierungsquelle hinzuzufügen (bzw. zu löschen).</Translation>
+        <!--******************-->
+        <!-- Coaching Report  -->
+        <!--******************-->
+        <Translation key="report.title1.financialReport">Finanzbericht</Translation>
+        <Translation key="report.title2.coachAccounting">Kostenaufwand pro Coach (ohne MWST)</Translation>
+        <Translation key="report.label.objectivesAchievments">Inwiefern wurden die Coaching Ziele erfüllt und die Aktivitäten umgesetzt? Welche konkreten Auswirkungen haben Sie erzielt? Was hat das Unternehmen gelernt? Wie ist die weitere Vorgehensweise?</Translation>
+        <Translation key="report.label.specificProblems">Was konnte nicht realisiert werden?</Translation>
+        <Translation key="report.label.difficulty">Wurden Sie mit spezifischen Problemen konfrontiert?</Translation>
+        <Translation key="report.label.plannedContinuation">Welche Massnahmen müssen Ihrer Meinung nach im Unternehmen noch ergriffen werden?</Translation>
+        <Translation key="report.label.coach">Coach</Translation>
+        <Translation key="report.label.effectiveNbOfHours">Anzahl Std.</Translation>
+        <Translation key="report.label.effectiveHoursAmount">Kosten des Coachings</Translation>
+        <Translation key="report.label.effectiveOtherExpensesAmount">Spesen</Translation>
+        <Translation key="report.label.activityAmount">Gesamtbetrag</Translation>
+        <Translation key="report.total">Gesamtbetrag</Translation>
+        <Translation key="report.totalApproved">Genehmigte Finanzierung</Translation>
+        <Translation key="report.balance">Saldo</Translation>
+        <Translation key="report.repeatCoach.hint">Klicken Sie auf das Plus (bzw. Minus) um einen Coach hinzuzufügen (bzw. zu löschen).</Translation>
+        <Translation key="report.legend.partner">Involvierte Partner</Translation>
+        <Translation key="report.hint.length.1000">Alle Textkommentare sind limitiert auf maximal 1000 Zeichen.</Translation>
+        <Translation key="report.rank.interaction">Mit Hilfe des KAMs bahnte sich eine gute Zusammenarbeit mit dem Unternehmen an.</Translation>
+        <Translation key="report.rank.management">Die Geschäftsleitung war aktiv im Coachingprozess engagiert</Translation>
+        <Translation key="report.rank.achievement">Die geplanten Ziele und Coaching Schwerpunkte wurden erreicht.</Translation>
+        <Translation key="report.legend.successStory">Erfolgsstory Coaching</Translation>
+        <Translation key="report.rank.sucessStory">Ich betrachte die Coachingerfahrung als Erfolgsstory und als geeignet für die Kommunikation.</Translation>
+        <Translation key="report.question.recommendation">Würden Sie diesen Fall als Erfolgsstory für die Kommunikation weiterempfehlen?</Translation>
+        <Translation key="report.legend.attractiveness">Skizzieren Sie Elemente der Story</Translation>
+        <Translation key="report.legend.partnerships">Konnten erfolgreiche Partnerschaften aufgebaut werden?</Translation>
+        <!--*****************-->
+        <!-- Report Approval -->
+        <!--*****************-->
+        <Translation key="approval.title1.approvementCriteria">Zustimmungskriterien</Translation>
+        <Translation key="approval.title2.completeness">Vollständigkeit der Informationen</Translation>
+        <Translation key="approval.title2.resultsQuality">Qualität der Ergebnisse</Translation>
+        <Translation key="approval.title2.financialStatement">Finanzbericht (ohne MWST)</Translation>
+        <Translation key="approval.title1.decision">Genehmigung Schlussbericht</Translation>
+        <Translation key="approval.label.opinion">Meinung</Translation>
+        <Translation key="approval.label.comment">Kommentar</Translation>
+        <Translation key="approval.label.date">Datum</Translation>
+        <Translation key="approval.label.author">Autor</Translation>
+        <Translation key="approval.label.decisionMakingAuthority">Entscheidungsorgan</Translation>
+        <Translation key="approval.th.fundingSources">Finanzierungsquellen</Translation>
+        <Translation key="approval.term.costOverrun">Other</Translation>
+        <Translation key="approval.th.approvedFunding">Genehmigte Finanzierung</Translation>
+        <Translation key="approval.th.effectiveCosts">Effektive Kosten</Translation>
+        <Translation key="approval.th.approvedBalance">Effektiver Saldo (genehmigte Finanzierung ./. effektive Kosten)</Translation>
+        <Translation key="approval.th.closure">Finanzabschluss</Translation>
+        <Translation key="approval.th.effectiveBalance">Differenz zwischen genehmigter Finanzierung und Finanzabschluss</Translation>
+        <!--**********-->
+        <!-- Feedback -->
+        <!--**********-->
+        <Translation key="feedback.legend.sme.no">Kein Feedback Formular an das Unternehmen gesendet</Translation>
+        <Translation key="feedback.legend.sme.inProgress">Pendent seitens Unternehmen…</Translation>
+        <Translation key="feedback.legend.sme.completed">Ausgefüllt durch das Unternehmen…</Translation>
+        <Translation key="feedback.legend.sent">Feedback Formular gesendet…</Translation>
+        <Translation key="feedback.legend.sme.to">An die Kontaktperson des Unternehmens</Translation>
+        <Translation key="feedback.legend.completed">Feedback Formular ausgefüllt…</Translation>
+        <Translation key="feedback.legend.sme.by">Durch die Kontaktperson des Unternehmens</Translation>
+        <Translation key="feedback.legend.kam.no">Kein Feedback Formular an den KAM gesendet</Translation>
+        <Translation key="feedback.legend.kam.inProgress">Pendent seitens KAM…</Translation>
+        <Translation key="feedback.legend.kam.completed">Ausgefüllt durch den KAM…</Translation>
+        <Translation key="feedback.legend.kam.to">An den KAM</Translation>
+        <Translation key="feedback.legend.kam.by">Durch den KAM</Translation>
+        <!--*************-->
+        <!-- Evaluation  -->
+        <!--*************-->
+        <Translation key="evaluation.legend.company">Feedback des Unternehmens</Translation>
+        <Translation key="evaluation.legend.kam">Bewertung durch KAM</Translation>
+        <Translation key="evaluation.legend.coach">Bewertung durch Coach</Translation>
+        <Translation key="evaluation.legend.support">Zusätzliche Unterstützung für das Unternehmen</Translation>
+        <Translation key="evaluation.legend.successStory">Erfolgsstory</Translation>
+        <!--***************************-->
+        <!-- External feedback surveys -->
+        <!--***************************-->
+        <Translation key="survey.sme.email">Bitte korrigieren Sie Ihre E-Mail Adresse, falls Sie nicht @@Activity_Contact_Name@@ sind oder diese falsch ist</Translation>
+        <Translation key="survey.sme1">Dank @@KAM_Name@@ konnten wir relevante Herausforderungen im Bereich Geschäftsinnovation identifizieren</Translation>
+        <Translation key="survey.sme2">Die Bedürfnisanalyse, welche wir gemeinsam mit @@KAM_Name@@ vorgenommen haben, führte zu internen Massnahmen</Translation>
+        <Translation key="survey.sme3">Ich wurde über die Coachprofile informiert, um auf dieser Basis einen geeigneten Coach auszuwählen</Translation>
+        <Translation key="survey.sme4">Durch die Coaching Unterstützung von @@Coach_Name@@ konnten wir die Herausforderungen gezielt angehen</Translation>
+        <Translation key="survey.sme5">Aufgrund der Mitwirkung von @@Coach_Name@@ rechnen wir damit, dass unser Geschäftsinnovationsvorhaben schnellere Fortschritte erzielt</Translation>
+        <Translation key="survey.sme6">@@Coach_Name@@ hat dazu beigetragen, unsere Innovations- oder Geschäftsstrategie zu verbessern</Translation>
+        <Translation key="survey.sme7">Ich empfehle das Innovationscoaching auch anderen Unternehmen</Translation>
+        <Translation key="survey.sme7.hint">Beschreiben Sie Ihre Erfahrungen mit dem Coaching</Translation>
+        <Translation key="survey.kam.email">Bitte korrigieren Sie Ihre E-Mail Adresse, falls Sie nicht @@KAM_Name@@ sind oder diese falsch ist</Translation>
+        <Translation key="survey.kam4">Ich schätze die gute Koordination mit dem Coach @@Coach_Name@@ (Dialog, Ansprechbarkeit)</Translation>
+        <Translation key="survey.kam4.hint">Beschreiben Sie Ihre Erfahrungen mit dem Coaching</Translation>
+        <Translation key="survey.kam8">Notwendigkeit einer weiteren Coaching Unterstützung</Translation>
+        <Translation key="survey.kam9">Würden Sie diesen Fall als Erfolgsstory für die Kommunikation weiterempfehlen ?</Translation>
+        <Translation key="survey.kam9.hint">Skizzieren Sie Elemente der Story</Translation>
+        <!--************-->
+        <!-- Statistics -->
+        <!--************-->
+        <Translation key="stats.gender">Contact person gender for Case</Translation>
+        <Translation key="stats.group.keywords">Suchbegriffen</Translation>
+        <Translation key="stats.criteria.coach">Coach</Translation>
+        <Translation key="stats.criteria.fundingSources">Financing source(s)</Translation>
+        <Translation key="stats.criteria.partnerTypes">Type of partners</Translation>
+        <Translation key="stats.criteria.partnerRoles">Role of partners</Translation>
+        <Translation key="stats.criteria.period">initiated...</Translation>
+        <Translation key="stats.criteria.targetedMarkets">Markets</Translation>
+        <Translation key="stats.criteria.size">Size</Translation>
+        <Translation key="stats.criteria.initialContext">Current</Translation>
+        <Translation key="stats.criteria.targetedContext">Planned</Translation>
+        <Translation key="stats.criteria.innovationVectors">Vectors</Translation>
+        <Translation key="stats.criteria.ideaSources">Ideas</Translation>
+        <Translation key="stats.criteria.resources">Resources</Translation>
+        <Translation key="stats.criteria.partners">Partnerships</Translation>
+        <Translation key="stats.hint.keywords">Es werden nur die Fälle angezeigt, die alle Suchbegriffe gleichzeitig (UND) mindestens in einem der Felder Titel, Unternehmenskontext des Falls, Titel einer Aktivität des Falles, Hauptaktivitäten des Unternehmens oder Ort des Unternehmens enthalten sind. Keine Unterscheidung bei Gross- und Kleinschreibung, jedoch Berücksichtigung von Akzenten und Pluralen. Leerzeichen und sonstige Satzzeichen innerhalb jedes Suchbegriffs werden genau so gesucht wie sie geschrieben sind.</Translation>
+        <Translation key="stats.q1">(Q1) To KAM: The top management understands the value of the coaching</Translation>
+        <Translation key="stats.q2">(Q2) To KAM: I felt confident using the needs analysis approach</Translation>
+        <Translation key="stats.q3">(Q3) To SME: [name of KAM] helped us to identify relevant business needs</Translation>
+        <Translation key="stats.q4">(Q4) To SME: The needs analysis performed together with [name of KAM] lead our company to take internal actions</Translation>
+        <Translation key="stats.q5">(Q5) To KAM: I could find suitably profiled coaches in the coach database</Translation>
+        <Translation key="stats.q6">(Q6) To SME: I was well informed about coaches to be able to choose the appropriate one</Translation>
+        <Translation key="stats.q7">(Q7) To Coach: The KAM prepared constructively my interaction with the SME beneficiary</Translation>
+        <Translation key="stats.q8">(Q8) To Coach: The management team of the company was actively engaged in the coaching process</Translation>
+        <Translation key="stats.q9">(Q9) To SME: I would recommend business innovation coaching to other companies</Translation>
+        <Translation key="stats.q10">(Q10) To Coach: I do consider the coaching experience suitable to be communicated as a success story</Translation>
+        <Translation key="stats.q11">(Q11) To SME: Thanks to [Name of Coach], we changed the way to approach our challenges</Translation>
+        <Translation key="stats.q12">(Q12) To coach: The planned tasks and objectives were achieved</Translation>
+        <Translation key="stats.q13">(Q13) To SME: Thanks to [Name of Coach], we expect our business innovation project to progress faster</Translation>
+        <Translation key="stats.q14">(Q14) To SME: Thanks to [Name of Coach], our business strategy improved</Translation>
+        <Translation key="stats.q15">(Q15) To KAM: I appreciate the interaction with the coach (dialogue, responsiveness)</Translation>
+        <Translation key="stats.kpi_1">1. Did the KAM capture the SME’s context? (KPI - Needs analysis)</Translation>
+        <Translation key="stats.kpi_2">2. Did the KAM lead the company to choose the right coach? (KPI - Coach selection)</Translation>
+        <Translation key="stats.kpi_3">3. Did the coaching activity empower the company to address its challenges? (KPI - Resource impact)</Translation>
+        <Translation key="stats.kpi_4">4. Did the improved company capacity impact the business development? (KPI - Business impact)</Translation>
+        <Translation key="stats.kpi">Compound KPI</Translation>
+        <Translation key="stats.kpi_1.legend">KPI_1 Needs analysis</Translation>
+        <Translation key="stats.kpi_2.legend">KPI_2 Coach selection</Translation>
+        <Translation key="stats.kpi_3.legend">KPI_3 Resource impact</Translation>
+        <Translation key="stats.kpi_4.legend">KPI_4 Business impact</Translation>
+        <Translation key="stats.kpi.legend">Compound KPI</Translation>
+        <Translation key="stats.sf1_1">1.1 SME recognises and acquires the value of the coaching scheme</Translation>
+        <Translation key="stats.sf1_2">1.2 KAM is competent and equipped</Translation>
+        <Translation key="stats.sf1_3">1.3 Assimilation/Transformation of results by SME</Translation>
+        <Translation key="stats.sf1_1.legend">SF_1_1 Coaching scheme</Translation>
+        <Translation key="stats.sf1_2.legend">SF_1_2 KAM</Translation>
+        <Translation key="stats.sf1_3.legend">SF_1.3 Assimilation/Transformation</Translation>
+        <Translation key="stats.sf2_1">2.1 Availability of coaches that fit requirements</Translation>
+        <Translation key="stats.sf2_2">2.2 SME have sufficient info to choose appropriate coach</Translation>
+        <Translation key="stats.sf2_1.legend">SF_2_1 Availability of coaches</Translation>
+        <Translation key="stats.sf2_2.legend">SF_2_2 SME info</Translation>
+        <Translation key="stats.sf3_1">3.1 Management team recognises the value of problem solving approach</Translation>
+        <Translation key="stats.sf3_2">3.2 Acquisition/Assimilation of approach</Translation>
+        <Translation key="stats.sf3_1.legend">SF_3_1 Value recognition</Translation>
+        <Translation key="stats.sf3_2.legend">SF_3_2 Acquisition/Assimilation</Translation>
+        <Translation key="stats.sf4_1">4.1 Progress toward successful commercialisation</Translation>
+        <Translation key="stats.sf4_1.legend">SF_4_1 Commercialisation</Translation>
+        <Translation key="stats.questions.kam">Questions to KAM</Translation>
+        <Translation key="stats.questions.kam.legend">Questions to KAM</Translation>
+        <Translation key="stats.questions.sme">Questions to SME</Translation>
+        <Translation key="stats.questions.sme.legend">Questions to SME</Translation>
+        <Translation key="stats.questions.coach">Questions to Coach</Translation>
+        <Translation key="stats.questions.coach.legend">Questions to Coach</Translation>
+    </Translations>
+</Dictionary>

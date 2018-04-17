@@ -1,0 +1,29 @@
+<Form Tag="UserProfile">
+  <Title>Profil d'un utilisateur</Title>
+  <Row>
+    <Cell W="12">
+      <Title Level="1">Rôles</Title>
+      <Repeat Tag="Roles" Min="0">
+          <Cell Tag="Role">
+              <Title Level="2">Rôle</Title>
+              <Row>
+                <Field Key="function" Tag="FunctionRef" Gap="1">Nom</Field>
+                <Field Key="services" Gap="1">Services</Field>
+                <Field Key="cantonal-antenna" Tag="CantonalAntennaRef" Gap="2">Antenne cantonnale</Field>
+              </Row>
+              <div xmlns="http://www.w3.org/1999/xhtml" style="float:right">
+                <span class="text-info">Cliquez sur moins (resp. plus) pour enlever (resp. ajouter) un rôle <Menu/></span>
+              </div>
+          </Cell>
+      </Repeat>
+    </Cell>
+  </Row>
+  <Row>
+    <Field Key="coladmin-entity" Tag="AdministrativeEntityRef" Gap="2">Entité administrative</Field>
+    <Field Key="coladmin-entity" Tag="CollaborativeEntityRef" Gap="2">Entité collaborative</Field>
+  </Row>
+  <Bindings>
+    <Require Keys="function"/>
+  </Bindings>
+  <Plugins/>
+</Form>

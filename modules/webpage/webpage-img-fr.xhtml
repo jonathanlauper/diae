@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:xt="http://ns.inria.org/xtiger">
+<head>                  
+  <!-- Use UTF-8 and avoid the xml protocol declaration at the top for Internet Explorer -->
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=8;" />   
+  <meta name="description" content="XTiger XML document template" />
+  <meta name="keywords" content="template, XTiger" />
+
+  <title>OppiStore module : base Web Page template with image upload</title>
+    
+  <style type="text/css">
+  /* RESET - do not copy this as it should usually depend on your web site look and feel */
+  body {
+    width: 800px;
+  }
+  p {
+    margin: 0 0 0.5em;
+  }
+  ul {
+    margin: 0 0 0.5em;
+  }
+  </style>
+
+  <link rel="stylesheet" href="page.css" type="text/css" charset="utf-8"/>
+  <link rel="stylesheet" href="template.css" type="text/css" charset="utf-8"/>
+  
+  <xt:head version="1.1" templateVersion="1.0" label="WebPage">
+
+  <xt:component name="t_content_type">  
+    <xt:repeat minOccurs="0" maxOccurs="*" pseudoLabel="Parag List TitleLevel1 TitleLevel2 LinesBlock Illustration" >
+      <xt:use types="t_row"/>
+    </xt:repeat>
+  </xt:component>
+
+  <xt:component name="t_row">
+    <div class="t_row">
+      <div class="t_menu">
+        <xt:menu-marker target="t_select"/><br/>
+        <xt:menu-marker/>
+      </div>
+      <xt:use types="t_parag t_list t_title1 t_title2 t_linesblock t_illustration" label="Parag List TitleLevel1 TitleLevel2 LinesBlock Illustration" param="name=t_select"/>
+    </div>
+  </xt:component>  
+
+  <xt:component name="t_parag" i18n="Parag">  
+    <p><xt:use types="text" param="type=textarea;shape=parent;filter=wiki">Cliquez pour éditer un paragraphe</xt:use></p>
+  </xt:component>
+
+  <xt:component name="t_list" i18n="List">  
+    <p><xt:use label="ListHeader" types="text" param="type=textarea;shape=parent - 75px;filter=wiki" option="unset">Cliquez pour éditer un en-tête de liste </xt:use><span class="xtt-hide-if-unselect"> :</span></p>
+    <ul class="List">
+      <xt:repeat minOccurs="1" maxOccurs="*" pseudoLabel="Item">
+          <li><xt:use types="text" label="Item" param="type=textarea;shape=parent-80px;filter=wiki">élément de liste</xt:use><xt:menu-marker/></li>
+      </xt:repeat>
+    </ul>
+  </xt:component>
+
+  <xt:component name="t_title1" i18n="Titre1">  
+    <h2>  
+      <xt:use types="text" param="type=textarea;shape=parent">Cliquez pour éditer un titre</xt:use>        
+    </h2>
+  </xt:component> 
+
+  <xt:component name="t_title2" i18n="Titre2">  
+    <h3>  
+      <xt:use types="text" param="type=textarea;shape=parent">Cliquez pour éditer un sous-titre</xt:use>        
+    </h3>
+  </xt:component>
+
+  <xt:component name="t_linesblock" i18n="Lignes">  
+    <ul class="x-LinesBlock">
+      <xt:repeat minOccurs="1" maxOccurs="*" pseudoLabel="Line">
+          <li><xt:use types="text" label="Line" param="type=textarea;shape=parent-80px;filter=wiki">Cliquez pour éditer la ligne</xt:use><xt:menu-marker/></li>
+      </xt:repeat>
+    </ul>
+  </xt:component>
+
+  <xt:component name="t_illustration" i18n="Image">  
+    <div class="x-Illustration">
+      <div class="xtt-hide-if-preview t_style_menu">
+        <span style="width: 70px;float: left">STYLE</span>
+        <div style="margin-left: 75px;">
+           Boite <xt:attribute types="select" name="Position" values="left center right" i18n="à\ gauche centrée à\ droite" param="filter=style;style_property=class;style_root_class=x-Illustration" default="à gauche"/>,
+           légende <xt:attribute types="select" name="LegendAlign" values="justify left center right" i18n="justifiée à\ gauche centrée à\ droite" param="filter=style;style_property=text-align;style_root_class=x-Illustration;style_target_class=x-Legend" default="justifiée"/><br/>
+           Largeur boite <xt:attribute types="text" name="Width" default="400" param="filter=width;width_root_class=x-Illustration"/> px,
+           largeur légende <xt:attribute types="text" name="LegendWidth" default="400" param="filter=width;width_root_class=x-Illustration;width_target_class=x-Legend"/> px
+         <!-- | <xt:use types="text" label="Position" option="unset" param="filter=style;style_property=class;style_value=center;style_root_class=x-Illustration;noedit=true">center</xt:use> -->
+        </div>
+      </div>
+      <div class="t_stack">
+        <xt:repeat minOccurs="1" maxOccurs="*" label="Stack">
+            <xt:use types="t_element" label="Element"/>
+        </xt:repeat>
+      </div>
+      <xt:use types="t_legend" label="Legend"/>
+    </div>
+  </xt:component>
+  
+  <xt:component name="t_element">  
+    <div class="t_element">
+      <div style="width: 100%;heigth: 100%;position: relative">
+        <span class="t-menu" style="position: absolute; top: 0; right: 0"><xt:menu-marker/></span>      
+        <span class="t_photo"><xt:use types="photo" label="Photo" param="photo_URL=images"/></span><br/>
+        <p class="xtt-hide-if-preview"><xt:use types="text" label="LinkRef" option="unset">url</xt:use></p>
+      </div>
+    </div>
+  </xt:component>
+
+  <xt:component name="t_legend">  
+    <p class="x-Legend">
+      <xt:use types="text" param="type=textarea;shape=parent-60px" option="unset">légende</xt:use>
+    </p>
+  </xt:component>
+  
+  </xt:head>
+
+  <!-- testing purpose -->
+	<link rel="stylesheet" href="../../oppidum/resources/css/Preview.css" type="text/css" charset="utf-8"/>
+</head>
+<body style="margin-left: 200px">
+  <h1><xt:use types="text" label="PageTitle" option="set">Titre de la page</xt:use></h1>  
+  <xt:use types="t_content_type" label="PageContent"/>
+</body>
+</html>

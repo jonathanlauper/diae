@@ -1,0 +1,232 @@
+<Templates>
+    <Template Name="activity" Mode="create">
+<![CDATA[
+  <Activity>
+    <No>{ $id }</No>
+    <CreationDate>{ $date }</CreationDate>
+    <StatusHistory>
+      <CurrentStatusRef>1</CurrentStatusRef>
+      <Status>
+        <Date>{ $date }</Date>
+        <ValueRef>1</ValueRef>
+      </Status>
+    </StatusHistory>
+    <Budget _Prune="none">
+      <Costs/>
+      <Revenues>
+        <FundingSources/>
+      </Revenues>
+      <Variables>
+        <CoachingHourlyRate>{ custom:number(globals:doc('settings-uri')//CoachingHourlyRate/Amount) }</CoachingHourlyRate>
+      </Variables>
+    </Budget>
+    <Alerts LastIndex="0" _Prune="none"/>
+    { $case/NeedsAnalysis }
+    <AccountManagerFeedback LastModification="{ $date }">
+      { $case/Evaluation/AccountManagerFeedback/Recognition }
+      { $case/Evaluation/AccountManagerFeedback/Tools }
+    </AccountManagerFeedback>
+  </Activity>
+]]></Template>
+  <!-- Share template for inclusion with template:include  -->
+    <Template Name="position" Mode="read" Subject="Case" Object="aPosition">
+<![CDATA[
+  (
+  $object/PositionRef,
+  $object/Comment,
+  <Date>{ string($object/@LastModification) }</Date>,
+  <Author>
+    { 
+    if (exists($object/Author/DisplayName)) then
+      $object/Author/DisplayName/text()
+    else
+      display:gen-person-name($object/Author/PersonKey, $lang )
+    }
+  </Author>
+  )
+]]></Template>
+  <!-- Share template for inclusion with template:include  -->
+    <Template Name="position" Mode="update" Subject="Case" Object="aPosition">
+<![CDATA[
+if (fn:deep-equal(misc:prune($form/*[local-name() eq local-name($object)]), $object)) then
+  ()
+else 
+  <XALAction Type="replace" Pivot="$object/parent::ReportApproval">
+    {
+    element { local-name($object) } {
+      attribute { 'LastModification' } { $date },
+      $form/PositionRef,
+      $form/Comment
+      }
+    <Author>
+      <PersonKey>{ $uid }</PersonKey>
+      <DisplayName>{ display:gen-person-name($uid, $lang) }</DisplayName>
+    </Author>
+    }
+  </XALAction>
+]]>f
+  </Template>
+    <Template Name="feedbacks" Mode="read" Subject="Case" Object="Activity">
+<![CDATA[
+  let $sme-order := $object/Evaluations/Order[Questionnaire eq 'ctracker-sme-feedback']
+  let $kam-order := $object/Evaluations/Order[Questionnaire eq 'ctracker-kam-feedback']
+  return
+    <Feedbacks>
+      <TitleSME>
+        { 
+        if (exists($sme-order/Answers)) then 
+          custom:get-local-string("feedback.legend.sme.completed", $lang)
+        else if (exists($sme-order)) then 
+          custom:get-local-string("feedback.legend.sme.inProgress", $lang)
+        else 
+          custom:get-local-string("feedback.legend.sme.no", $lang)
+        }
+      </TitleSME>
+      <TitleKAM>
+        { 
+        if (exists($kam-order/Answers)) then 
+          custom:get-local-string("feedback.legend.kam.completed", $lang)
+        else if (exists($kam-order)) then 
+          custom:get-local-string("feedback.legend.kam.inProgress", $lang)
+        else 
+          custom:get-local-string("feedback.legend.kam.no", $lang)
+        }
+      </TitleKAM>
+      <SentSME>
+        {
+        $sme-order/Email,
+        $sme-order/Date
+        }
+      </SentSME>
+      {
+      if (exists($sme-order/Answers)) then 
+          <CompletedSME>
+            <Email>{ $sme-order/Answers/ContactEmail/text() }</Email>
+            <Date>{ string($sme-order/Answers/@LastModification) }</Date>
+          </CompletedSME>
+      else
+          ()
+      }
+      <SentKAM>
+        {
+        $kam-order/Email,
+        $kam-order/Date
+        }
+      </SentKAM>
+      {
+      if (exists($kam-order/Answers)) then 
+          <CompletedKAM>
+            <Email>{ $kam-order/Answers/ContactEmail/text() }</Email>
+            <Date>{ string($kam-order/Answers/@LastModification) }</Date>
+          </CompletedKAM>
+      else
+          ()
+      }
+    </Feedbacks>
+]]></Template>
+  <!-- TODO: decode Answers for ManagingReport (also useful in stats ?) -->
+    <Template Name="evaluations" Mode="read" Subject="Case" Object="Activity">
+<![CDATA[
+let $managing := $object/AccountManagerFeedback
+let $coaching := $object/CoachingReport
+return
+  <Evaluations>
+    <ActivityTitle>{ custom:gen-activity-title($subject, $object, $lang) }</ActivityTitle>
+    <CustomerReport>
+      {
+      feedback:genPollDataForEditing($object/Evaluations/Order[Questionnaire eq 'ctracker-sme-feedback']/Answers/*)
+      }
+    </CustomerReport>
+    <ManagingReport>
+      {
+      $managing/Recognition,
+      $managing/Tools,
+      $managing/Profiles,
+      feedback:genPollDataForEditing($object/Evaluations/Order[Questionnaire eq 'ctracker-kam-feedback']/Answers/*)
+      }
+    </ManagingReport>
+    <CoachingReport>
+      {
+      $coaching/KAMPreparation,
+      $coaching/ManagementTeam,
+      $coaching/ObjectivesAchievements,
+      $coaching/Difficulty,
+      $coaching/PlannedContinuation,
+      $coaching/Dissemination
+      }
+    </CoachingReport>
+  </Evaluations>
+]]></Template>
+  <!-- Computes Costs breakdown per-coach from logbook to import inside coaching report 
+       Uses $form to actually pass Activity -->
+    <Template Name="logbook" Mode="import">
+<![CDATA[
+let $logbook := $form/Logbook
+let $entries := $logbook/LogbookEntry
+let $approved := $form/Budget/Variables/TotalApproved
+let $rate := $form/Budget/Variables/CoachingHourlyRate
+return
+  <Costs>
+    { 
+    $form/Budget/Variables/CoachingHourlyRate,
+    (: WARNING : do not return <CoachingCosts/> to be compatible with XTiger empty repetition model ! :)
+    if (exists($logbook/LogbookEntry/CoachKey)) then
+      <CoachingCosts>
+        {
+        for $items in $logbook/LogbookEntry
+        let $coach-key := $items/CoachKey
+        let $hours := sum($items/NbOfHours)
+        let $cost := $hours * $rate
+        let $expenses := sum($items/ExpenseAmount)
+        group by $coach-key
+        return
+          <CoachActivity>
+           { $coach-key }
+           <EffectiveNbOfHours>{ $hours }</EffectiveNbOfHours>
+           <EffectiveHoursAmount>{ $cost }</EffectiveHoursAmount>
+           <EffectiveOtherExpensesAmount>{ $expenses }</EffectiveOtherExpensesAmount>
+           <ActivityAmount>{ $cost + $expenses }</ActivityAmount>
+          </CoachActivity>
+        }
+      </CoachingCosts>
+     else
+      (),
+    let $hours := sum($entries/NbOfHours)
+    let $cost := sum($entries/NbOfHours) * $rate
+    let $expenses := sum($entries/ExpenseAmount)
+    let $spent := $cost + $expenses
+    return (
+      <TotalEffectiveCosts>
+         <TotalEffectiveHoursNb>{ $hours }</TotalEffectiveHoursNb>
+         <TotalEffectiveHoursAmount>{ $cost }</TotalEffectiveHoursAmount>
+         <TotalEffectiveOtherExpensesAmount>{ $expenses }</TotalEffectiveOtherExpensesAmount>
+         <TotalSpent>{ $spent }</TotalSpent>
+       </TotalEffectiveCosts>,
+       $approved,
+       <SpentBalance>{ $approved - $spent }</SpentBalance>
+       )
+    }
+   </Costs>
+]]></Template>
+  <!-- only for debugging to be moved to XCM -->
+    <Template Name="vanilla" Mode="update">
+<![CDATA[
+  <XAL>
+    <XALAction Type="replace">
+      {
+      element { $document }
+      { 
+      attribute { 'LastModification' } { $date },
+      $form/*
+      }
+      }
+    </XALAction>
+  </XAL>
+]]></Template>
+  <!-- only for debugging to be moved to XCM -->
+    <Template Name="vanilla" Mode="read">
+<![CDATA[
+  element { $document }
+  { $activity/*[local-name(.) eq $document]/* }
+]]></Template>
+</Templates>

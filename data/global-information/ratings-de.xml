@@ -1,0 +1,96 @@
+<GlobalInformation>
+  <Description Lang="de">
+    <Selector Name="Positions">
+      <Option>
+        <Value>0</Value>
+        <Name>Nicht gesehen</Name>
+      </Option>
+      <Option>
+        <Value>1</Value>
+        <Name>Positiv</Name>
+      </Option>
+      <Option>
+        <Value>2</Value>
+        <Name>Negativ</Name>
+      </Option>
+      <Option>
+        <Value>4</Value>
+        <Name>À discuter</Name>
+      </Option>
+    </Selector>
+    <Selector Name="RatingScales" Test="Rating scale">
+      <Option>
+        <Value>5</Value>
+        <Name>Überhaupt nicht einverstanden</Name>
+      </Option>
+      <Option>
+        <Value>4</Value>
+        <Name>Eher nicht einverstanden</Name>
+      </Option>
+      <Option>
+        <Value>3</Value>
+        <Name>Neutral</Name>
+      </Option>
+      <Option>
+        <Value>2</Value>
+        <Name>Einverstanden</Name>
+      </Option>
+      <Option>
+        <Value>1</Value>
+        <Name>Voll einverstanden</Name>
+      </Option>
+    </Selector>
+    <Selector Name="YesNoScales" Test="Yes or no">
+      <Option>
+        <Value>1</Value>
+        <Name>Ja</Name>
+      </Option>
+      <Option>
+        <Value>2</Value>
+        <Name>Nein</Name>
+      </Option>
+    </Selector>
+    <Selector Name="CommunicationAdvices">
+      <Option>
+        <Value>1</Value>
+        <Name>Ja</Name>
+      </Option>
+      <Option>
+        <Value>2</Value>
+        <Name>Nein</Name>
+      </Option>
+      <Option>
+        <Value>3</Value>
+        <Name>Später</Name>
+      </Option>
+    </Selector>
+    <Selector Name="SupportScales" Value="Id" Label="Name" Test="Further support">
+      <Option>
+        <Value>1</Value>
+        <Name>Ja</Name>
+      </Option>
+      <Option>
+        <Value>2</Value>
+        <Name>Nein</Name>
+      </Option>
+      <Option>
+        <Value>3</Value>
+        <Name>Unknown</Name>
+      </Option>
+    </Selector>
+    <Selector Name="ServiceFollowUpScales">
+      <Option>
+        <Value>1</Value>
+        <Name>Wir sind Ihrer Anfrage nachgegangen, mit konkretem Ergebnis</Name>
+      </Option>
+      <Option>
+        <Value>2</Value>
+        <Name>Wir sind Ihrer Anfrage nachgegangen, jedoch ohne konkretes Ergebnis</Name>
+      </Option>
+      <Option>
+        <Value>3</Value>
+        <Name>Wir sind Ihrer Anfrage nicht nachgegangen</Name>
+      </Option>
+    </Selector>
+  </Description>
+</GlobalInformation>

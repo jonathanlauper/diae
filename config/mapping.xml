@@ -1,0 +1,492 @@
+<!-- ======================================================================
+                         Case tracker pilote mapping
+     ====================================================================== -->
+<site db="/db/sites/diae" confbase="/db/www/diae" startref="home" supported="login logout" key="pilote" mode="dev" languages="de en fr" default="en">
+  <item name="me" supported="forgotten" method="POST" epilogue="home">
+    <model src="xcm:modules/users/password.xql"/>
+    <view src="xcm:modules/users/password.xsl"/>
+    <action name="POST" epilogue="home">
+      <model src="xcm:modules/users/password.xql"/>
+      <view src="xcm:modules/users/password.xsl"/>
+    </action>
+    <action name="forgotten" epilogue="home">
+      <!-- GET or POST -->
+      <access>
+        <rule action="GET POST" role="all"/>
+        <!-- visible to anyone -->
+      </access>
+      <model src="xcm:modules/users/password.xql"/>
+      <view src="xcm:modules/users/password.xsl"/>
+    </action>
+  </item>
+  <!-- *********** -->
+  <!-- ** home ** -->
+  <!-- *********** -->
+  <item name="home" supported="edit" collection="pages" resource="home-$lang.xml" epilogue="home">
+
+    <model src="lib/resource.xql"/>
+    <view src="lib/display.xsl"/>
+    <item name="content" method="POST">
+      <model src="lib/content.xql"/>
+      <action name="POST">
+        <model src="lib/write.xql"/>
+      </action>
+    </item>
+    <action name="edit" epilogue="home">
+      <model src="lib/edit.xql"/>
+      <view src="lib/edit.xsl"/>
+    </action>
+  </item>
+  
+  <collection name="ocr" supported="edit"  method="POST" collection="pages" resource="ocr.xml" epilogue="workflow">
+    
+    <model src="modules/ocr/ocr.xql"/>
+    <view src="modules/ocr/ocr.xsl"/>
+
+    
+    <collection name="docs" method="POST" resource="ocr">
+      <item method="POST">
+        <model src="modules/annexes/read.xql">
+          <param name="cache" value="no-cache"/>
+        </model>
+        <variant name="GET" format="pdf"/>
+        <variant name="GET" format="doc"/>
+        <variant name="GET" format="docx"/>
+        <variant name="GET" format="xls"/>
+        <variant name="GET" format="xlsx"/>
+        <variant name="GET" format="ppt"/>
+        <variant name="GET" format="pptx"/>
+        <action name="POST"> <!-- DELETE simulation -->
+          <model src="modules/annexes/delete.xql"/>
+        </action>
+      </item>
+      <action name="POST" resource="ocr">
+        <model src="modules/annexes/write.xql"/>
+        <view src="xcm:modules/workflow/workflow.xsl"/>
+      </action>
+    </collection>
+    <collection name="templates">
+      <item name="annex" epilogue="annex.xhtml">
+        <model src="modules/annexes/form.xql"/>
+      </item>
+    </collection>
+  </collection>
+  
+  <collection name="recognize" supported="edit"  method="POST" collection="pages" resource="ocr.xml" epilogue="workflow">
+    
+    <model src="modules/ocr/recognize.xql"/>
+    <view src="modules/ocr/recognize.xsl"/>
+    
+    <item supported="ocr" method="POST">
+      <model src="modules/ocr/ocr1.xql"/>
+      <view src="modules/ocr/ocr1.xsl"/>
+      
+<!--      <model src="modules/enterprises/enterprise.xql"/>
+      <action name="POST">
+        <model src="modules/enterprises/enterprise.xql"/>
+      </action>
+      <variant name="GET" format="blend">
+        <view src="views/blend.xsl"/>
+      </variant>
+      <variant name="GET" format="modal" epilogue="*">
+        <view src="xcm:modules/enterprises/modal.xsl"/>
+      </variant>
+      <action name="related" epilogue="*">
+        <model src="modules/cases/related.xql"/>
+        <view src="modules/stage/search.xsl"/>
+      </action>-->
+      
+    </item>
+    
+    <collection name="images" method="POST">
+      <model src="oppidum:models/forbidden.xql"/>
+      <item resource="$3" collection="pages/images">
+        <access>
+          <rule action="GET" role="all"/>
+        </access>
+        <model src="xcm:modules/images/image.xql"/>
+        <variant name="GET" format="jpeg"/>
+        <variant name="GET" format="jpg"/>
+        <variant name="GET" format="png"/>
+        <variant name="GET" format="gif"/>
+      </item>
+      <action name="POST">
+        <model src="xcm:modules/images/upload.xql">
+          <param name="group" value="users"/>
+          <param name="max-size" value="400x400"/>
+        </model>
+      </action>
+    </collection>
+    <collection name="docs" method="POST" resource="ocr">
+      <item method="POST">
+        <model src="modules/annexes/read.xql">
+          <param name="cache" value="no-cache"/>
+        </model>
+        <variant name="GET" format="pdf"/>
+        <variant name="GET" format="doc"/>
+        <variant name="GET" format="docx"/>
+        <variant name="GET" format="xls"/>
+        <variant name="GET" format="xlsx"/>
+        <variant name="GET" format="ppt"/>
+        <variant name="GET" format="pptx"/>
+        <action name="POST"> <!-- DELETE simulation -->
+          <model src="modules/annexes/delete.xql"/>
+        </action>
+      </item>
+      <action name="POST" resource="ocr">
+        <model src="modules/annexes/write.xql"/>
+        <view src="xcm:modules/workflow/workflow.xsl"/>
+      </action>
+    </collection>
+    <collection name="templates">
+      <item name="annex" epilogue="annex.xhtml">
+        <model src="modules/annexes/form.xql"/>
+      </item>
+    </collection>
+  </collection>
+  
+  <!-- ********************** -->
+  <!-- ** cases collection ** -->
+  <!-- ********************** -->
+  
+  <!-- ***************** -->
+  <!-- ** enterprises ** -->
+  <!-- ***************** -->
+  <collection name="enterprises" supported="add" method="POST" epilogue="home" collection="enterprises" resource="enterprises.xml">
+    <model src="xcm:modules/enterprises/search.xql"/>
+    <view src="xcm:modules/enterprises/search.xsl"/>
+    <action name="POST" epilogue="*">
+      <model src="xcm:modules/enterprises/search.xql"/>
+      <view src="xcm:modules/enterprises/search.xsl"/>
+    </action>
+    <import module="submission" param="name=SearchEnterprisesRequest"/>
+    <action name="add">
+      <model src="modules/enterprises/enterprise.xql"/>
+    </action>
+    <item supported="related" method="POST">
+      <model src="modules/enterprises/enterprise.xql"/>
+      <action name="POST">
+        <model src="modules/enterprises/enterprise.xql"/>
+      </action>
+      <variant name="GET" format="blend">
+        <view src="views/blend.xsl"/>
+      </variant>
+      <variant name="GET" format="modal" epilogue="*">
+        <view src="xcm:modules/enterprises/modal.xsl"/>
+      </variant>
+      <action name="related" epilogue="*">
+        <model src="modules/cases/related.xql"/>
+        <view src="modules/stage/search.xsl"/>
+      </action>
+      <item name="delete" method="POST DELETE">
+        <!-- delete controller -->
+        <action name="POST">
+          <model src="xcm:modules/enterprises/delete.xql"/>
+        </action>
+        <action name="DELETE">
+          <model src="xcm:modules/enterprises/delete.xql"/>
+        </action>
+      </item>
+    </item>
+  </collection>
+  <!-- ************* -->
+  <!-- ** persons ** -->
+  <!-- ************* -->
+  <collection name="persons" supported="add" method="POST" epilogue="home" collection="persons" resource="persons.xml">
+    <model src="xcm:modules/persons/search.xql"/>
+    <view src="xcm:modules/persons/search.xsl"/>
+    <action name="POST" epilogue="*">
+      <model src="xcm:modules/persons/search.xql"/>
+      <view src="xcm:modules/persons/search.xsl"/>
+    </action>
+    <import module="submission" param="name=SearchPersonsRequest"/>
+    <collection name="images" method="POST">
+      <model src="oppidum:models/forbidden.xql"/>
+      <item resource="$3" collection="persons/images">
+        <access>
+          <rule action="GET" role="all"/>
+        </access>
+        <model src="xcm:modules/images/image.xql"/>
+        <variant name="GET" format="jpeg"/>
+        <variant name="GET" format="jpg"/>
+        <variant name="GET" format="png"/>
+        <variant name="GET" format="gif"/>
+      </item>
+      <action name="POST">
+        <model src="xcm:modules/images/upload.xql">
+          <param name="group" value="users"/>
+          <param name="max-size" value="400x400"/>
+        </model>
+      </action>
+    </collection>
+    <action name="add">
+      <model src="modules/persons/person.xql"/>
+    </action>
+    <item method="POST">
+      <model src="modules/persons/person.xql"/>
+      <action name="POST">
+        <model src="modules/persons/person.xql"/>
+        <view src="xcm:modules/persons/ajax.xsl"/>
+      </action>
+      <variant name="GET" format="blend">
+        <view src="views/blend.xsl"/>
+      </variant>
+      <variant name="GET" format="modal" epilogue="*">
+        <view src="xcm:modules/persons/modal.xsl"/>
+      </variant>
+      <item name="delete" method="POST DELETE">
+        <!-- delete controller -->
+        <action name="POST">
+          <model src="xcm:modules/persons/delete.xql"/>
+        </action>
+        <action name="DELETE">
+          <model src="xcm:modules/persons/delete.xql"/>
+        </action>
+      </item>
+    </item>
+  </collection>
+  <!-- *************** -->
+  <!-- ** templates ** -->
+  <!-- *************** -->
+  <item name="templates" collection="templates">
+    <model src="oppidum:models/templates.xql"/>
+    <item name="search">
+      <item name="persons" epilogue="person-search.xhtml">
+        <model src="xcm:modules/persons/form.xql"/>
+      </item>
+      <item name="enterprises" epilogue="enterprise-search.xhtml">
+        <model src="xcm:modules/enterprises/form.xql"/>
+      </item>
+    </item>
+    <item name="person" epilogue="person.xhtml">
+      <model src="xcm:modules/persons/form.xql"/>
+    </item>
+    <item name="enterprise" epilogue="enterprise.xhtml">
+      <model src="xcm:modules/enterprises/form.xql"/>
+    </item>
+    <item name="profile" epilogue="profile.xhtml">
+      <model src="modules/management/form.xql"/>
+    </item>
+    
+    <item name="account" epilogue="account.xhtml">
+      <model src="xcm:modules/management/form.xql"/>
+    </item>
+    <item name="demo" epilogue="demo.xhtml">
+      <model src="modules/demo/form.xql"/>
+    </item>
+    <item name="topic" epilogue="topic.xhtml">
+      <model src="lib/form.xql"/>
+    </item>
+  </item>
+  <!-- ************ -->
+  <!-- ** admin  ** -->
+  <!-- ************ -->
+  <item name="admin" method="POST">
+    <access>
+      <rule action="GET POST" role="u:admin g:developer" message="admin"/>
+    </access>
+    <model src="oppidum:modules/admin/restore.xql"/>
+    <view src="oppidum:modules/admin/restore.xsl"/>
+    <action name="POST">
+      <model src="oppidum:modules/admin/restore.xql"/>
+      <view src="oppidum:modules/admin/restore.xsl"/>
+    </action>
+    <item name="deploy">
+      <access>
+        <rule action="GET" role="all"/>
+      </access>
+      <model src="scripts/deploy.xql"/>
+    </item>
+    <item name="validate">
+      <access>
+        <rule action="GET" role="u:admin g:developer"/>
+      </access>
+      <model src="scripts/validate.xql"/>
+    </item>
+    <item name="hold">
+      <model src="xcm:models/hold.xql"/>
+    </item>
+  </item>
+  <!-- ***************** -->
+  <!-- ** management  ** -->
+  <!-- ***************** -->
+  <item name="management" epilogue="home">
+    <access>
+      <rule action="GET" role="u:admin g:admin-system g:developer" message="system manager"/>
+    </access>
+    <model src="modules/management/management.xql"/>
+    <view src="modules/management/management.xsl"/>
+    <collection name="users">
+      <access>
+        <rule action="GET" role="u:admin g:admin-system g:developer" message="system manager"/>
+      </access>
+      <model src="xcm:modules/management/user.xql"/>
+      <view src="xcm:modules/management/user.xsl"/>
+    </collection>
+    <item name="thesaurus" method="POST">
+      <access>
+        <rule action="GET POST" role="u:admin g:admin-system g:developer" message="system manager"/>
+      </access>
+      <model src="xcm:modules/thesaurus/thesaurus.xql"/>
+      <action name="POST">
+        <model src="xcm:modules/thesaurus/thesaurus.xql"/>
+      </action>
+    </item>
+    <item name="params" method="POST">
+      <access>
+        <rule action="GET POST" role="u:admin g:admin-system g:developer" message="system manager"/>
+      </access>
+      <model src="xcm:modules/management/params.xql"/>
+      <view src="xcm:modules/management/params.xsl"/>
+      <action name="POST">
+        <model src="xcm:modules/management/params.xql"/>
+      </action>
+    </item>
+    <item name="groups">
+      <access>
+        <rule action="GET" role="u:admin g:admin-system g:developer" message="system manager"/>
+      </access>
+      <model src="xcm:modules/management/groups.xql"/>
+    </item>
+    <item name="roles">
+      <access>
+        <rule action="GET" role="u:admin g:admin-system g:developer" message="system manager"/>
+      </access>
+      <model src="xcm:modules/management/roles.xql"/>
+      <view src="xcm:modules/management/roles.xsl"/>
+    </item>
+    <item name="workflow">
+      <access>
+        <rule action="GET" role="u:admin g:admin-system g:developer" message="system manager"/>
+      </access>
+      <model src="xcm:modules/management/workflow.xql"/>
+    </item>
+    <item name="login">
+      <access>
+        <rule action="GET" role="u:admin g:admin-system g:developer" message="administrateur"/>
+      </access>
+      <model src="xcm:modules/management/login.xql"/>
+      <view src="xcm:modules/management/login.xsl"/>
+    </item>
+    <item name="access">
+      <access>
+        <rule action="GET" role="u:admin g:admin-system g:developer" message="administrateur"/>
+      </access>
+      <model src="xcm:modules/management/login.xql"/>
+      <view src="xcm:modules/management/access.xsl"/>
+    </item>
+  </item>
+  <!-- ************** -->
+  <!-- ** profiles ** -->
+  <!-- ************** -->
+  <collection name="profiles" collection="persons" resource="persons.xml">
+    <item method="POST">
+      <access>
+        <rule action="GET POST" role="u:admin g:admin-system g:developer" message="system manager"/>
+      </access>
+      <model src="modules/users/profile.xql"/>
+      <action name="POST">
+        <model src="modules/users/profile.xql"/>
+      </action>
+    </item>
+  </collection>
+  <!-- ************** -->
+  <!-- ** accounts ** -->
+  <!-- ************** -->
+  <collection name="accounts" collection="persons" resource="persons.xml">
+    <item method="POST" supported="delete">
+      <access>
+        <rule action="GET POST delete" role="u:admin g:admin-system g:developer" message="system manager"/>
+      </access>
+      <model src="xcm:modules/users/account.xql"/>
+      <action name="POST">
+        <model src="xcm:modules/users/account.xql"/>
+      </action>
+      <action name="delete">
+        <!-- delete controller -->
+        <model src="xcm:modules/users/account.xql"/>
+      </action>
+    </item>
+  </collection>
+  <!-- ***************** -->
+  <!-- ** about  ** -->
+  <!-- ***************** -->
+  <item name="about" epilogue="home" resource="file:///views/about.xml" collection="docs">
+    <access>
+      <rule action="GET" role="all"/>
+    </access>
+  </item>
+  <!-- ***************** -->
+  <!-- ** guidelines  ** -->
+  <!-- ***************** -->
+  
+  <!-- ************ -->
+  <!-- ** forms  ** -->
+  <!-- ************ -->
+  <item name="forms" resource="file:///formulars/_register.xml" supported="install" epilogue="home">
+    <access>
+      <rule action="GET" role="u:admin g:users g:developer" message="member"/>
+    </access>
+    <view src="xcm:modules/formulars/simulator.xsl"/>
+    <item resource="file:///formulars/$2.xml"/>
+    <action name="install" resource="">
+      <model src="xcm:modules/formulars/install.xql">
+        <param name="sg-folder" value="eval:globals:app-name()"/>
+      </model>
+    </action>
+  </item>
+  <!-- *********** -->
+  <!-- ** stats ** -->
+  <!-- *********** -->
+  <item name="stats" supported="filter export">
+    <access>
+      <rule action="GET POST filter export" role="g:users" message="registered user"/>
+    </access>
+    <item name="cases" epilogue="home">
+      <model src="modules/stats/stats.xql"/>
+      <view src="modules/stats/stats.xsl"/>
+    </item>
+    <item name="activities" epilogue="home">
+      <model src="modules/stats/stats.xql"/>
+      <view src="modules/stats/stats.xsl"/>
+    </item>
+    <action name="filter">
+      <model src="modules/stats/filter.xql"/>
+    </action>
+    <action name="export">
+      <model src="modules/stats/export.xql"/>
+    </action>
+  </item>
+  <!-- ****************** -->
+  <!-- ** web services **  -->
+  <!-- ****************** -->
+  
+  
+  
+  <!-- ***************** -->
+  <!-- **  selectors  ** -->
+  <!-- ***************** -->
+  
+  <!-- *************************** -->
+  <!-- ** dictionary (optional) ** -->
+  <!-- *************************** -->
+  <item name="dictionary" method="POST" supported="test export">
+    <action name="POST">
+      <model src="xcm:modules/dictionary/update.xql"/>
+    </action>
+    <action name="test">
+      <model src="xcm:modules/dictionary/test.xql"/>
+    </action>
+    <action name="export">
+      <model src="xcm:modules/dictionary/export.xql"/>
+    </action>
+  </item>
+  <!-- ************* -->
+  <!-- **  health ** -->
+  <!-- ************* -->
+  
+  <!-- ********************** -->
+  <!-- **  test (optional) ** -->
+  <!-- ********************** -->
+  
+</site>

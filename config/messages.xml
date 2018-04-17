@@ -1,0 +1,252 @@
+<messages>
+    <info type="INFO" timeout="-1">
+        <message>%s</message>
+    </info>
+    <info type="ASK-LOGOUT" timeout="-1">
+        <message lang="fr">L'accès au CaseTracker sera bloqué pour des raisons de maintenance. Veuillez terminer votre saisie et vous déconnecter au plus vite. Votre accès sera bloqué d'ici  %s</message>
+        <message lang="en">The CaseTracker will be put into maintenance. You are kindly requested to finish your operations and to log out from the application as soon as possible. In any case you will be logged out in %s from now.</message>
+        <message lang="de">Beim CaseTracker stehen Wartungsarbeiten an.  Wir bitten Sie, Ihre Arbeitsgänge zu beenden und sich auszuloggen. Ihr Zugang  wird in  %s blockiert werden.</message>
+    </info>
+    <info type="ACTION-LOGIN-SUCCESS">
+        <message lang="fr">Vous avez été connecté avec succès</message>
+        <message lang="en">You have been logged in successfully</message>
+        <message lang="de">Sie wurden erfolgreich verbunden</message>
+    </info>
+    <info type="ACTION-LOGOUT-SUCCESS">
+        <message lang="fr">Vous avez été déconnecté avec succès</message>
+        <message lang="de">Sie wurden erfolgreich ausgeloggt</message>
+        <message lang="en">You have been logged out successfully</message>
+    </info>
+    <info type="ACTION-UPDATE-SUCCESS">
+        <message lang="fr">La ressource vient d'être mise à jour avec succès</message>
+        <message lang="en">The resource has just been updated</message>
+        <message lang="de">Die Daten wurden erfolgreich aktualisiert</message>
+    </info>
+    <info type="ACTION-UPDATE-SAME-SUCCESS">
+        <message lang="fr">La ressource vient d'être sauvegardée avec succès</message>
+        <message lang="en">The resource has just been saved</message>
+        <message lang="de">Die Daten wurden soeben gespeichert</message>
+    </info>
+    <info type="ACTION-CREATE-SUCCESS" code="201">
+        <message lang="fr">La nouvelle ressource vient d'être créée avec succès</message>
+        <message lang="en">The new resource has been entered successfully</message>
+        <message lang="de">Die neuen Daten wurden erfolgreich eingegeben</message>
+    </info>
+    <info type="ACTIVITY-CREATED" code="201">
+        <message lang="fr">L'activité vient d'être créée</message>
+        <message lang="en">The activity has been created</message>
+        <message lang="de">Die Aktivität wurde abgespeichert</message>
+    </info>
+    <info type="EXTERNAL-SERVICE-CREATED" code="201">
+        <message lang="fr">Le service externe vient d'être créé</message>
+        <message lang="en">The external service has been created</message>
+        <message lang="de">Die ....  wurde abgespeichert</message>
+    </info>
+    <info type="EXTERNAL-SERVICE-CREATED-WITH-ERROR" code="201">
+        <message lang="fr">Le service externe vient d'être créé mais une erreur a empêché l'envoi par e-mail du lien vers l'enquête</message>
+        <message lang="en">The external service has been created but an error has prevented to send the link to the questionnaire by e-mail</message>
+        <message lang="de">TRADUIRE: Le service externe vient d'être créé mais une erreur a empêché l'envoi par e-mail du lien vers l'enquête</message>
+    </info>
+    <info type="WFSTATUS-UPDATED">
+        <message lang="fr">Le statut a été modifié avec succès</message>
+        <message lang="en">The status has been changed with success</message>
+        <message lang="de">Der Status wurde erfolgreich geändert</message>
+    </info>
+    <info type="DELETE-CASE-CONFIRM" code="202">
+        <message lang="fr">Vous pouvez supprimer le cas “%s” car il ne contient aucune activité. Êtes-vous sûr de vouloir le supprimer? Cette action est irreversible</message>
+        <message lang="en">You can remove the case “%s” because it does not contain any activity. Are you sure you want to delete it? This action is irreversible</message>
+        <message lang="de">Sie können den Fall “%s” löschen, da dieser keine Aktivität enthält. Sind Sie sicher, dass Sie den Löschvorgang fortsetzen möchten? Der Löschvorgang kann nicht rückgängig gemacht werden</message>
+    </info>
+    <info type="DELETE-ACTIVITY-CONFIRM" code="202">
+        <message lang="fr">Vous pouvez supprimer l'activité “%s” du cas “%s” car vous êtes dans le statut Choix du coach. Êtes-vous sûr de vouloir la supprimer? Cette action est irreversible, la seule solution consiste à créer une nouvelle activité.</message>
+        <message lang="en">You can delete the activity “%s” of case “%s” because it is in coach assignment status. Are you sur you want to delete it now ? This action is irreversible, the only way to come back will be to create a new coaching activity</message>
+        <message lang="de">Sie können die Aktivität “%s” des Falles “%s” löschen, da Sie sich im Status Coach Wahl befinden. Sind Sie sicher, dass Sie den Löschvorgang fortsetzen möchten? Der Löschvorgang kann nicht rückgängig gemacht werden. Der einzige Ausweg wäre die Eingabe einer neuen Aktivität.</message>
+    </info>
+    <info type="DELETE-PERSON-CONFIRM" code="202">
+        <message lang="fr">Vous pouvez supprimer la personne “%s” car celle-ci n'est liée à aucun cas ou activité de coaching et n'a pas d'accès. Êtes-vous sûr de vouloir la supprimer? Cette action est irreversible.</message>
+        <message lang="en">You can remove the person “%s” because s/he is not referenced in any case or coaching activity and has no access login. Are you sure you want to delete her? This action is irreversible</message>
+        <message lang="de">Sie können die Person “%s” löschen, da diese weder mit einer Coaching Aktivität noch mit einem Fall verbunden ist und auch keine Zugriffsrechte besitzt.. Sind Sie sicher dass Sie den Löschvorgang fortsetzen möchten? Der Löschvorgang kann nicht rückgängig gemacht werden</message>
+    </info>
+    <info type="DELETE-CASE-SUCCESS">
+        <message lang="fr">Le cas a été supprimé avec succès.</message>
+        <message lang="en">The case has been removed successfully</message>
+        <message lang="de">Dieser Fall wurde erfolgreich gelöscht</message>
+    </info>
+    <info type="DELETE-ACTIVITY-SUCCESS" timeout="-1">
+        <message lang="fr">L'activité de coaching “%s” du cas “%s” a été supprimée avec succès.</message>
+        <message lang="en">The coaching activity “%s” of case “%s” has been removed successfully</message>
+        <message lang="de">Die Coaching Aktivität “%s” des Falles “%s” wurde erfolgreich gelöscht.</message>
+    </info>
+    <info type="DELETE-PERSON-SUCCESS">
+        <message lang="fr">La personne “%s” a été effacée avec succès</message>
+        <message lang="en">The person “%s” has been removed successfully</message>
+        <message lang="de">Die Person “%s” wurde erfolgreich gelöscht</message>
+    </info>
+    <info type="DELETE-ANNEXE-SUCCESS">
+        <message lang="fr">Le document annexe “%s” a été effacé avec succès</message>
+        <message lang="en">the appendix “%s” has been removed successfully</message>
+        <message lang="de">Der Anhang “%s” wurde erfolgreich gelöscht</message>
+    </info>
+    <info type="LOGBOOK-CLOSED">
+        <message lang="fr">Le suivi de l'activité a bien été fermé, les données sont à présent disponibles dans le rapport final</message>
+        <message lang="en">The activity data are now available in the final report, since the activity progress has been closed</message>
+        <message lang="de">Sie haben die Eingabe im Logbuch abgeschlossen. Die betereffenden Informationen sind jetzt im Schlussbericht verfügbar</message>
+    </info>
+    <info type="DELETE-ENTERPRISE-CONFIRM" code="202">
+        <message lang="fr">Vous pouvez supprimer l'entreprise  “%s” car celle-ci n'est liée à aucun cas ou activité de coaching, et n'est pas liée à une personne existante dans la base de données. Êtes-vous sûr de vouloir la supprimer? Cette action est irreversible.</message>
+        <message lang="en">You can remove the company “%s” because it is not linked to any case, any activity and is not represented by any person of the data base. Are you sure you want to delete it? This action is irreversible</message>
+        <message lang="de">Sie können das Unternehmen  “%s” löschen, da dieses weder mit einer Coaching Aktivität noch mit einer Person aus der Datenbank verbunden ist. Sind Sie sicher dass Sei den Löschvorgang fortsetzen möchten? Der Löschvorgang kann nicht rückgängig gemacht werden.</message>
+    </info>
+    <info type="DELETE-ENTERPRISE-SUCCESS">
+        <message lang="fr">L'entreprise “%s” a été effacée avec succès</message>
+        <message lang="en">The company “%s” has been removed successfully</message>
+        <message lang="de">Das Unternehmen “%s” wurde erfolgreich gelöscht</message>
+    </info>
+    <info type="ACTION-ALERT-CREATED" code="201">
+        <message lang="fr">Le message vient d'être envoyé au(x) destinataire(s) et enregistré dans l'historique des messages</message>
+        <message lang="en">The message has just been sent to the adressee(s) and registered in the messages review</message>
+        <message lang="de">Die Nachricht wurde dem/den Empfänger(n) soeben übermittelt und  im Mitteilungsarchiv abgelegt</message>
+    </info>
+    <info type="CASE-CLIENT-CONFIRM" code="202" envelope="confirm">
+        <message lang="fr">L'entreprise client “%s” fait déjà partie des cas suivants “%s”, est-ce que vous confirmez la création d'un nouveau cas pour cette entreprise ?</message>
+        <message lang="en">The company is a beneficiary at least for the cases %s, are you sure that you want to create a new case for this company?</message>
+        <message lang="de">Das Kundenunternehmen “%s” ist bereits Nutzniesser in folgenden Fällen “%s”. Wollen Sie wirklich einen neuen Fall kreieren?</message>
+    </info>
+    <info type="ACTIVITY-CREATE-MISS-CONFIRM" code="202" envelope="confirm">
+        <message lang="fr">L'analyse des besoins effectuée par “%s” ne précise aucun défi d'affaires pour ce cas, est-ce que vous confirmez tout de même la création de l'activité de coaching ?</message>
+        <message lang="en">The needs analysis performed by “%s” does not define any business challenge for the case, do you confirm anyway the creation of a coaching activity ?</message>
+        <message lang="de">Die Bedürfnisanalyse von “%s” enthält keine Angaben über Innovationsherausforderungen. Wollen Sie trotzdem eine Coaching Aktivität schaffen?</message>
+    </info>
+    <info type="ACTIVITY-CREATE-OK-CONFIRM" code="202" envelope="confirm">
+        <message lang="fr">Est-ce que vous confirmez la création d'une activité de coaching suite à l'analyse des besoins de “%s” ?</message>
+        <message lang="en">Do you confirm the creation of a coaching activity from the needs analysis of “%s” ?</message>
+        <message lang="de">Bestätigen Sie das Hinzufügen einer Coaching Aktivität im Anschluss an folgende Bedürfnisanalyse “%s” ?</message>
+    </info>
+    <info type="ACTIVITY-CREATE-OK-CONFIRM-CLOSING" code="202" envelope="confirm">
+        <message lang="fr">Est-ce que vous confirmez la création d'une nouvelle activité de coaching suite à l'analyse des besoins de “%s” ?</message>
+        <message lang="en">%s Do you confirm the creation of a new coaching activity from the needs analysis of “%s” ?</message>
+        <message lang="de">Bestätigen Sie das Hinzufügen einer neuen Coaching Aktivität im Anschluss an folgende Bedürfnisanalyse “%s” ?</message>
+    </info>
+    <info type="EXTERNAL-SERVICE-CREATE-OK-CONFIRM" code="202" envelope="confirm">
+        <message lang="fr">Est-ce que vous confirmez la demande de service externe suite à l'analyse des besoins de “%s” ?</message>
+        <message lang="en">Do you confirm the request of external service from the needs analysis of “%s” ?</message>
+        <message lang="de">.....</message>
+    </info>
+    <info type="EXTERNAL-SERVICE-CREATE-OK-CONFIRM-CLOSING" code="202" envelope="confirm">
+        <message lang="fr">Est-ce que vous confirmez la création d'une demande de service externe suite à l'analyse des besoins de “%s” ?</message>
+        <message lang="en">%s Do you confirm the creation of a new external service from the needs analysis of “%s” ?</message>
+        <message lang="de">.....</message>
+    </info>
+    <info type="CLOSING-WITH-ONGOING-ACTIVITIES">
+        <message lang="fr">La création de la nouvelle activité implique la fermeture du cas précédent “%s” (créé le %s) qui contient encore %s activité(s) en cours. Les données de l'entreprise cliente et de la personne de contact du cas seront archivées dans le cas pour des statistiques futures. Cette fermeture automatique n'a pas d'impact sur les activités  en cours qui suivent leur cours normalement.</message>
+        <message lang="en">The creation of the new activity will close previous case “%s” (created on %s) which still contains %s running activity(ies). The client enterprise and the contact person for the case will be archived in the case for future statistical treatment. This will not affect the running activities which will continue as usual.</message>
+        <message lang="de">Mit dem Hinzufügen der neuen Aktivität wird der vorgängige Fall “%s”, (kreiert am %s), abgeschlossen. Die laufenden Coaching Aktivitäten des abgeschlossenen Falls gehen jedoch weiter. Die Daten des Kundenunternehmens und der Kontaktperson des Falles werden zu statistischen Zwecken archiviert.</message>
+    </info>
+    <info type="CLOSING-WITHOUT-ONGOING-ACTIVITIES">
+        <message lang="fr">La création de la nouvelle activité implique la fermeture du cas précédent “%s” (créé le %s) qui ne contient plus aucune activité en cours. Les données de l'entreprise cliente et de la personne de contact du cas seront archivées dans le cas pour des statistiques futures.</message>
+        <message lang="en">The creation of the new activity will close previous case “%s” (created on %s) which does not contain any running activity any more. The client enterprise and the contact person for the case will be archived in the case for future statistical treatment.</message>
+        <message lang="de">Mit dem Hinzufügen der neuen Aktivität wird der vorgängige Fall “%s”, (kreiert am %s), abgeschlossen. Der Fall enthält keine laufenden Coaching Aktivitäten. Die Daten des Kundenunternehmens und der Kontaktperson des Falles werden zu statistischen Zwecken archiviert.</message>
+    </info>
+    <info type="CLOSING-WITHOUT-ACTIVITIES">
+        <message lang="fr">La création de la nouvelle activité implique la fermeture du cas précédent “%s” (créé le %s) qui ne contient aucune activité. Les données de l'entreprise cliente et de la personne de contact du cas seront archivées dans le cas pour des statistiques futures.</message>
+        <message lang="en">The creation of the new activity will close previous case “%s” (created on %s) which does not contain any activity. The client enterprise and the contact person for the case will be archived in the case for future statistical treatment.</message>
+        <message lang="de">Mit dem Hinzufügen der neuen Aktivität wird der vorgängige Fall “%s”, (kreiert am %s), abgeschlossen. Der Fall enthält keine Coaching Aktivitäten. Die Daten des Kundenunternehmens und der Kontaktperson des Falles werden zu statistischen Zwecken archiviert.</message>
+    </info>
+    <info type="CASE-CLOSED" timeout="-1">
+        <message lang="fr">Le cas précédent “%s” (créé le %s) a été fermé suite à la création de la nouvelle activité et les données de l'entreprise cliente et de la personne de contact seront archivées pour des statistiques futures.</message>
+        <message lang="en">The previous case “%s” (created on %s) has been closed as a side effect of creating the new activity and its client enterprise and contact person have been archived for future statistical treatment.</message>
+        <message lang="de">Mit dem Hinzufügen der neuen Aktivität wird der vorgängige Fall “%s”, (kreiert am %s), abgeschlossen. Die Daten des Kundenunternehmens und der Kontaktperson des Falles werden zu statistischen Zwecken archiviert.</message>
+    </info>
+    <info type="CASE-REOPENED" timeout="-1">
+        <message lang="fr">Le cas “%s” a été réouvert en raison de la création de l'activité et est désormais le cas actif pour l'entreprise “%s”.</message>
+        <message lang="en">The case “%s” has been re-opened as a side effect of creating the new activity and is now the active case for the company “%s”.</message>
+        <message lang="de">Der Fall “%s” wurde aufgrund des Hinzufügens einer Aktivität wieder aktiviert und ist demzufolge nun der aktive Fall für das Unternehmen “%s”.</message>
+    </info>
+    <info type="CASE-ASSIGNED" timeout="-1">
+        <message lang="fr">Le cas %s a été attribué à %s et un email a été envoyé à %s</message>
+        <message lang="en">The case %s has been assigned to %s and an e-mail has been sent to %s</message>
+        <message lang="de">Der Fall %s wurde %s zugewiesen und eine E-Mail wurde gesendet an %s</message>
+    </info>
+    <info type="NOTIFY-TRANSITION-REPORT" timeout="-1">
+        <message lang="fr">Un email de notification a été envoyé à %s</message>
+        <message lang="en">A notification e-mail has been sent to %s</message>
+        <message lang="de">Eine E-Mail wurde gesendet an %s</message>
+    </info>
+    <info type="SEND-EMAIL-SUCCESS" timeout="-1">
+        <message lang="fr">Un email de notification a été envoyé à %s</message>
+        <message lang="en">A notification e-mail has been sent to %s</message>
+        <message lang="de">Eine E-Mail wurde gesendet an %s</message>
+    </info>
+    <info type="SME-FEEDBACK-EMAIL-SENT" timeout="-1">
+        <message lang="fr">Un email avec un lien vers le questionnaire de feedback de l'entreprise a été envoyé à %s</message>
+        <message lang="en">An e-mail with a link to the SME feedback questionnaire has been sent to %s</message>
+        <message lang="de">Eine E- Mail wurde zusammen mit dem Link zum Feedback Fragebogen des Unternehmens geschickt an %s</message>
+    </info>
+    <info type="KAM-FEEDBACK-EMAIL-SENT" timeout="-1">
+        <message lang="fr">Un email avec un lien vers le questionnaire de feedback du KAM a été envoyé à %s</message>
+        <message lang="en">An e-mail with a link to the KAM feedback questionnaire has been sent to %s</message>
+        <message lang="de">Eine E- Mail wurde zusammen mit dem Link zum Feedback Fragebogen des KAM geschickt an %s</message>
+    </info>
+    <info type="ACTION-DELETE-SUCCESS">
+        <message lang="fr">La ressource a été supprimée.</message>
+        <message lang="en">The resource has been deleted</message>
+        <message lang="de">Die Ressource wurde gelöscht</message>
+    </info>
+    <info type="MODE-WARNING-TEST">
+        <message lang="fr">Ceci est un SERVEUR DE TEST! Si vous voulez utiliser la plateforme réelle du CaseTracker, vérifiez svp l'URL que vous utilisez. Les informations contenues dans cette plateforme risquent de ne pas être exactes ou d'être perdues à tout moment…</message>
+        <message lang="en">This is a TEST SERVER only ! If your intent is to use the real Case Tracker application, then check the URL you are using. Information on this platform may not be accurate and can be lost at any time...</message>
+        <message lang="de">Dies ist nur ein Test-Server! Sollten Sie beabsichtigen den reellen Case Tracker zu benutzen, überprüfen Sie bitte den URL. Wir machen Sie darauf aufmerksam, dass die Informationen in dieser Plattform teils inkorrekt sind und Informationen ebenso verloren gehen könnten....</message>
+    </info>
+    <info type="MODE-WARNING-DEV">
+        <message lang="fr">Ceci est un SERVEUR DE DEVELOPPEMENT! Si vous voulez utiliser la plateforme réelle du CaseTracker, vérifiez svp le URL que vous utilisez. Les informations contenues dans cette plateforme risquent de ne pas être exactes ou d'être perdues à un moment quelconque…</message>
+        <message lang="en">This is a DEVELOPMENT SERVER only ! If your intent is to use the real Case Tracker application, then check the URL you are using. Information on this platform may not be accurate and can be lost at any time...</message>
+        <message lang="de">Dies ist ein ENTWICKLUNGSSERVER! Falls Sie Zugang zum reellen Case Tracker wünschen, überprüfen Sie bitte den URL. Es könnte sein, dass gewisse Informationen in dieser Plattform nicht präzise sind oder verlorengehen könnten…</message>
+    </info>
+   <!-- ******************************************** -->
+   <!-- *************  Account Messages ************ -->
+   <!-- ******************************************** -->
+    <info type="ACCOUNT-LOGIN-CREATED" code="201">
+        <message lang="fr">Le compte a été créé et un message a été envoyé à “%s”</message>
+        <message lang="en">The account has been created and a message has been sent to "%s"</message>
+        <message lang="de">The account has been created and a message has been sent to “%s”</message>
+    </info>
+    <info type="ACCOUNT-LOGIN-UPDATED">
+        <message lang="fr">Le nouveau compte a été créé et un message a été envoyé à “%s”</message>
+        <message lang="en">The new account has been created and a message has been sent to "%s"</message>
+        <message lang="de">The new account has been created and a message has been sent to “%s”</message>
+    </info>
+    <info type="ACCOUNT-LOGIN-DELETED">
+        <message lang="fr">L'identifiant “%s” a été supprimé et n'a donc plus accès à la base de données</message>
+        <message lang="en">The user “%s” has been removed and therefore has no longer access to the data base</message>
+        <message lang="de">Der Benutzername “%s” wurde gelöscht. Der Person wurde daher jegliche Zugriffsrechte entzogen.</message>
+    </info>
+    <info type="ACCOUNT-PWD-CHANGED-MAIL">
+        <message lang="fr">Le mot de passe a été modifié et un message de notification envoyé à %s</message>
+        <message lang="en">The password has been changed and a notification message has been sent to %s</message>
+        <message lang="de">Das Passwort wurde geändert und eine Nachricht gesendet an %s</message>
+    </info>
+    <info type="ACCOUNT-PWD-CHANGED-NOMAIL">
+        <message lang="fr">Le mot de passe a été modifié par contre le message de notification n'a pas pu ête envoyé à %s. Veuillez aviser la personne par un autre moyen.</message>
+        <message lang="en">The password has been changed but the notification message couldn't be sent to %s. Try to get it through another canal</message>
+        <message lang="de">Das Passwort wurde geändert, wogegen die Nachricht per E-Mail an %s nicht übermittelt werden konnte. Bitte benachrichtigen Sie die Person auf anderem Weg.</message>
+    </info>
+    <info type="PROFILE-UPDATED-WOACCESS">
+        <message lang="fr">Le profil de “%s” a été mis à jour, n'oubliez pas de lui créer un login ou de lui générer un mot de passe si vous souhaitez lui donner accès à l'application</message>
+        <message lang="en">The profil of “%s” has been updated, do not forget to create him a login or to generate a password if you want him to have an access to the application</message>
+        <message lang="de">Das Profil “%s” wurde aktualisiert, bitte denken Sie daran dieser Person ein neues Login zu kreieren oder ihr ein neues Passwort zu generieren, falls Sie möchten, dass sie wieder zugriffsberechtigt ist.</message>
+    </info>
+    <info type="PROFILE-UPDATED">
+        <message lang="fr">Le profil de l'utilisateur “%s” a été mis à jour</message>
+        <message lang="en">The profile of the user “%s” has been updated</message>
+        <message lang="de">Das Benutzerprofil “%s” wurde aktualisiert.</message>
+    </info>
+   <!-- ******************************************** -->
+   <!-- ************  Appendix Messages ************ -->
+   <!-- ******************************************** -->
+    <info type="APPENDIX-PREFLIGHT-OK" code="200">
+        <message>%s</message>
+    </info>
+    <info type="APPENDIX-CREATED" code="201">
+        <message>%s</message>
+    </info>
+</messages>

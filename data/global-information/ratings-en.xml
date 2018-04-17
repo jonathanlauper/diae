@@ -1,0 +1,96 @@
+<GlobalInformation>
+  <Description Lang="en" Role="normative">
+    <Selector Name="Positions">
+      <Option>
+        <Value>0</Value>
+        <Name>Not considered</Name>
+      </Option>
+      <Option>
+        <Value>1</Value>
+        <Name>In favour</Name>
+      </Option>
+      <Option>
+        <Value>2</Value>
+        <Name>Against</Name>
+      </Option>
+      <Option>
+        <Value>4</Value>
+        <Name>To be discussed</Name>
+      </Option>
+    </Selector>
+    <Selector Name="RatingScales" Test="Rating scale">
+      <Option>
+        <Value>5</Value>
+        <Name>Strongly disagree</Name>
+      </Option>
+      <Option>
+        <Value>4</Value>
+        <Name>Disagree</Name>
+      </Option>
+      <Option>
+        <Value>3</Value>
+        <Name>Neutral</Name>
+      </Option>
+      <Option>
+        <Value>2</Value>
+        <Name>Agree</Name>
+      </Option>
+      <Option>
+        <Value>1</Value>
+        <Name>Strongly agree</Name>
+      </Option>
+    </Selector>
+    <Selector Name="YesNoScales" Test="Yes or no">
+      <Option>
+        <Value>1</Value>
+        <Name>Yes</Name>
+      </Option>
+      <Option>
+        <Value>2</Value>
+        <Name>No</Name>
+      </Option>
+    </Selector>
+    <Selector Name="CommunicationAdvices">
+      <Option>
+        <Value>1</Value>
+        <Name>Yes</Name>
+      </Option>
+      <Option>
+        <Value>2</Value>
+        <Name>No</Name>
+      </Option>
+      <Option>
+        <Value>3</Value>
+        <Name>Later</Name>
+      </Option>
+    </Selector>
+    <Selector Name="SupportScales" Value="Id" Label="Name" Test="Further support">
+      <Option>
+        <Value>1</Value>
+        <Name>Yes</Name>
+      </Option>
+      <Option>
+        <Value>2</Value>
+        <Name>No</Name>
+      </Option>
+      <Option>
+        <Value>3</Value>
+        <Name>Unknown</Name>
+      </Option>
+    </Selector>
+    <Selector Name="ServiceFollowUpScales">
+      <Option>
+        <Value>1</Value>
+        <Name>We responded to the request, with positive result</Name>
+      </Option>
+      <Option>
+        <Value>2</Value>
+        <Name>We responded to the request, without tangible result</Name>
+      </Option>
+      <Option>
+        <Value>3</Value>
+        <Name>We didn’t respond to the request</Name>
+      </Option>
+    </Selector>
+  </Description>
+</GlobalInformation>

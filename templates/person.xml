@@ -1,0 +1,158 @@
+<!--
+     Case Tracker Reference application - Platinn version
+     
+     Author: Stéphane Sire <s.sire@opppidoc.fr>
+     
+     Person entity data templates
+     
+     Quick Test Plan  :
+     - /persons/[0-9+].xml (implies ?goal=read)
+     - /persons/[0-9+].xml?goal=update
+     - /persons/[0-9+].xml?goal=autofill
+     - /persons/[0-9+].xml?goal=autofill&enveloppe=ContactPerson
+     - /persons/[0-9+].modal
+     - POST /persons/add?next=redirect
+     - POST /persons/[0-9+]?goal=update
+     
+     July 2017 - (c) Copyright 2017 Oppidoc SARL. All Rights Reserved.
+  -->
+<Templates>
+  <!-- Returns person information with roles for reading -->
+  <Template Name="person-with-roles" Mode="read" Subject="Person">
+    <![CDATA[
+let $roles := 
+  <Roles>
+  {
+  for $r in $subject/UserProfile/Roles/Role
+  let $services := display:gen-name-for('Services', $r/ServiceRef, $lang)
+  let $regions := display:gen-name-for('CantonalAntennas', $r/CantonalAntennaRef, $lang)
+  return 
+    (
+    <Function>{ display:gen-name-for('Functions', $r/FunctionRef, $lang) }</Function>,
+    <Name>
+      {
+      if ($services) then 
+        string-join(($services)[. ne ''], ", ")
+      else if ($regions) then 
+        string-join(($regions)[. ne ''], ", ")
+      else
+        ()
+      }
+    </Name>
+    )
+  }
+  </Roles>
+return
+  <Person>
+    {
+    template:include('person', $subject, (), $lang)/*,
+    if (count($roles/Function) > 0) then $roles else () 
+    }
+  </Person>
+]]>
+  </Template>
+  <!-- Returns person information for reading or editing
+       Should never be prune to the empty sequence as Contacts/Email is mandatory -->
+  <Template Name="person" Mode="read" Subject="Person">
+    <![CDATA[
+  let $info := $subject/Information
+  return
+    <Person>
+      { 
+      $info/(Sex | Civility | Name | Country),
+      $info/EnterpriseKey,
+      $info/(Function | Contacts | Photo)
+      }
+    </Person>
+]]>
+  </Template>
+  <!-- Creates a new Person as per database.xml data mapping configuration -->
+  <Template Name="person" Mode="create">
+    <![CDATA[
+<XAL>
+  <XALAction Type="create" Entity="person" Key="{ $id }">
+    <Person>
+      <Id>{ $id }</Id>
+      <Information LastModification="{ $date }">
+        {
+        $form/Sex,
+        $form/Civility,
+        $form/Name,
+        $form/Country,
+        $form/EnterpriseKey,
+        $form/Function,
+        $form/Contacts,
+        $form/Photo
+        }
+      </Information>
+    </Person>
+  </XALAction>
+</XAL>
+]]>
+  </Template>
+  <Template Name="person" Mode="update" Subject="Person">
+    <![CDATA[
+<XAL>
+  <XALAction Type="replace">
+    <Information LastModification="{ $date }">
+      {
+      $form/Sex,
+      $form/Civility,
+      $form/Name,
+      $form/Country,
+      $form/EnterpriseKey,
+      $form/Function,
+      $form/Contacts,
+      $form/Photo
+      }
+    </Information>
+  </XALAction>
+</XAL>
+]]>
+  </Template>
+  <!-- Generates Person data for transclusion from live person Information or from Archive 
+       Both models must be compatible (otherwise you need two data templates)
+   -->
+  <Template Name="person" Mode="cite" Subject="Information Archive">
+    <![CDATA[
+<ContactPerson>
+  <PersonKey>{ $id }</PersonKey>
+  {
+  $subject/Name, 
+  $subject/Sex,
+  $subject/Civility,
+  $subject/Photo,
+  $subject/Contacts,
+  $subject/Function
+  }
+</ContactPerson>
+]]>
+  </Template>
+  <!-- Generates Person data for archiving (must be compatible with transclusion mode)
+   -->
+  <Template Name="person" Mode="copy" Subject="ContactPerson">
+    <![CDATA[
+<XAL>
+  <XALAction Type="replace">
+    { template:gen-document("person", "archive", $form, $lang) }
+  </XALAction>
+</XAL>
+]]>
+  </Template>
+  <!-- Generates Person data for archiving (must be compatible with transclusion mode)
+   -->
+  <Template Name="person" Mode="archive">
+    <![CDATA[
+<Archive LastModification="{ $date }">
+  {
+  $form/Name, 
+  $form/Sex,
+  $form/Civility,
+  $form/Photo,
+  $form/Contacts,
+  $form/Function
+  }
+</Archive>
+]]>
+  </Template>
+</Templates>

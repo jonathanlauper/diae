@@ -1,0 +1,23 @@
+<Form Tag="Annex" 
+  xmlns:site="http://oppidoc.com/oppidum/site"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+  >
+  <Row>
+    <Field Key="file">File</Field>
+  </Row>
+  <Row>
+    <ol style="clear: both" class="x-List" xmlns="http://www.w3.org/1999/xhtml">
+      <li loc="annex.hint.1">cliquez sur l'icône puis sélectionnez le fichier à charger</li>
+      <li loc="annex.hint.2">modifiez le nom du fichier à charger :
+        <ul class="x-List">
+          <li loc="annex.hint.2.1">c'est le nom qui servira à former le lien vers le document</li>
+          <li loc="annex.hint.2.2">il doit être unique parmi toutes les annexes et ne comporter ni espace ni caractère spécial</li>
+        </ul>
+      </li>
+      <li loc="annex.hint.3">envoyez le fichier sur le serveur avec le bouton de sauvegarde</li>
+      <li loc="annex.hint.4">répétez l'opération ci-dessus (cliquez sur l'icône à droite du message indiquant le succès pour recommencer)</li>
+      <li loc="annex.hint.5">cliquez sur "Terminer" lorsque vous aurez fini</li>
+    </ol>
+    <xhtml:p loc="annex.hint.6">Notez que vous ne pouvez télécharger que des documents PDF ou des documents Microsoft Office.</xhtml:p>
+  </Row>
+</Form>

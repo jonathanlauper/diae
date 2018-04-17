@@ -1,0 +1,24 @@
+<Database>
+  <Policies>
+    <Policy Name="users" Owner="admin" Group="users" Perms="rwxrwxr--"/>
+    <Policy Name="noguest" Owner="admin" Group="users" Perms="rwxrwx---"/>
+  </Policies>
+  <Entities>
+    <Entity Name="person">
+      <Collection Policy="users">persons</Collection>
+      <Resource Root="Persons" Pivot="//Person/Id" Policy="users">persons.xml</Resource>
+    </Entity>
+    <Entity Name="enterprise">
+      <Collection Policy="users">enterprises</Collection>
+      <Resource Root="Enterprises" Pivot="//Enterprise/Id" Policy="users">enterprises.xml</Resource>
+    </Entity>
+    <Entity Name="case">
+      <Collection Policy="users" Sharding="by-year-month-key">cases</Collection>
+      <Resource Policy="users" Pivot="//Case/No">case.xml</Resource>
+    </Entity>
+    <Entity Name="annex-of-activity">
+      <Collection Policy="noguest" Sharding="unsupported">/db/binaries+case+activities/$_</Collection>
+      <Resource Policy="noguest"/>
+    </Entity>
+  </Entities>
+</Database>

@@ -1,0 +1,32 @@
+<Settings>
+    <SMTPServer>!localhost</SMTPServer>
+    <DefaultEmailSender>case-tracker-demo-no-reply@sample.org</DefaultEmailSender>
+    <Sudoer>
+        <User>create-dba-user</User>
+        <Password>dba-user-password</Password>
+    </Sudoer>
+    <Media>
+        <Allow>
+            <Category>account</Category>
+        </Allow>
+        <Debug>
+            <Category>reminders</Category>
+            <Category>account</Category>
+            <Category>workflow</Category>
+            <Category>action</Category>
+        </Debug>
+    </Media>
+    <Hold>
+        <Allow>admin</Allow>
+    </Hold>
+
+  <Module>
+    <Name>login</Name>
+    <Property>
+      <Key>startref</Key>
+      <Value>home</Value>
+    </Property>
+  </Module>
+
+</Settings>
+

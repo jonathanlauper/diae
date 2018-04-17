@@ -1,0 +1,21 @@
+<site:view xmlns:site="http://oppidoc.com/oppidum/site" xmlns="http://www.w3.org/1999/xhtml">
+  <site:content>
+    <fieldset class="bubble">
+      <legend>Dokumente zum Downloaden</legend>
+      <p><a href="guidelines/calendar">Dates à retenir en 2018</a></p>
+      <p><a href="guidelines/regulation">Règlement Platinn</a></p>
+      <p><a href="guidelines/roadmap">The smeE-MPOWER Practice Guide</a></p>
+    </fieldset>
+    <fieldset class="bubble">
+      <legend>Nutzung der Anwendung</legend>
+      <p>Zur Nutzung der WEB-Applikation zur Verwaltung des Coachings von platinn, müssen Sie Ihren WEB-Navigator wie folgt konfigurieren:</p>
+      <ul>
+        <li>Die Cookies akzeptieren</li>
+        <li>Javascript aktivieren</li>
+      </ul>
+      <p>Bitte beachten Sie, dass Ihre Registrierung nach einer bestimmten Zeit (ca. 30 Minuten) abläuft, falls Sie ein Fenster ohne Benutzerinteraktion zu lange geöffnet lassen. Sie erhalten in diesem Fall eine Nachricht, dass Sie für alle weiteren Aktionen nicht mehr die nötige Berechtigung besitzen. Sie müssen sich dann erneut registrieren, um die Seite neu laden zu können.</p>
+      <p>Sollte diese Situation auftauchen mit einem Fenster, das ein Dokument enthält, welches noch nicht abgespeichert wurde, empfehlen wir parallel ein zweites Fenster zu öffnen und sich hier erneut zu registrieren, wobei das erste Fenster geöffnet bleibt. Sobald die Anwendung Sie als Benutzer identifiziert hat, können Sie in das erste Fenster klicken und Ihr Dokument abspeichern. Es ist in jedem Falle empfehlenswert Ihre Dokumente jeweils abzuspeichern bevor Sie die Seite oder den Computer verlassen !</p>
+      <p>Die Anwendung ist geeignet für den WEB-Navigator <b>Firefox</b>. Bitte benutzen Sie unbedingt diesen Navigator, bevor Sie uns irgendwelche Systemstörungen melden.</p>
+    </fieldset>
+  </site:content>
+</site:view>

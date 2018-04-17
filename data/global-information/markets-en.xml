@@ -1,0 +1,204 @@
+<?xml version="1.0"?>
+<!-- DEPRECATED : do not deploy it !!! (replaced by Thomson Reuters classification from selectors depot reuters-[lang].xml) -->
+<GlobalInformation>
+  <Description Lang="en">
+    <Selector Name="TargetedMarkets">
+      <Title>Legacy Platinn targeted markets classification (DEPRECATED)</Title>
+      <Group>
+        <Value>Platinn</Value>
+        <Name>legacy classification</Name>
+        <Selector>
+          <Option>
+            <Value>010</Value>
+            <Name>Aircraft industry</Name>
+            <Reuters>521010</Reuters>
+          </Option>
+          <Option>
+            <Value>020</Value>
+            <Name>Internal Design &amp; Decoration</Name>
+            <Reuters>532030</Reuters>
+          </Option>
+          <Option>
+            <Value>025</Value>
+            <Name>Agriculture</Name>
+            <Reuters>-1</Reuters>
+          </Option>
+          <Option>
+            <Value>030</Value>
+            <Name>Food industry</Name>
+            <Reuters>541010</Reuters>
+            <Reuters>541020</Reuters>
+          </Option>
+          <Option>
+            <Value>035</Value>
+            <Name>Veterinary and Animal care</Name>
+            <Reuters>-1</Reuters>
+          </Option>
+          <Option>
+            <Value>040</Value>
+            <Name>Culture, Arts and Music</Name>
+            <Reuters>-1</Reuters>
+          </Option>
+          <Option>
+            <Value>050</Value>
+            <Name>Household appliances</Name>
+            <Reuters>532040</Reuters>
+          </Option>
+          <Option>
+            <Value>055</Value>
+            <Name>Insurances</Name>
+            <Reuters>553010</Reuters>
+          </Option>
+          <Option>
+            <Value>060</Value>
+            <Name>Quality Assurance and Certification</Name>
+            <Reuters>-1</Reuters>
+          </Option>
+          <Option>
+            <Value>070</Value>
+            <Name>Automation</Name>
+            <Reuters>521020</Reuters>
+          </Option>
+          <Option>
+            <Value>075</Value>
+            <Name>Automobile industry</Name>
+            <Reuters>531010</Reuters>
+          </Option>
+          <Option>
+            <Value>080</Value>
+            <Name>Office automation</Name>
+            <Reuters>571050</Reuters>
+          </Option>
+          <Option>
+            <Value>090</Value>
+            <Name>Social Enterprises and Community support</Name>
+            <Reuters>-1</Reuters>
+          </Option>
+          <Option>
+            <Value>095</Value>
+            <Name>Trading</Name>
+            <Reuters>-1</Reuters>
+          </Option>
+          <Option>
+            <Value>100</Value>
+            <Name>Communication</Name>
+            <Reuters>571020</Reuters>
+          </Option>
+          <Option>
+            <Value>110</Value>
+            <Name>Packaging</Name>
+            <Reuters>513020</Reuters>
+          </Option>
+          <Option>
+            <Value>120</Value>
+            <Name>Construction</Name>
+            <Reuters>522010</Reuters>
+          </Option>
+          <Option>
+            <Value>125</Value>
+            <Name>Business consulting and Financial services</Name>
+            <Reuters>551010</Reuters>
+          </Option>
+          <Option>
+            <Value>130</Value>
+            <Name>Education and Teaching</Name>
+            <Reuters>-1</Reuters>
+          </Option>
+          <Option>
+            <Value>140</Value>
+            <Name>Energy and Heating</Name>
+            <Reuters>501010</Reuters>
+            <Reuters>501020</Reuters>
+            <Reuters>501030</Reuters>
+          </Option>
+          <Option>
+            <Value>150</Value>
+            <Name>Environment</Name>
+            <Reuters>-1</Reuters>
+          </Option>
+          <Option>
+            <Value>160</Value>
+            <Name>Industrial equipment</Name>
+            <Reuters>521020</Reuters>
+          </Option>
+          <Option>
+            <Value>165</Value>
+            <Name>Finances Banques</Name>
+            <Reuters>551010</Reuters>
+          </Option>
+          <Option>
+            <Value>170</Value>
+            <Name>Industrial fourniture</Name>
+            <Reuters>521020</Reuters>
+          </Option>
+          <Option>
+            <Value>180</Value>
+            <Name>Textile Habillement Chaussures</Name>
+            <Reuters>532020</Reuters>
+          </Option>
+          <Option>
+            <Value>190</Value>
+            <Name>Jewelery &amp; Watchmaking</Name>
+            <Reuters>571040</Reuters>
+          </Option>
+          <Option>
+            <Value>200</Value>
+            <Name>Information services</Name>
+            <Reuters>572010</Reuters>
+          </Option>
+          <Option>
+            <Value>210</Value>
+            <Name>Computer sciences</Name>
+            <Reuters>572010</Reuters>
+          </Option>
+          <Option>
+            <Value>215</Value>
+            <Name>Engineering</Name>
+            <Reuters>522010</Reuters>
+          </Option>
+          <Option>
+            <Value>220</Value>
+            <Name>Games &amp; Sports</Name>
+            <Reuters>-1</Reuters>
+          </Option>
+          <Option>
+            <Value>230</Value>
+            <Name>Leisure, Tourism &amp; Hobby</Name>
+            <Reuters>533010</Reuters>
+          </Option>
+          <Option>
+            <Value>240</Value>
+            <Name>Housing</Name>
+            <Reuters>554020</Reuters>
+            <Reuters>554030</Reuters>
+          </Option>
+          <Option>
+            <Value>250</Value>
+            <Name>Metrology</Name>
+            <Reuters>-1</Reuters>
+          </Option>
+          <Option>
+            <Value>255</Value>
+            <Name>Optics</Name>
+            <Reuters>571040</Reuters>
+          </Option>
+          <Option>
+            <Value>260</Value>
+            <Name>Cosmetics</Name>
+            <Reuters>562010</Reuters>
+          </Option>
+          <Option>
+            <Value>265</Value>
+            <Name>Pharmaceutical and chemical industry</Name>
+            <Reuters>562010</Reuters>
+          </Option>
+          <Option>
+            <Value>280</Value>
+            <Name>Health services</Name>
+            <Reuters>561020</Reuters>
+          </Option>
+        </Selector>
+      </Group>
+    </Selector>
+  </Description>
+</GlobalInformation>

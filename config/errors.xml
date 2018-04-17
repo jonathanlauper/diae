@@ -1,0 +1,59 @@
+<errors>
+    <error type="CUSTOM" code="500">
+        <message lang="en">%s</message>
+    </error>
+    
+    <!-- ****************************************** -->
+    <!-- *********** Appendix Errors ************** -->
+    <!-- ****************************************** -->
+    <error type="APPENDIX-MISSING-NAME" code="400">
+        <message lang="fr">Vous devez spécifier un nom pour enregistrer le document sur le serveur</message>
+        <message lang="en">You must give a name to record the file on the server</message>
+        <message lang="de">Geben Sie bitte den Namen des Dokumentes ein, um dieses im Server zu speichern</message>
+    </error>
+    <error type="APPENDIX-MISSING-TYPE" code="400">
+        <message lang="fr">Le serveur n'arrive pas à reconnaitre le type de fichier envoyé</message>
+        <message lang="en">The server could not identify the file type</message>
+        <message lang="de">Dem Server ist die Dokumentart unbekannt</message>
+    </error>
+    <error type="APPENDIX-WRONG-TYPE" code="400">
+        <message lang="fr">Le type de fichier “%s” n'est pas supporté, vous devez utiliser l'un des types suivants : %s</message>
+        <message lang="en">Unsupported file type “%s”, your document must be of one of the following types : %s</message>
+        <message lang="de">Das Dateiformat “%s” ist nicht erlaubt, bitte verwenden Sie die folgenden Dokumentformate : %s</message>
+    </error>
+    <error type="APPENDIX-NO-BINARY-FILE" code="400">
+        <message lang="fr">Le fichier téléchargé ne correspond pas à ce qui est attendu, fichier binaire attendu</message>
+        <message lang="en">Unexpected file content received, binary file expected</message>
+        <message lang="de">Das geladene Dokument entspricht nicht dem verlangten Format, binaire Datei erlaubt</message>
+    </error>
+    <error type="APPENDIX-WRITE-ERROR" code="500">
+        <message lang="fr">Erreur interne lors de la sauvegarde du document, veuillez vérifier que vous êtes identifié et réessayez</message>
+        <message lang="en">Internal error while writing the file to the server, please check you are logged in and try again</message>
+        <message lang="de">Interne Fehlermeldung beim Abspeichern des Dokumentes</message>
+    </error>
+    <error type="DB-CREATE-COLLECTION-ERROR" code="500">
+        <message lang="fr">Erreur interne lors de la sauvegarde, impossible de créer l'emplacement pour copier le document, veuillez vérifier que vous êtes identifié et réessayez</message>
+        <message lang="en">Internal error while writing the file to the server : impossible to create a location to store it please check you are logged in and try again</message>
+        <message lang="de">TRADUIRE : Erreur interne lors de la sauvegarde, impossible de créer l'emplacement pour copier le document, veuillez vérifier que vous êtes identifié et réessayez</message>
+    </error>
+    <error type="DB-WRITE-BINARY-ERROR" code="500">
+        <message lang="fr">Erreur interne lors de la sauvegarde</message>
+        <message lang="en">Internal error while writing the file to the server</message>
+        <message lang="de">TRADUIRE : Erreur interne lors de la sauvegarde</message>
+    </error>
+    <error type="APPENDIX-DUPLICATED-NAME" code="500">
+        <message lang="fr">Le nom de fichier “%s” est déjà pris, veuillez proposer un autre nom</message>
+        <message lang="en">The name “%s” is already used for another appendix, please propose a new one and try again</message>
+        <message lang="de">Der Dokumentname “%s” ist bereits vergeben, wählen Sie einen anderen Namen aus und versuchen es erneut</message>
+    </error>
+    
+    <!-- ***************************************** -->
+    <!-- ************ Access Errors ************** -->
+    <!-- ***************************************** -->
+    <error type="MODE-WARNING-DEV">
+        <message lang="fr">Ceci est un SERVEUR DE DEVELOPPEMENT! Si vous voulez utiliser la plateforme réelle du CaseTracker, vérifiez svp le URL que vous utilisez. Les informations contenues dans cette plateforme risquent de ne pas être exactes ou d'être perdues à un moment quelconque…</message>
+        <message lang="en">This is a DEVELOPMENT SERVER only ! If your intent is to use the real Case Tracker application, then check the URL you are using. Information on this platform may not be accurate and can be lost at any time...</message>
+        <message lang="de">Dies ist ein ENTWICKLUNGSSERVER! Falls Sie Zugang zum reellen Case Tracker wünschen, überprüfen Sie bitte den URL. Es könnte sein, dass gewisse Informationen in dieser Plattform nicht präzise sind oder verlorengehen könnten…</message>
+    </error>
+    
+</errors>

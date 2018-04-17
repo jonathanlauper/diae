@@ -1,0 +1,11 @@
+<Form Tag="Topic" Style="width:800px">
+  <Title>Page edtition</Title>
+  <Row>
+    <Cell W="12" Gap="1.6">
+      <Field Key="content" Tag="Content" Gap="0"/>
+    </Cell>
+  </Row>  
+  <Plugins>
+    <RichText Keys="content" Menu="static"/>
+  </Plugins>
+</Form>

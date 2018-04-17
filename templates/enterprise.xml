@@ -1,0 +1,191 @@
+<!--
+     Case Tracker Reference application - Platinn version
+     
+     Author: Stéphane Sire <s.sire@opppidoc.fr>
+     
+     Enterprise entity data templates
+     
+     Quick Test Plan  :
+     - /enterprises/[0-9+].xml (implies ?goal=read)
+     - /enterprises/[0-9+].xml?goal=update
+     - /enterprises/[0-9+].xml?goal=autofill(&context=Partner)(&plugin=choice)(&enveloppe=Some)
+     - /enterprises/[0-9+].modal
+     - POST /enterprises/add?next=redirect
+     - POST /enterprises/[0-9+]?goal=update
+     
+     July 2017 - (c) Copyright 2017 Oppidoc SARL. All Rights Reserved.
+  -->
+<Templates>
+  <!-- Generate an Enterprise entity for reading or editing inside a formular -->
+  <Template Name="enterprise" Mode="read" Subject="Enterprise">
+    <![CDATA[
+  let $info := $subject/Information
+  return
+    <Enterprise>
+      {
+      $info/Name,
+      $info/ShortName,
+      $info/WebSite,
+      $info/CreationYear,
+      $info/SizeRef,
+      $info/DomainActivityRef,
+      $info/MainActivities,
+      $info/TargetedMarkets,
+      $info/Address
+      }
+    </Enterprise>
+]]>
+  </Template>
+  <!-- Create a new Enterprise entity in database as per database.xml configuration -->
+  <Template Name="enterprise" Mode="create">
+    <![CDATA[
+<XAL>
+  <XALAction Type="create" Entity="enterprise" Key="{ $id }">
+    <Enterprise>
+      <Id>{ $id }</Id>
+      <Information LastModification="{ $date }">
+        {
+        $form/Name,
+        $form/ShortName,
+        $form/WebSite,
+        $form/CreationYear,
+        $form/SizeRef,
+        $form/DomainActivityRef,
+        $form/MainActivities,
+        $form/TargetedMarkets,
+        $form/Address
+        }
+      </Information>
+    </Enterprise>
+  </XALAction>
+  <XALAction Type="invalidate" Lang="en"><Cache>enterprise</Cache><Cache>town</Cache></XALAction>
+</XAL>
+]]>
+  </Template>
+  <!-- Update an Enterprise entity in database -->
+  <Template Name="enterprise" Mode="update" Subject="Enterprise">
+    <![CDATA[
+<XAL>
+  <XALAction Type="replace">
+    <Information LastModification="{ $date }">
+      {
+      $form/Name,
+      $form/ShortName,
+      $form/WebSite,
+      $form/CreationYear,
+      $form/SizeRef,
+      $form/DomainActivityRef,
+      $form/MainActivities,
+      $form/TargetedMarkets,
+      $form/Address
+      }
+    </Information>
+  </XALAction>
+  <XALAction Type="invalidate">
+    {
+    if ($subject/Information/Name ne $form/Name) then <Cache>enterprise</Cache> else (),
+    if ($subject/Information/Address/Town ne $form/Address/Town) then <Cache>town</Cache> else ()
+    }
+  </XALAction>
+</XAL>
+]]>
+  </Template>
+  <!-- Generate an Enterprise transclusion for embedding inside a formular -->
+  <Template Name="enterprise" Mode="cite" Subject="Information Archive">
+    <![CDATA[
+<ClientEnterprise>
+  <EnterpriseKey>{ $id }</EnterpriseKey>
+  { 
+  if (request:get-parameter('plugin', 'constant') ne 'choice') then
+    $subject/Name
+  else
+    (),
+  $subject/ShortName,
+  $subject/CreationYear,
+  $subject/SizeRef,
+  $subject/DomainActivityRef,
+  $subject//WebSite,
+  $subject/TargetedMarkets,
+  $subject/MainActivities,
+  $subject/Address
+  }
+</ClientEnterprise>
+]]>
+  </Template>
+  <!-- Archive an Enterprise dead-copy inside another document in database -->
+  <Template Name="enterprise" Mode="copy" Subject="ClientEnterprise">
+    <![CDATA[
+<XAL>
+  <XALAction Type="replace">
+    { template:gen-document("enterprise", "archive", $form, $lang) }
+  </XALAction>
+</XAL>
+]]>
+  </Template>
+  <!-- Generate an Enterprise archive for writing to database  -->
+  <Template Name="enterprise" Mode="archive">
+    <![CDATA[
+<Archive LastModification="{ $date }">
+  { 
+  $form/Name,
+  $form/ShortName,
+  $form/CreationYear,
+  $form/SizeRef,
+  $form/DomainActivityRef,
+  $form//WebSite,
+  $form/TargetedMarkets,
+  $form/MainActivities,
+  $form/Address
+  }
+</Archive>
+]]>
+  </Template> 
+  <!-- Generate a Partner transclusion for embedding inside a list of partners formular -->
+  <Template Name="partner" Mode="cite" Subject="Information Archive">
+    <![CDATA[
+<PartnerEnterprise>
+  <EnterpriseKey>{ $id }</EnterpriseKey>
+  { 
+  if (request:get-parameter('plugin', 'constant') ne 'choice') then
+    $subject/Name
+  else
+    ()
+  }
+  <Address>
+    {
+    $subject/Address/PostalCode,
+    $subject/Address/Town,
+    $subject/Address/RegionRef,
+    $subject/Address/Country
+    }
+  </Address>
+</PartnerEnterprise>
+]]>
+  </Template>
+  <!-- Archive a Partner enterprise inside another document database  -->
+  <Template Name="partner" Mode="copy" Subject="Partner">
+    <![CDATA[
+<XAL>
+  <XALAction Type="replace">
+    { template:gen-document("partner", "archive", $form, $lang) }
+  </XALAction>
+</XAL>
+]]>
+  </Template>
+  <!-- Generate a Partner archive for writing to database -->
+  <Template Name="partner" Mode="archive">
+    <![CDATA[
+<Archive LastModification="{ $date }">
+  { $form/Name }
+  <Address>
+    {
+    $form/Address/PostalCode,
+    $form/Address/Town,
+    $form/Address/RegionRef,
+    $form/Address/Country
+    }
+  </Address>
+</Archive>
+]]>
+  </Template>
+</Templates>

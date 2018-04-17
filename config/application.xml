@@ -1,0 +1,482 @@
+<Application>
+  <Workflows>
+    <Workflow Id="Case">
+      <Documents TemplateBaseURL="../templates/">
+        <Document Tab="case" PreOpenAtStatus="1 10 12" AtStatus="1" AtFinalStatus="10 12" Blender="yes" class="case">
+          <Controller>case</Controller>
+          <Template Param="breadcrumbs">case</Template>
+          <Action Type="status" AtStatus="1"/>
+          <Action Type="update" AtStatus="1" Avoid="$subject/Information/ClientEnterprise/Archive"/>
+          <Action Type="correct" AtStatus="1 10 12" Meet="$subject/Information/ClientEnterprise/Archive"/>
+          <Action Type="delete" AtStatus="1"/>
+          <!-- <Action Type="spawn" AtStatus="1" ProxyTab="coaching-assignment" Id="cmd-create-coaching"/> -->
+        </Document>
+        <Document Tab="coaching-assignment" Accordion="no">
+          <Controller>activities</Controller>
+          <Action Type="create" AtStatus="1"/>
+        </Document>
+        <Document Tab="externalservice" Accordion="no">
+          <Controller>externalservices/create</Controller>
+          <Action Type="create"/>
+        </Document>
+      </Documents>
+      <Transitions>
+        <Transition From="1" To="-1" GenericError="INCOMPLETE-CASE-FOR-ACTIVITY">
+          <Assert Base="$subject/Management" Error="MISSING-KAM">
+            <true>exists($base/AccountManagerKey)</true>
+          </Assert>
+          <Assert Base="fn:doc($globals:enterprises-uri)//Enterprise[Id eq $subject/Information/ClientEnterprise/EnterpriseKey]/Information" Error="MISSING-ENTERPRISE-STATS">
+            <true>count($base/TargetedMarkets/*) &gt;= 1</true>
+            <true>$base/DomainActivityRef[. ne '']</true>
+            <true>$base/SizeRef[. ne '']</true>
+            <true>$base/CreationYear[. ne '']</true>
+            <true>$base/Address/PostalCode[. ne '']</true>
+            <true>$base/Address/Town[. ne '']</true>
+            <true>$base/Address/RegionRef[. ne '']</true>
+            <true>$base/Address/Country[. ne '']</true>
+          </Assert>
+          <Assert Base="fn:collection($globals:persons-uri)//Person[Id eq $subject/NeedsAnalysis/ContactPerson/PersonKey]/Information" Error="MISSING-CONTACT-INFO">
+            <true>$base/Sex[. ne '']</true>
+            <true>$base/Function[. ne '']</true>
+            <true>$base/Name/FirstName[. ne '']</true>
+            <true>$base/Name/LastName[. ne '']</true>
+            <true>$base/Contacts/Email[. ne '']</true>
+          </Assert>
+          <Assert Base="$subject/Management" Error="MISSING-ETHICAL">
+            <true>exists($base/Conformity/Personal/YesNoScaleRef)</true>
+            <true>exists($base/Conformity/Financial/YesNoScaleRef)</true>
+          </Assert>
+          <Assert Base="$subject/NeedsAnalysis" Error="MISSING-NEEDS-ANALYSIS">
+            <true>exists($base/Analysis/Date)</true>
+            <true>exists($base/Context/InitialContextRef)</true>
+            <true>exists($base/Context/TargetedContextRef)</true>
+          </Assert>
+          <Assert Base="$subject/Evaluation/AccountManagerFeedback" Error="MISSING-EVALUATION-NEEDS-ANALYSIS">
+            <true>exists($base/Recognition/RatingScaleRef)</true>
+            <true>exists($base/Tools/RatingScaleRef)</true>
+          </Assert>
+        </Transition>
+        <Transition From="1" To="12" TriggerBy="auto">
+        </Transition>
+      </Transitions>
+    </Workflow>
+    <Workflow Id="Activity">
+      <Documents TemplateBaseURL="../../../templates/">
+        <!-- Case reminders -->
+        <Document Tab="case" AtStatus="1 2 3 4 5 7" AtFinalStatus="9 10" Blender="yes" class="case">
+          <Controller>../../case</Controller>
+          <Template>case</Template>
+          <Action Type="update" AtStatus="1 2 3 4 5 7 9 10"/>
+        </Document>
+        <!-- Activity documents -->
+        <Document Tab="coaching-assignment" PreOpenAtStatus="1" AtStatus="1 2 3 4 5 7" AtFinalStatus="9 10" Blender="yes">
+          <AutoExec AtStatus="1" Id="ae-advance" i18nBase="action.status">
+            <Forward Command="status" EventTarget="go-coaching-plan">cmd-change-status</Forward>
+          </AutoExec>
+          <Controller>coaching-assignment</Controller>
+          <Template Param="breadcrumbs">coaching-assignment</Template>
+          <Action Type="status" AtStatus="1" Id="cmd-change-status"/>
+          <Action Type="update" AtStatus="1"/>
+          <Action Type="delete" AtStatus="1"/>
+        </Document>
+        <Document Tab="coaching-plan" Blender="yes" AtStatus="2 3 4 5 7" AtFinalStatus="9 10">
+          <Controller>coaching-plan</Controller>
+          <Template>coaching-plan</Template>
+          <Action Type="update" AtStatus="2" Avoid="$subject/ClientEnterprise/Archive"/>
+          <Action Type="correct" AtStatus="2" Meet="$subject/ClientEnterprise/Archive"/>
+          <Action Type="status" AtStatus="2"/>
+        </Document>
+        <Document Tab="consultation" AtStatus="3 4 5 7" AtFinalStatus="9 10">
+          <Controller>consultation</Controller>
+          <Template>consultation</Template>
+          <Action Type="status" AtStatus="3"/>
+          <Host RootRef="RegionOpinion">
+            <Action Type="update" AtStatus="3"/>
+            <Flag Name="disop" Action="update"/>
+          </Host>
+          <Host RootRef="ServiceOpinion">
+            <Action Type="update" AtStatus="3"/>
+            <Flag Name="servop" Action="update"/>
+          </Host>
+          <Host RootRef="OtherOpinion">
+            <Action Type="update" AtStatus="3"/>
+            <Flag Name="othop" Action="update"/>
+          </Host>
+        </Document>
+        <Document Tab="coach-contracting" AtStatus="4 5 7" AtFinalStatus="9 10">
+          <Controller>coach-contracting</Controller>
+          <Template>coach-contracting</Template>
+          <Action Type="status" AtStatus="4"/>
+          <Action Type="update" AtStatus="4"/>
+        </Document>
+        <Document Tab="logbook" AtStatus="5 7" AtFinalStatus="10">
+          <Action Type="delete" AtStatus="5" Render="off"/>
+          <Action Type="drawer" AtStatus="5" loc="action.add.logbookItem" AppenderId="c-logbook-list">
+            <Controller>logbook</Controller>
+            <Template>logbook-entry</Template>
+          </Action>
+          <Content><Insert Match="Logbook"/></Content>
+        </Document>
+        <Document Tab="coaching-report" AtStatus="5 7" AtFinalStatus="10">
+          <Controller>coaching-report</Controller>
+          <Template>coaching-report</Template>
+          <Action Type="status" AtStatus="5"/>
+          <Action Type="update" AtStatus="5" Avoid="$subject/Partners/Partner/Archive"/>
+          <Action Type="correct" AtStatus="5" Meet="$subject/Partners/Partner/Archive"/>
+        </Document>
+        <Document Tab="report-approval" AtStatus="7" AtFinalStatus="10">
+          <Controller>report-approval</Controller>
+          <Template>report-approval</Template>
+          <Action Type="status" AtStatus="7"/>
+          <Action Type="update" AtStatus="7"/>
+        </Document>
+        <Document Tab="evaluations" Blender="yes" AtStatus="7" AtFinalStatus="10">
+          <Controller>evaluations</Controller>
+          <Template Param="breadcrumbs">evaluations</Template>
+        </Document>
+        <Document Tab="feedbacks" AtStatus="80 81" AtFinalStatus="11">
+          <Controller>feedbacks</Controller>
+          <Template Param="breadcrumbs">feedbacks</Template>
+          <Action Type="status" AtStatus="80" Group="feedback"/>
+        </Document>
+      </Documents>
+      <Transitions>
+        <!-- ============== Coach assignment ============== -->
+                <Transition From="1" To="2" Id="go-coaching-plan" Template="coach-assignment-notification" GenericError="INCOMPLETE-DOCUMENT">
+                    <Meet>r:account-manager</Meet>
+                    <Recipients>r:coach</Recipients>
+          <!-- <Email Template="coach-assignment-supervision"/> -->
+          <Assert Base="$subject/Assignment" Error="MISSING-COACH">
+            <true>$base/ResponsibleCoachKey[. ne '']</true>
+          </Assert>
+          <Assert Base="$subject/Assignment" Error="MISSING-SERVICE-OR-PHASE">
+            <true>$base/ServiceRef[. ne '']</true>
+            <true>$base/PhaseRef[. ne '']</true>
+          </Assert>
+          <Assert Base="$subject/AccountManagerFeedback/Profiles" Error="MISSING-EVALUATION-COACH-ASSIGNMENT">
+            <true>exists($base/RatingScaleRef)</true>
+          </Assert>
+        </Transition>
+        <Transition From="2" To="3" GenericError="INCOMPLETE-DOCUMENT">
+          <Meet>r:coach</Meet>
+          <Recipients>r:account-manager r:service-manager r:region-manager g:admin-system</Recipients>
+          <Assert Base="fn:doc($globals:enterprises-uri)//Enterprise[Id eq $object/FundingRequest/ClientEnterprise/EnterpriseKey]/Information" Error="MISSING-ENTERPRISE-STATS">
+            <true>count($base/TargetedMarkets/*) &gt;= 1</true>
+            <true>$base/DomainActivityRef[. ne '']</true>
+            <true>$base/SizeRef[. ne '']</true>
+            <true>$base/CreationYear[. ne '']</true>
+            <true>$base/Address/PostalCode[. ne '']</true>
+            <true>$base/Address/Town[. ne '']</true>
+            <true>$base/Address/RegionRef[. ne '']</true>
+            <true>$base/Address/Country[. ne '']</true>
+          </Assert>
+          <Assert Base="fn:collection($globals:persons-uri)//Person[Id eq $object/FundingRequest/ContactPerson/PersonKey]/Information" Error="MISSING-CONTACT-INFO">
+            <true>$base/Sex[. ne '']</true>
+            <true>$base/Function[. ne '']</true>
+            <true>$base/Name/FirstName[. ne '']</true>
+            <true>$base/Name/LastName[. ne '']</true>
+            <true>$base/Contacts/Email[. ne '']</true>
+          </Assert>
+          <Assert Base="$object/FundingRequest" Error="MISSING-ETHICAL">
+            <true>exists($base/Conformity/Personal/YesNoScaleRef)</true>
+            <true>exists($base/Conformity/Financial/YesNoScaleRef)</true>
+            <true>exists($base/Conformity/Professional/YesNoScaleRef)</true>
+          </Assert>
+        </Transition>
+        <Transition From="2" To="1">
+          <Meet>r:coach</Meet>
+          <Recipients>r:account-manager</Recipients>
+        </Transition>
+        <Transition From="3" To="4">
+          <Meet>r:service-manager</Meet>
+          <Recipients>g:admin-decision g:admin-finance</Recipients>
+        </Transition>
+        <Transition From="3" To="2">
+          <Meet>r:service-manager</Meet>
+          <Recipients>r:coach r:account-manager r:service-manager g:admin-system</Recipients>
+        </Transition>
+        <Transition From="4" To="5">
+          <Meet>g:admin-decision</Meet>
+          <Recipients>r:coach r:account-manager r:service-manager r:region-manager g:admin-finance</Recipients>
+        </Transition>
+        <Transition From="4" To="9" Launch="make-archives-for-stats">
+          <Meet>g:admin-decision</Meet>
+          <Recipients>r:coach r:account-manager r:service-manager</Recipients>
+        </Transition>
+        <Transition From="4" To="3">
+          <Meet>g:admin-decision</Meet>
+          <Recipients>r:service-manager r:region-manager g:admin-system</Recipients>
+        </Transition>
+        <Transition From="4" To="2">
+          <Meet>g:admin-decision</Meet>
+          <Recipients>r:coach r:account-manager r:service-manager g:admin-system</Recipients>
+        </Transition>
+        <Transition From="5" To="7" Launch="set-feedbacks">
+          <Meet>r:coach</Meet>
+          <Recipients>g:admin-finance g:admin-perf r:service-manager</Recipients>
+        </Transition>
+        <Transition From="7" To="10" Launch="make-archives-for-stats">
+          <Meet>g:admin-decision</Meet>
+          <Recipients>r:coach r:region-manager</Recipients>
+        </Transition>
+        <Transition From="7" To="5">
+          <Meet>g:admin-decision</Meet>
+          <Recipients>r:coach r:service-manager g:admin-finance</Recipients>
+        </Transition>
+        <Transition From="80" To="81" Label="Ask feedback to SME and KAM" Launch="start-feedbacks" Group="feedback">
+          <Meet>g:admin-perf</Meet>
+        </Transition>
+        <Transition From="80" To="82" Group="feedback">
+          <Meet>g:admin-perf</Meet>
+        </Transition>
+        <Transition From="81" To="11" Mail="direct" TriggerBy="start-feedbacks" Group="feedback" Template="activity-evaluated">
+          <Meet>all</Meet>
+          <Recipients>g:admin-perf</Recipients>
+        </Transition>
+      </Transitions>
+    </Workflow>
+  </Workflows>
+  <Security>
+    <Documents>
+      <!-- Documents -->
+      <Document TabRef="case" Root="Case">
+        <Action Type="read">
+          <Meet>g:account-manager g:coach g:admin-decision g:admin-finance g:admin-perf g:service-manager g:region-manager r:innovarc-case r:case-init</Meet>
+        </Action>
+        <Action Type="update">
+          <Meet>r:account-manager r:active-case-init</Meet>
+        </Action>
+        <Action Type="delete">
+          <Meet>r:account-manager r:active-case-init</Meet>
+        </Action>
+      </Document>
+      <Document TabRef="coaching-assignment" Root="Assignment" Form="coaching-assignment.xml">
+        <Action Type="create">
+          <Meet>r:account-manager</Meet>
+        </Action>
+        <Action Type="update">
+          <Meet>r:account-manager</Meet>
+        </Action>
+        <Action Type="delete">
+          <Meet>r:account-manager</Meet>
+        </Action>
+      </Document>
+      <Document TabRef="coaching-plan" Root="FundingRequest" Form="coaching-plan.xml">
+        <Action Type="read">
+          <Meet>g:account-manager g:coach g:admin-decision g:admin-finance g:admin-perf g:service-manager g:region-manager r:innovarc-case</Meet>
+        </Action>
+        <Action Type="update">
+          <Meet>r:coach</Meet>
+        </Action>
+      </Document>
+      <Document TabRef="consultation" Root="Opinions" Form="opinions.xml">
+        <Action Type="read">
+          <Meet>g:account-manager g:coach g:admin-decision g:admin-finance g:admin-perf g:service-manager g:region-manager r:innovarc-case</Meet>
+        </Action>
+        <!-- Only contains modal windows
+             FIXME: TabRef is virtual to allow simple access control using check-tab-permissions -->
+      </Document>
+      <Document TabRef="region-opinion" Root="RegionOpinion" Form="position.xml">
+        <Action Type="read">
+          <Meet>g:account-manager g:coach g:admin-decision g:admin-finance g:admin-perf g:service-manager g:region-manager r:innovarc-case</Meet>
+        </Action>
+        <Action Type="update">
+          <Meet>r:region-manager</Meet>
+        </Action>
+      </Document>
+      <Document TabRef="service-opinion" Root="ServiceOpinion" Form="position.xml">
+        <Action Type="read">
+          <Meet>g:account-manager g:coach g:admin-decision g:admin-finance g:admin-perf g:service-manager g:region-manager r:innovarc-case</Meet>
+        </Action>
+        <Action Type="update">
+          <Meet>r:service-manager</Meet>
+        </Action>
+      </Document>
+      <Document TabRef="other-opinion" Root="OtherOpinion" Form="opinion.xml">
+        <Action Type="read">
+          <Meet>g:account-manager g:coach g:admin-decision g:admin-finance g:admin-perf g:service-manager g:region-manager r:innovarc-case</Meet>
+        </Action>
+        <Action Type="update">
+          <Meet>g:account-manager g:coach g:admin-decision g:admin-finance g:admin-perf g:service-manager g:region-manager r:innovarc-case</Meet>
+        </Action>
+      </Document>
+      <Document TabRef="coach-contracting" Root="FundingDecision" Form="coach-contracting.xml">
+        <Action Type="read">
+          <Meet>g:account-manager g:coach g:admin-decision g:admin-finance g:admin-perf g:service-manager g:region-manager r:innovarc-case</Meet>
+        </Action>
+        <Action Type="update">
+          <Meet>g:admin-decision</Meet>
+        </Action>
+      </Document>
+      <Document TabRef="logbook" Root="Logbook" Form="logbook-entry.xml">
+        <Action Type="read">
+          <Meet>g:account-manager g:coach g:admin-decision g:admin-finance g:admin-perf g:service-manager g:region-manager r:innovarc-case</Meet>
+        </Action>
+        <Action Type="drawer">
+          <Meet>r:coach</Meet>
+        </Action>
+        <Action Type="update">
+          <Meet>r:coach</Meet>
+        </Action>
+        <Action Type="delete">
+          <Meet>r:coach</Meet>
+        </Action>
+      </Document>
+      <Document TabRef="coaching-report" Root="CoachingReport" Form="coaching-report.xml">
+        <Action Type="read">
+          <Meet>g:account-manager g:coach g:admin-decision g:admin-finance g:admin-perf g:service-manager g:region-manager r:innovarc-case</Meet>
+        </Action>
+        <Action Type="update">
+          <Meet>r:coach</Meet>
+        </Action>
+      </Document>
+      <Document TabRef="report-approval" Root="ReportApproval" Form="report-approval.xml">
+        <Action Type="read">
+          <Meet>g:account-manager g:coach g:admin-decision g:admin-finance g:admin-perf g:service-manager g:region-manager r:innovarc-case</Meet>
+        </Action>
+        <Action Type="update">
+          <Meet>g:admin-decision r:service-manager</Meet>
+        </Action>
+      </Document>
+      <Document TabRef="feedbacks" Root="Feedbacks" Form="feedbacks.xml">
+        <Action Type="read">
+          <Meet>g:account-manager g:coach g:admin-decision g:admin-finance g:admin-perf g:service-manager g:region-manager r:innovarc-case</Meet>
+        </Action>
+        <Action Type="launch">
+          <Meet>g:admin-perf</Meet>
+        </Action>
+      </Document>
+      <Document TabRef="evaluations" Root="Evaluations" Form="evaluations.xml">
+        <Action Type="read">
+          <Meet>g:account-manager g:coach g:admin-decision g:admin-finance g:admin-perf g:service-manager g:region-manager r:innovarc-case</Meet>
+        </Action>
+      </Document>
+      <Document TabRef="externalservice" Root="ExternalService" Form="externalservice.xml">
+        <Action Type="create">
+          <Meet>r:account-manager</Meet>
+        </Action>
+      </Document>
+    </Documents>
+    <!-- Application entities -->
+    <Resources>
+      <Resource Name="OCR">
+        <Action Type="create">
+          <Meet>g:account-manager g:coach g:region-manager g:case-init</Meet>
+        </Action>
+        <Action Type="open">
+          <Meet>g:account-manager g:coach g:admin-decision g:admin-finance g:admin-perf g:service-manager g:region-manager r:innovarc-case r:case-init</Meet>
+        </Action>
+      </Resource>
+      
+      <Resource Name="Case">
+        <Action Type="create">
+          <Meet>g:account-manager g:coach g:region-manager g:case-init</Meet>
+        </Action>
+        <Action Type="open">
+          <Meet>g:account-manager g:coach g:admin-decision g:admin-finance g:admin-perf g:service-manager g:region-manager r:innovarc-case r:case-init</Meet>
+        </Action>
+      </Resource>
+      <Resource Name="Activity">
+        <Action Type="create">
+          <Meet>r:account-manager</Meet>
+        </Action>
+      </Resource>
+      <Resource Name="Annex">
+        <Action Type="create">
+          <Meet>r:coach g:admin-finance g:admin-system</Meet>
+        </Action>
+        <Action Type="delete">
+          <Meet>r:annex-owner</Meet>
+        </Action>
+      </Resource>
+      <Resource Name="Person">
+        <Action Type="create">
+          <Meet>g:account-manager g:coach g:admin-decision g:admin-finance g:admin-perf g:region-manager g:case-init</Meet>
+        </Action>
+        <Action Type="update">
+          <Meet>g:account-manager g:coach g:admin-decision g:admin-finance g:admin-perf g:region-manager g:case-init</Meet>
+          <Meet Format="eval">exists($subject) and user:get-current-person-id() eq $subject/Id/text()</Meet>
+        </Action>
+        <Action Type="delete">
+          <Meet>g:account-manager g:coach g:admin-decision g:admin-finance g:admin-perf g:region-manager g:case-init</Meet>
+        </Action>
+      </Resource>
+      <Resource Name="UserProfile">
+        <Action Type="update">
+          <Meet>g:admin-system</Meet>
+        </Action>
+      </Resource>
+      <Resource Name="Enterprise">
+        <Action Type="create">
+          <Meet>g:account-manager g:coach g:admin-decision g:admin-finance g:admin-perf g:region-manager g:case-init</Meet>
+        </Action>
+        <Action Type="delete">
+          <Meet>g:account-manager g:coach g:admin-decision g:admin-finance g:admin-perf g:region-manager g:case-init</Meet>
+        </Action>
+        <Action Type="update">
+          <Meet>g:account-manager g:coach g:admin-decision g:admin-finance g:admin-perf g:region-manager g:case-init</Meet>
+        </Action>
+      </Resource>
+      <Resource Name="Obfuscated">
+        <Action Type="decode">
+          <Meet>g:admin-system</Meet>
+        </Action>
+      </Resource>
+      <Resource Name="ExternalService">
+        <Action Type="create">
+          <Meet>r:account-manager</Meet>
+        </Action>
+      </Resource>
+    </Resources>
+    <Roles>
+      <!-- Checks if current user has a semantic role according to subject/object (e.g. access control) -->
+      <Role Name="account-manager">
+        <Meet Format="eval">$uid = $subject/Management/AccountManagerKey/text()</Meet>
+      </Role>
+      <Role Name="coach">
+        <Meet Format="eval">$uid = $object/Assignment/ResponsibleCoachKey/text()</Meet>
+      </Role>
+      <Role Name="service-manager">
+        <Meet Format="eval">exists(user:get-user-profile()//Role[(FunctionRef eq '2') and (ServiceRef eq $object/Assignment/ServiceRef)])</Meet>
+      </Role>
+      <Role Name="region-manager">
+        <Meet Format="eval">let $r := globals:doc('enterprises-uri')//Enterprise[Id eq $subject/Information/ClientEnterprise/EnterpriseKey]/Information/Address/RegionRef return exists(user:get-user-profile()//Role[(FunctionRef eq '3') and (CantonalAntennaRef eq $r)])</Meet>
+      </Role>      
+      <Role Name="innovarc-case">
+        <Meet Format="eval">'9' = $subject/NeedsAnalysis/ContactSourceRef/text() or ('6', '7') =  $object/Budget/Revenues//FundingSourceRef</Meet>
+      </Role>
+      <Role Name="case-init">
+        <Meet Format="eval">$uid = $subject/Management/InitiatedByKey/text()</Meet>
+      </Role>
+      <Role Name="active-case-init">
+        <Meet Format="eval">$uid = $subject/Management/InitiatedByKey/text() and empty($subject/Management/AccountManagerKey)</Meet>
+      </Role>
+      <Role Name="annex-owner" Object="Resource">
+        <Meet Format="eval">$uid = $object/SenderKey</Meet>
+      </Role>
+    </Roles>
+    <Groups>
+      <!-- List of persons with semantic role according to subject/object (e.g. to compute e-mail recipients) -->
+            <Group Name="account-manager">
+                <Meet Format="eval">$subject/Management/AccountManagerKey/text()</Meet>
+            </Group>
+            <Group Name="coach">
+                <Meet Format="eval">$object/Assignment/ResponsibleCoachKey/text()</Meet>
+            </Group>
+            <Group Name="service-manager">
+                <Meet Format="eval">globals:collection('persons-uri')//Person[UserProfile//Role[(FunctionRef eq '2') and (ServiceRef eq $object/Assignment/ServiceRef)]]/Id/text()</Meet>
+            </Group>
+            <Group Name="region-manager">
+                <Meet Format="eval">let $r := globals:doc('enterprises-uri')//Enterprise[Id eq $subject/Information/ClientEnterprise/EnterpriseKey]/Information/Address/RegionRef return globals:collection('persons-uri')//Person[UserProfile//Role[(FunctionRef eq '3') and (CantonalAntennaRef = $r)]]/Id/text()</Meet>
+            </Group>
+        </Groups>
+        <Omnipotent>
+            <Meet>u:admin g:admin-system g:developer</Meet>
+        </Omnipotent>
+    </Security>
+    <Persons>
+    <!-- expressions to compute a given person's properties given a subject/object (not used here) -->
+        <Property Name="email" Subject="Enterprise">globals:collection('persons-uri')//Person[Id eq $uid]/Information/Contacts/Email</Property>
+        <Property Name="fullname" Subject="Enterprise">let $info := globals:collection('persons-uri')//Person[Id eq $uid]/Information/Name return if ($info) then concat($info/FirstName, ' ', $info/LastName) else ()</Property>
+    </Persons>
+</Application>

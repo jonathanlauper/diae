@@ -1,0 +1,70 @@
+<!-- ======================================================================
+       Oppidoc Business Application Development Framework 
+     ======================================================================= -->
+<modules>
+  <!-- *************************************** -->
+  <!-- ** Generic Case or Activity document ** -->
+  <!-- *************************************** -->
+    <module id="document">
+        <action name="GET">
+            <model src="models/document.xql">
+                <param name="document" value="some"/>
+                <param name="workflow" value="some"/>
+            </model>
+        </action>
+        <action name="POST">
+            <model src="models/document.xql">
+                <param name="document" value="some"/>
+                <param name="workflow" value="some"/>
+            </model>
+        </action>
+    </module>
+  <!-- ************ -->
+  <!-- ** Alerts ** -->
+  <!-- ************ -->
+    <module id="alerts">
+        <collection name="alerts" method="POST">
+            <model src="xcm:modules/workflow/alert.xql"/>
+            <action name="POST">
+                <model src="xcm:modules/workflow/alert.xql"/>
+                <view src="xcm:modules/workflow/alert.xsl"/>
+            </action>
+            <item>
+                <model src="xcm:modules/workflow/alert.xql"/>
+                <variant name="GET" format="modal">
+                    <view src="xcm:modules/workflow/alert-modal.xsl"/>
+                </variant>
+            </item>
+        </collection>
+    </module>
+  <!-- ********************* -->
+  <!-- ** Document sample ** -->
+  <!-- ********************* -->
+    <module id="sample">
+        <action name="GET">
+            <model src="modules/activities/sample.xql">
+                <param name="root" value="Sample"/>
+            </model>
+        </action>
+        <action name="POST">
+            <model src="modules/activities/sample.xql">
+                <param name="root" value="Sample"/>
+            </model>
+        </action>
+    </module>
+  <!-- **************** -->
+  <!-- ** Submission ** -->
+  <!-- **************** -->
+    <module id="submission">
+        <item name="submission" method="POST">
+            <model src="xcm:modules/submission/submission.xql">
+                <param name="name" value="SearchRequest"/>
+            </model>
+            <action name="POST">
+                <model src="xcm:modules/submission/submission.xql">
+                    <param name="name" value="SearchRequest"/>
+                </model>
+            </action>
+        </item>
+    </module>
+</modules>

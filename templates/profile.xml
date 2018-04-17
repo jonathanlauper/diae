@@ -1,0 +1,60 @@
+<!--
+     Case Tracker Reference application
+
+     Author: Stéphane Sire <s.sire@opppidoc.fr>
+
+     User proile data templates
+
+     July 2017 - (c) Copyright 2017 Oppidoc SARL. All Rights Reserved.
+  -->
+<Templates>
+    <Template Name="profile" Mode="read" Subject="Person" Object="UserProfile">
+<![CDATA[
+<UserProfile _Prune="none">
+  {
+  $object/Roles,
+  $object/AdministrativeEntityRef,
+  $object/CollaborativeEntityRef
+  }
+</UserProfile>
+]]></Template>
+    <Template Name="profile" Mode="validate" Subject="Person" Object="UserProfile">
+<![CDATA[
+  <XAL>
+    <XALAction Type="assert">
+      <True Error="VALIDATION-ROOT-ERROR">{ local-name($form) eq 'UserProfile' }</True>
+      <False Error="VALIDATION-PROFILE-FAILED">{ $form/Roles/Role[not(FunctionRef)] or $form/Roles/Role/FunctionRef[. eq ''] }</False>
+      <True Error="VALIDATION-DUPLICATED-ROLE">{ count(distinct-values($form/Roles/Role/FunctionRef)) eq count($form/Roles/Role/FunctionRef) }</True>
+      <False Error="PROTECT-ROLE-INTEGRITY-SR">{ exists($object/Roles/Role/FunctionRef[. eq '2']) and not($form/Roles/Role/FunctionRef[. eq '2']) }</False>
+      <False Error="ROLE-SR-WRONG-SERVICE-REF">{ exists($form/Roles/Role/FunctionRef[. eq '2'][empty(../ServiceRef) or (count(../ServiceRef) > 1) or (../ServiceRef eq '')]) }</False>
+      <False Error="ROLE-CAD-WRONG-CA-REF">{ exists($form/Roles/Role/FunctionRef[. eq '3'][empty(../CantonalAntennaRef) or (count(../CantonalAntennaRef) > 1) or (../CantonalAntennaRef eq '')]) }</False>
+      <False Error="ROLE-COACH-EMPTY-SERVICE-REF">{ exists($form/Roles/Role/FunctionRef[. eq '4'][empty(../ServiceRef) or (../ServiceRef = '')]) }</False>
+      <False Error="PROTECT-ADMIN-SYSTEM-ROLE">{ exists($object/Username) and ($object/Username eq oppidum:get-current-user()) and ($object/Roles/Role/FunctionRef[.='1']) and not($form/Roles/Role/FunctionRef[.='1']) }</False>
+    </XALAction>
+  </XAL>
+]]></Template>
+    <Template Name="profile" Mode="create" Subject="Person">
+<![CDATA[
+<XAL>
+  <XALAction Type="insert">
+    <UserProfile>
+    {
+    $form/Roles,
+    $form/UserProfile/AdministrativeEntityRef,
+    $form/UserProfile/CollaborativeEntityRef
+    }
+    </UserProfile>
+  </XALAction>
+</XAL>
+]]></Template>
+    <Template Name="profile" Mode="update" Subject="Person" Object="UserProfile" Assert="exists($object)" Fallback="create">
+<![CDATA[
+<XAL _Prune="none">
+  <XALAction Type="align" Pivot="$object">
+    <Roles>{ $form/Roles/* }</Roles>
+    <AdministrativeEntityRef>{ $form/AdministrativeEntityRef/text() }</AdministrativeEntityRef>
+    <CollaborativeEntityRef>{ $form/CollaborativeEntityRef/text() }</CollaborativeEntityRef>
+  </XALAction>
+</XAL>
+]]></Template>
+</Templates>

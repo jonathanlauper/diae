@@ -1,0 +1,86 @@
+<Services>
+    <Providers>
+        <Service>
+            <Id>diae</Id>
+            <Name Lang="en">Case Tracker</Name>
+            <AuthorizationToken>REPLACE-WITH-YOUR-TOKEN</AuthorizationToken>
+      <!-- Can be REMOVED : testing purpose -->
+      <EndPoint>
+        <Id>diae.loopback</Id>
+        <Name Lang="en">Loopback</Name>
+      </EndPoint>
+    </Service>
+  </Providers>
+  <Consumers>
+    <Service>
+      <Id>feedback</Id>
+      <Name>feedback</Name>
+      <AuthorizationToken>REPLACE-WITH-YOUR-TOKEN</AuthorizationToken>
+      <EndPoint>
+        <Id>feedback.questionnaires</Id>
+        <Name>Questionnaires</Name>
+        <URL>http://localhost:8082/exist/projects/feedback/questionnaires</URL>
+        <Deploy>
+          <POST Expected="200,201">
+            <Resource>
+              <File>formulars/sme-feedback-fr.xml</File>
+              <Append>
+                <Hook Name="Case Tracker" Service="diae.questionnaires" EndPoint="diae.sme-feedback.submit"/>
+              </Append>
+            </Resource>
+            <Description>SME feedback questionnaire</Description>
+          </POST>
+          <POST Expected="200,201">
+            <Resource>
+              <File>formulars/kam-feedback-fr.xml</File>
+              <Append>
+                <Hook Name="Case Tracker" Service="diae.questionnaires" EndPoint="diae.kam-feedback.submit"/>
+              </Append>
+            </Resource>
+            <Description>KAM feedback questionnaire</Description>
+          </POST>
+            <POST Expected="200,201">
+                <Resource>
+                    <File>formulars/externalservice-feedback.xml</File>
+                    <Append>
+                        <Hook Name="Case Tracker" Service="diae.questionnaires" EndPoint="diae.externalservice-feedback.submit"/>
+                    </Append>
+                </Resource>
+                <Description>External service feedback questionnaire</Description>
+            </POST>
+        </Deploy>
+      </EndPoint>
+      <EndPoint>
+        <Id>feedback.orders</Id>
+        <Name>Orders</Name>
+        <URL>http://localhost:8082/exist/projects/feedback/orders</URL>
+      </EndPoint>
+    </Service>
+  </Consumers>
+  <Hooks>
+        <Service>
+            <Id>diae.questionnaires</Id>
+            <Name>Questionnaires</Name>
+            <EndPoint>
+                <Id>diae.sme-feedback.submit</Id>
+                <Name>SME feedback form submission</Name>
+                <URL>http://localhost:8081/exist/platinn/diae/sme-feedback</URL>
+            </EndPoint>
+            <EndPoint>
+                <Id>diae.kam-feedback.submit</Id>
+                <Name>KAM feedback form submission</Name>
+                <URL>http://localhost:8081/exist/platinn/diae/kam-feedback</URL>
+            </EndPoint>
+            <EndPoint>
+                <Id>diae.externalservice-feedback.submit</Id>
+                <Name>External service feedback form submission</Name>
+                <URL>http://localhost:8081/exist/platinn/diae/externalservice-feedback</URL>
+            </EndPoint>
+            <EndPoint>
+                <Id>feedback.form.link</Id>
+                <Name>SME feedback form online</Name>
+                <URL>http://localhost:8082/exist/projects/feedback/forms/</URL>
+            </EndPoint>
+        </Service>
+    </Hooks>
+</Services>

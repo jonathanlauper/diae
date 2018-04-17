@@ -1,0 +1,544 @@
+<Emails>
+  <!-- ************************************************************************
+                                FRENCH VERSION
+       ************************************************************************
+   -->
+  <Alert Name="case-user-message" Lang="fr">
+    <Subject>Message concernant @@Case_Title@@</Subject>
+    <Message>
+      <Text>Saisi ton message ici...</Text>
+      <Text>Accès direct au cas de l'entreprise sur le CaseTracker: @@Link_To_Case@@</Text>
+      <Text>@@User_First_Name@@ @@User_Last_Name@@</Text>
+    </Message>
+  </Alert>
+  <Alert Name="activity-user-message" Lang="fr">
+    <Subject>Message concernant l'activité de coaching @@Activity_Title@@</Subject>
+    <Message>
+      <Text>Saisi ton message ici...</Text>
+      <Text>Accès direct à l'activité de coaching sur le CaseTracker: @@Link_To_Activity@@</Text>
+      <Text>@@User_First_Name@@ @@User_Last_Name@@</Text>
+    </Message>
+  </Alert>
+  <Alert Name="case-workflow-transition" Lang="fr">
+    <Subject>Le cas @@Company@@ a changé de statut (@@Case_Status_Name@@)</Subject>
+    <Message>
+      <Text>Je t’informe que le cas de l'entreprise @@Case_Title@@ a @@Case_Action_Verb@@ vers le statut @@Case_Status_Name@@</Text>
+      <Text>Accès direct au cas de l'entreprise sur le CaseTracker: @@Link_To_Case@@</Text>
+      <Text>@@User_First_Name@@ @@User_Last_Name@@</Text>
+    </Message>
+  </Alert>
+  <Alert Name="activity-workflow-transition" Lang="fr">
+    <Subject>L'activité de coaching @@Company@@, @@Activity_Service@@, @@Activity_Phase@@ a changé de statut (@@Activity_Status_Name@@)</Subject>
+    <Message>
+      <Text>Je t’informe que l'activité de coaching @@Activity_Title@@ a @@Activity_Action_Verb@@ vers le statut @@Activity_Status_Name@@</Text>
+      <Text>Accès direct à l'activité de coaching sur le CaseTracker: @@Link_To_Activity@@</Text>
+      <Text>@@User_First_Name@@ @@User_Last_Name@@</Text>
+    </Message>
+  </Alert>
+  <Alert Name="coach-assignment-notification" Lang="fr">
+    <Subject>Nouvelle activité de coaching @@Activity_Title@@</Subject>
+    <Message>
+      <Line>Cher coach,</Line>
+      <Text>Tu as été sélectionné comme coach pour l'entreprise @@Company@@</Text>
+      <Text>Merci de compléter l'activité de coaching sur le CaseTracker: @@Link_To_Activity@@</Text>
+      <Block>
+        <Line>Meilleures salutations,</Line>
+        <Line>@@User_First_Name@@ @@User_Last_Name@@</Line>
+      </Block>
+    </Message>
+  </Alert>
+  <Alert Name="coach-assignment-supervision" Lang="fr">
+    <Subject>Choix du coach pour l'activité @@Activity_Title@@</Subject>
+    <To>case-tracker-no-reply@platinn.ch</To>
+    <Message>
+      <Text>J'ai attribué l'entreprise @@Company@@ au coach @@Coach_First_Name@@ @@Coach_Last_Name@@</Text>
+      <Block>
+        <Line>Meilleures salutations,</Line>
+        <Line>@@User_First_Name@@ @@User_Last_Name@@</Line>
+      </Block>
+    </Message>
+  </Alert>
+  <Email Name="region-comment" Lang='fr'>
+    <Subject>Avis @@Position@@ pour l'activité @@Activity_Title@@</Subject>
+    <Message>
+      <Text>@@Author_Name@@ vient de sauvegarder un avis @@Position@@ pour l'activité @@Company@@, @@Activity_Service@@, @@Activity_Phase@@, avec le commentaire suivant :</Text>
+      <Text>"@@Comment@@"</Text>
+      <Text>N'oubliez pas de donner vote avis</Text>
+      <Text>Accès direct à l'activité de coaching sur le CaseTracker: @@Link_To_Activity@@</Text>
+      <Text>Ceci est un message automatique du système, veuillez ne pas répondre</Text>
+    </Message>
+  </Email>
+  <Email Name="region-comment-plus" Lang='fr'>
+    <Subject>Avis @@Position@@ pour l'activité @@Activity_Title@@</Subject>
+    <Message>
+      <Text>@@Author_Name@@ vient de sauvegarder un avis @@Position@@ pour l'activité @@Company@@, @@Activity_Service@@, @@Activity_Phase@@, avec le commentaire suivant :</Text>
+      <Text>"@@Comment@@"</Text>
+      <Text>Vous avez déjà donné votre avis "@@Service_Position@@" le "@@Service_Position_Date@@"</Text>
+      <Text>Accès direct à l'activité de coaching sur le CaseTracker: @@Link_To_Activity@@</Text>
+      <Text>Ceci est un message automatique du système, veuillez ne pas répondre</Text>
+    </Message>
+  </Email>  
+  <Email Name="innovarc-notification" Lang='fr'>
+    <To>suisse@innovarc.eu</To>
+    <Subject>L'activité de coaching @@Company@@, @@Activity_Service@@, @@Activity_Phase@@ a changé de statut (@@Activity_Status_Name@@)</Subject>
+    <Message>
+      <Text>L'application CaseTracker de platinn signale le changement de statut d'une activité</Text>
+      <Text>Accès direct à l'activité de coaching sur le CaseTracker: @@Link_To_Activity@@</Text>
+      <Text>Ceci est un message automatique du système, veuillez ne pas répondre</Text>
+    </Message>
+  </Email>
+  <Email Name="sme-feedback" Lang="fr">
+    <Subject>Évaluation du coaching dans le cadre de @@Company@@, @@Activity_Service@@, @@Activity_Phase@@</Subject>
+    <Message>
+      <Text>Cher(e) @@Activity_Contact_First_Name@@ @@Activity_Contact_Last_Name@@,</Text>
+      <Text>Pouvons-nous vous demander de faire l'évaluation du coaching de @@Coach_First_Name@@ @@Coach_Last_Name@@ qui a été organisé par @@KAM_First_Name@@ @@KAM_Last_Name@@ ?</Text>
+      <Text>Vos commentaires nous aideront à améliorer continuellement la qualité de notre coaching.</Text>
+      <Text>Veuillez utiliser le lien suivant:</Text>
+      <Text Visibility="obfuscate">@@Link_To_Form@@</Text>
+      <Block>
+        <Line>Nous vous remercions pour votre soutien,</Line>
+        <Line>@@User_First_Name@@ @@User_Last_Name@@</Line>
+        <Line>platinn</Line>
+      </Block>
+    </Message>
+  </Email>
+  <Email Name="kam-feedback" Lang="fr">
+    <Subject>Évaluation du coaching dans le cadre de @@Company@@, @@Activity_Service@@, @@Activity_Phase@@</Subject>
+    <Message>
+      <Text>Cher(e) @@KAM_Name@@,</Text>
+      <Text>Pouvons-nous te demander de faire l'évaluation du coaching que tu as organisé ?</Text>
+      <Text>Tes commentaires nous aideront à améliorer continuellement la qualité de notre coaching.</Text>
+      <Text>Merci d'utiliser le lien suivant:</Text>
+      <Text Visibility="obfuscate">@@Link_To_Form@@</Text>
+      <Block>
+        <Line>Nous te remercions pour ton soutien:</Line>
+        <Line>platinn</Line>
+      </Block>
+    </Message>
+  </Email>
+  <Email Name="externalservice-feedback" Lang="fr">
+    <Subject>Demande de service externe pour la société: @@TargetCompany_Name@@, soumise par: @@Requester_Name@@</Subject>
+    <Message>
+      <Text>Cher(e) @@RequestedProvider_Contact@@,</Text>
+      <Text>C’est avec plaisir que je vous soumets une demande pour un service externe pour l’entreprise @@TargetCompany_Name@@ (accès au détail en cliquant sur le lien ci-dessous):</Text>
+      <Text Visibility="obfuscate">@@Link_To_Form@@</Text>
+      <Block>
+        <Line>Merci pour votre collaboration,</Line>
+        <Line>@@Requester_Name@@</Line>
+      </Block>
+    </Message>
+  </Email>
+  <Alert Name="activity-evaluated" Lang="fr">
+    <Subject>L'activité de coaching @@Company@@, @@Activity_Service@@, @@Activity_Phase@@ a été évaluée</Subject>
+    <Message>
+      <Text>Accès direct à l'activité de coaching sur le CaseTracker: @@Link_To_Activity@@</Text>
+    </Message>
+  </Alert>
+  <Email Name="login-created" Lang="fr">
+    <Subject>Création de ton compte d'utilisateur CaseTracker</Subject>
+    <Message>
+      <Text>Cher(e) @@User_First_Name@@ @@User_Last_Name@@,</Text>
+      <Text>Bienvenue dans le CaseTracker.</Text>
+      <Block>
+        <Line>Ton nom d'utilisateur est : @@Login@@</Line>
+        <Line>et le mot de passe : @@Password@@</Line>
+      </Block>
+      <Text>L'attribution de nouvelles activités de coaching te sera notifiée par le système.</Text>
+      <Block>
+        <Line>Meilleures salutations,</Line>
+        <Line>l'administrateur du CaseTracker </Line>
+      </Block>
+    </Message>
+  </Email>
+  <Email Name="login-updated" Lang="fr">
+    <Subject>Modification de ton compte d'utilisateur CaseTracker</Subject>
+    <Message>
+      <Text>Cher(e) @@User_First_Name@@ @@User_Last_Name@@,</Text>
+      <Text>Ton compte d'utilisateur a été modifié.</Text>
+      <Block>
+        <Line>Ton nouveau nom d'utilisateur est : @@Login@@</Line>
+        <Line>et le mot de passe : @@Password@@</Line>
+      </Block>
+      <Text>Pour changer ton mot de passe, il faut cliquer sur ton nom d'utilisateur dans le coin supérieur à droite de l'écran.</Text>
+      <Text>Le CaseTracker a été conçu pour fonctionner avec le navigateur Firefox, clique sur "Directives" dans le menu du haut pour plus d'informations.</Text>
+      <Block>
+        <Line>Meilleures salutations,</Line>
+        <Line>@@Admin_First_Name@@ @@Admin_Last_Name@@</Line>
+        <Line>l'administrateur du CaseTracker</Line>
+      </Block>
+    </Message>
+  </Email>
+  <Email Name="new-password-by-admin" Lang="fr">
+    <Subject>Modification de ton compte d'utilisateur CaseTracker</Subject>
+    <Message>
+      <Text>Ton nouveau mot de passe pour le CaseTracker est : @@Password@@</Text>
+      <Text>Utilise ce mot de passe dès maintenant !</Text>
+      <Text>Pour changer ton mot de passe, il faut cliquer sur ton nom d'utilisateur dans le coin supérieur à droite de l'écran.</Text>
+      <Block>
+        <Line>Meilleures salutations,</Line>
+        <Line>@@Admin_First_Name@@ @@Admin_Last_Name@@</Line>
+        <Line>l'administrateur du CaseTracker</Line>
+      </Block>
+    </Message>
+  </Email>
+  <Email Name="new-password-by-user" Lang="fr">
+    <Subject>Modification de ton compte d'utilisateur CaseTracker</Subject>
+    <Message>
+      <Text>Ton nouveau mot de passe pour le CaseTracker est : @@Password@@</Text>
+      <Text>Utilise ce mot de passe dès maintenant !</Text>
+      <Text>Pour changer ton mot de passe, il faut cliquer sur ton nom d'utilisateur dans le coin supérieur à droite de l'écran.</Text>
+      <Text>Ceci est un message automatique du système, veuillez ne pas répondre.</Text>
+    </Message>
+  </Email>
+  <!-- ************************************************************************
+                                ENGLISH VERSION
+       ************************************************************************
+   -->
+  <!-- ======================================================================
+         Messages to pre-fill mail composition window
+       ======================================================================
+   -->
+  <Alert Name="case-user-message" Lang="en">
+    <Subject>Message about project @@Case_Title@@</Subject>
+    <Message>
+      <Text>Edit your own message here...</Text>
+      <Text>Direct link to Company case on Case Tracker: @@Link_To_Case@@</Text>
+      <Text>@@User_First_Name@@ @@User_Last_Name@@</Text>
+    </Message>
+  </Alert>
+  <Alert Name="activity-user-message" Lang="en">
+    <Subject>Message about @@Activity_Title@@ coaching activity</Subject>
+    <Message>
+      <Text>Edit your own message here...</Text>
+      <Text>Direct link to Company coaching activity on Case Tracker: @@Link_To_Activity@@</Text>
+      <Text>@@User_First_Name@@ @@User_Last_Name@@</Text>
+    </Message>
+  </Alert>
+  <!-- ======================================================================
+         Messages sent on status change (application.xml)
+  
+         - fully automatic (no end user control)
+         - editing by end-user before sending or cancelling
+       ======================================================================
+   -->
+  <!-- Default for case workflow transition -->
+  <Alert Name="case-workflow-transition" Lang="en">
+    <Subject>Status @@Case_Status_Name@@: @@Company@@</Subject>
+    <Message>
+      <Text>I inform you that the case @@Case_Title@@ has @@Case_Action_Verb@@ to @@Case_Status_Name@@</Text>
+      <Text>Direct link to Company case on Case Tracker: @@Link_To_Case@@</Text>
+      <Text>@@User_First_Name@@ @@User_Last_Name@@</Text>
+    </Message>
+  </Alert>
+  <!-- Default for activity workflow transition -->
+  <Alert Name="activity-workflow-transition" Lang="en">
+    <Subject>Status @@Activity_Status_Name@@: @@Company@@, @@Activity_Service@@, @@Activity_Phase@@</Subject>
+    <Message>
+      <Text>I inform you that the coaching activity has @@Activity_Action_Verb@@ to @@Activity_Status_Name@@</Text>
+      <Text>Direct link to Company coaching activity on Case Tracker: @@Link_To_Activity@@</Text>
+      <Text>@@User_First_Name@@ @@User_Last_Name@@</Text>
+    </Message>
+  </Alert>
+  <!-- Example of a specific message: coach notification  -->
+  <Alert Name="coach-assignment-notification" Lang="en">
+    <Subject>Case @@Activity_Title@@ ready for your input</Subject>
+    <Message>
+      <Line>Dear Coach,</Line>
+      <Text>You have been selected to coach @@Company@@</Text>
+      <Text>Please update the case on this link: @@Link_To_Activity@@</Text>
+      <Block>
+        <Line>Best regards,</Line>
+        <Line>@@User_First_Name@@ @@User_Last_Name@@</Line>
+      </Block>
+    </Message>
+  </Alert>
+  <!-- Exemple of automatic message: management notification -->
+  <!-- NOTE: not used -->
+  <Alert Name="coach-assignment-supervision" Lang="en">
+    <Subject>Coach assigned for project @@Activity_Title@@</Subject>
+    <To>management@case-tracker-demo.org</To>
+    <Message>
+      <Text>I have just assigned @@Coach_First_Name@@ @@Coach_Last_Name@@ to coach @@Company@@</Text>
+      <Block>
+        <Line>Best regards,</Line>
+        <Line>@@User_First_Name@@ @@User_Last_Name@@</Line>
+      </Block>
+    </Message>
+  </Alert>
+  <!-- Automatic SME feedback form link notification
+       See evaluation.xqm when launching start-feedbacks service -->
+  <Email Name="sme-feedback" Lang="en">
+    <Subject>Your feedback of the coaching for @@Project_Acronym@@ needed</Subject>
+    <Message>
+      <Text>Dear @@Activity_Contact_First_Name@@ @@Activity_Contact_Last_Name@@,</Text>
+      <Text>May we kindly invite you to give your opinion about the coaching of @@Coach_First_Name@@ @@Coach_Last_Name@@ that was organised by @@KAM_First_Name@@ @@KAM_Last_Name@@.</Text>
+      <Text>Your feedback will help us to improve the quality of the coaching scheme.</Text>
+      <Text>Please use this link :</Text>
+      <Text Visibility="obfuscate">@@Link_To_Form@@</Text>
+      <Block>
+        <Line>Thanks for your contribution,</Line>
+        <Line>@@User_First_Name@@ @@User_Last_Name@@</Line>
+        <Line>Platinn Coaching Team</Line>
+      </Block>
+    </Message>
+  </Email>
+  <!-- Automatic KAM feedback form link notification
+       See evaluation.xqm when launching start-feedbacks service -->
+  <Email Name="kam-feedback" Lang="en">
+    <Subject>Your opinion on the coaching for @@Project_Acronym@@, please</Subject>
+    <To>@@KAM_Email@@</To>
+    <Message>
+      <Text>Dear @@KAM_Name@@,</Text>
+      <Text>May we kindly invite you to give your opinion about the coaching that you organised.</Text>
+      <Text>Your feedback will help us to improve the quality of the coaching scheme.</Text>
+      <Text Visibility="obfuscate">@@Link_To_Form@@</Text>
+      <Block>
+        <Line>Thanks for your contribution,</Line>
+        <Line>Platinn Coaching Team</Line>
+      </Block>
+    </Message>
+  </Email>
+  <!-- not used -->
+  <Email Name="externalservice-feedback" Lang="en">
+    <Subject>Your answer to an external service request for the case: @@Case_Title@@, please</Subject>
+    <Message>
+      <Text>Dear @@RequestedProvider_Contact@@,</Text>
+      <Text>May we kindly invite you to give your answer to the following external service request:</Text>
+      <Text Visibility="obfuscate">@@Link_To_Form@@</Text>
+      <Block>
+        <Line>Thanks for your contribution,</Line>
+        <Line>Platinn Coaching Team</Line>
+      </Block>
+    </Message>
+  </Email>
+  <!-- ======================================================================
+         Reminders (checks.xml)
+       ======================================================================
+   -->
+  <!-- ======================================================================
+         User account messages
+       ======================================================================
+   -->
+  <Email Name="login-created" Lang="en">
+    <Subject>Creation of your Case Tracker user account</Subject>
+    <Message>
+      <Text>Dear @@User_First_Name@@ @@User_Last_Name@@,</Text>
+      <Text>Welcome to the Case Tracker service.</Text>
+      <Block>
+        <Line>Your login has this ID : @@Login@@</Line>
+        <Line>and this password : @@Password@@</Line>
+      </Block>
+      <Text>When you are selected for a case you will be notified</Text>
+      <Block>
+        <Line>Best regards,</Line>
+        <Line>Case Tracker Team</Line>
+      </Block>
+    </Message>
+  </Email>
+  <!-- *************************************** -->
+  <Email Name="login-updated" Lang="en">
+    <Subject>Modification of your Case Tracker user account</Subject>
+    <Message>
+      <Text>Dear @@User_First_Name@@ @@User_Last_Name@@,</Text>
+      <Text>Your Case Tracker user account has been modified</Text>
+      <Block>
+        <Line>Your new login has this ID : @@Login@@</Line>
+        <Line>and this password : @@Password@@</Line>
+      </Block>
+      <Text>To change your password connect to the application then click on your login name on the top right corner of the screen</Text>
+      <Text>The Case Tracker is designed to run with Firefox, select "Guidelines" in the top menu for more information</Text>
+      <Block>
+        <Line>Warmest regards,</Line>
+        <Line>@@Admin_First_Name@@ @@Admin_Last_Name@@</Line>
+        <Line>Case Tracker Administrator</Line>
+      </Block>
+    </Message>
+  </Email>
+  <!-- *************************************** -->
+  <Email Name="new-password-by-admin" Lang="en">
+    <Subject>Modification of your Case Tracker user account</Subject>
+    <Message>
+      <Text>Your new password to access the Case Tracker is : @@Password@@</Text>
+      <Text>Use it from now to connect</Text>
+      <Text>To change your password connect to the application then click on your login name on the top right corner of the screen</Text>
+      <Block>
+        <Line>Warmest regards,</Line>
+        <Line>@@Admin_First_Name@@ @@Admin_Last_Name@@</Line>
+        <Line>Case Tracker Administrator</Line>
+      </Block>
+    </Message>
+  </Email>
+  <!-- *************************************** -->
+  <Email Name="new-password-by-user" Lang="en">
+    <Subject>Modification of your Case Tracker user account</Subject>
+    <Message>
+      <Text>Your new password to access the Case Tracker is : @@Password@@</Text>
+      <Text>Use it from now to connect</Text>
+      <Text>To change your password connect to the application then click on your login name on the top right corner of the screen</Text>
+      <Text>This message has been automatically generated, please do not answer</Text>
+    </Message>
+  </Email>
+  <!-- ************************************************************************
+                                GERMAN VERSION
+       ************************************************************************
+   -->
+  <Alert Name="case-user-message" Lang="de">
+    <Subject>Mitteilung betreffend @@Case_Title@@</Subject>
+    <Message>
+      <Text>Bitte gebe hier Deine eigene Mitteilung ein...</Text>
+      <Text>Direktzugang zum Unternehmensfall auf CaseTracker: @@Link_To_Case@@</Text>
+      <Text>@@User_First_Name@@ @@User_Last_Name@@</Text>
+    </Message>
+  </Alert>
+  <Alert Name="activity-user-message" Lang="de">
+    <Subject>Mitteilung betreffend @@Activity_Title@@ Coaching Aktivität</Subject>
+    <Message>
+      <Text>Bitte gebe hier Deine eigene Mitteilung ein...</Text>
+      <Text>Direktzugang zur Coaching Aktivität auf CaseTracker: @@Link_To_Activity@@</Text>
+      <Text>@@User_First_Name@@ @@User_Last_Name@@</Text>
+    </Message>
+  </Alert>
+  <Alert Name="case-workflow-transition" Lang="de">
+    <Subject>Unternehmensfall @@Company@@ hat einen neuen Status (@@Case_Status_Name@@)</Subject>
+    <Message>
+      <Text>Ich informiere Dich, dass der Unternehmensfall @@Case_Title@@ @@Case_Action_Verb@@ @@Case_Status_Name@@</Text>
+      <Text>Direktzugang zum Unternehmensfall auf CaseTracker: @@Link_To_Case@@</Text>
+      <Text>@@User_First_Name@@ @@User_Last_Name@@</Text>
+    </Message>
+  </Alert>
+  <Alert Name="activity-workflow-transition" Lang="de">
+    <Subject>Die Coaching Aktivität @@Company@@, @@Activity_Service@@, @@Activity_Phase@@ hat einen neuen Status (@@Activity_Status_Name@@)</Subject>
+    <Message>
+      <Text>Ich informiere Sie, dass die Coaching Aktivität @@Activity_Title@@ @@Activity_Action_Verb@@ @@Activity_Status_Name@@</Text>
+      <Text>Direktzugang zur Coaching Aktivität auf CaseTracker: @@Link_To_Activity@@</Text>
+      <Text>@@User_First_Name@@ @@User_Last_Name@@</Text>
+    </Message>
+  </Alert>
+  <Alert Name="coach-assignment-notification" Lang="de">
+    <Subject>Neue Coaching Aktivität @@Activity_Title@@</Subject>
+    <Message>
+      <Line>Lieber Coach</Line>
+      <Text>Du wurdest als Coach für die Firma @@Company@@ ausgewählt.</Text>
+      <Text>Bitte definiere die Coaching Aktivität im CaseTracker, indem Du auf folgenden Link klickst: @@Link_To_Activity@@</Text>
+      <Block>
+        <Line>Mit besten Grüssen,</Line>
+        <Line>@@User_First_Name@@ @@User_Last_Name@@</Line>
+      </Block>
+    </Message>
+  </Alert>
+  <Alert Name="coach-assignment-supervision" Lang="de">
+    <Subject>Coach Zuweisung für die Aktivität @@Activity_Title@@</Subject>
+    <To>management@case-tracker-demo.org</To>
+    <Message>
+      <Text>Ich habe der Firma @@Company@@ den Coach @@Coach_First_Name@@ @@Coach_Last_Name@@ zugewiesen.</Text>
+      <Block>
+        <Line>Mit besten Grüssen,</Line>
+        <Line>@@User_First_Name@@ @@User_Last_Name@@</Line>
+      </Block>
+    </Message>
+  </Alert>
+  <Email Name="sme-feedback" Lang="de">
+    <Subject>Bewertung des Coachings im Rahmen von @@Company@@, @@Activity_Service@@, @@Activity_Phase@@</Subject>
+    <Message>
+      <Text>Sehr geehrte(r) @@Activity_Contact_First_Name@@ @@Activity_Contact_Last_Name@@,</Text>
+      <Text>Dürfen wir Sie um die Bewertung der Coaching Aktivität von @@Coach_First_Name@@ @@Coach_Last_Name@@ bitten, welche von @@KAM_First_Name@@ @@KAM_Last_Name@@ organisiert wurde ?</Text>
+      <Text>Ihre Rückmeldung wird uns helfen, die Qualität unseres Coachings laufend zu verbessern.</Text>
+      <Text>Benutzen Sie bitte den folgenden Link :</Text>
+      <Text Visibility="obfuscate">@@Link_To_Form@@</Text>
+      <Block>
+        <Line>Wir bedanken uns für Ihre Unterstützung,</Line>
+        <Line>@@User_First_Name@@ @@User_Last_Name@@</Line>
+        <Line>platinn</Line>
+      </Block>
+    </Message>
+  </Email>
+  <Email Name="kam-feedback" Lang="de">
+    <Subject>Bewertung des Coachings im Rahmen von @@Company@@, @@Activity_Service@@, @@Activity_Phase@@</Subject>
+    <To>@@KAM_Email@@</To>
+    <Message>
+      <Text>Liebe(r) @@KAM_Name@@,</Text>
+      <Text>Dürfen wir Dich um die Coaching Bewertung bitten, welches von Dir organisiert wurde ?</Text>
+      <Text>Deine Rückmeldung wird uns helfen, die Qualität unseres Coachings laufend zu verbessern.</Text>
+      <Text>Benutzen Sie bitte den folgenden Link :</Text>
+      <Text Visibility="obfuscate">@@Link_To_Form@@</Text>
+      <Block>
+        <Line>Wir bedanken uns für Deine Unterstützung,</Line>
+        <Line>platinn</Line>
+      </Block>
+    </Message>
+  </Email>
+  <Email Name="externalservice-feedback" Lang="de">
+    <Subject>Antrag für einen externen Service für die Firma: @@TargetCompany_Name@@, beantragt durch: @@Requester_Name@@</Subject>
+    <Message>
+      <Text>Liebe(r) @@RequestedProvider_Contact@@,</Text>
+      <Text>Ich freue mich, Ihnen nachfolgend einen Antrag für einen externen Service für die Firma @@TargetCompany_Name@@ zu stellen (Details Inhalt des Antrages via folgendem Link):</Text>
+      <Text Visibility="obfuscate">@@Link_To_Form@@</Text>
+      <Block>
+        <Line>Besten Dank für Ihre Zusammenarbeit,</Line>
+        <Line>@@Requester_Name@@</Line>
+      </Block>
+    </Message>
+  </Email>
+  <Alert Name="activity-evaluated" Lang="de">
+    <Subject>Erhalt einer Bewertung in bezug auf folgende Coaching Aktivität @@Company@@, @@Activity_Service@@, @@Activity_Phase@@</Subject>
+    <Message>
+      <Text>Direktzugang zur Coaching Aktivität auf CaseTracker: @@Link_To_Activity@@</Text>
+    </Message>
+  </Alert>
+  <Email Name="login-created" Lang="de">
+    <Subject>Schaffung Deines CaseTracker Benutzerkontos</Subject>
+    <Message>
+      <Text>Liebe(r) @@User_First_Name@@ @@User_Last_Name@@,</Text>
+      <Text>Willkommen im CaseTracker.</Text>
+      <Block>
+        <Line>Dein Benutzerlogin hat die ID : @@Login@@</Line>
+        <Line>und das Passwort : @@Password@@</Line>
+      </Block>
+      <Text>Du wirst vom System über Dir neu zugewiesene Coaching Aktivitäten informiert. </Text>
+      <Block>
+        <Line>Mit besten Grüssen,</Line>
+        <Line>CaseTracker System Manager</Line>
+      </Block>
+    </Message>
+  </Email>
+  <Email Name="login-updated" Lang="de">
+    <Subject>Veränderung Deines CaseTracker Benutzerkontos</Subject>
+    <Message>
+      <Text>Liebe(r) @@User_First_Name@@ @@User_Last_Name@@,</Text>
+      <Text>Dein Benutzerkonto wurde verändert.</Text>
+      <Block>
+        <Line>Das neue Login hat die ID : @@Login@@</Line>
+        <Line>und das Passwort : @@Password@@</Line>
+      </Block>
+      <Text>Um das Passwort zu verändern, musst Du den Benutzernamen auf der rechten, oberen Ecke des Bildschirms anklicken.</Text>
+      <Text>Der CaseTracker wurde auf den Firefox Browser optimiert. Wähle die Funktion "Direktiven" im oberen Menü für weitere Informationen.</Text>
+      <Block>
+        <Line>Mit besten Grüssen,</Line>
+        <Line>@@Admin_First_Name@@ @@Admin_Last_Name@@</Line>
+        <Line>CaseTracker System Manager</Line>
+      </Block>
+    </Message>
+  </Email>
+  <Email Name="new-password-by-admin" Lang="de">
+    <Subject>Veränderung Deines CaseTracker Benutzerkontos</Subject>
+    <Message>
+      <Text>Dein neues Passwort für das CaseTracker Login lautet : @@Password@@</Text>
+      <Text>Nutze dieses Passwort ab sofort !</Text>
+      <Text>Um das Passwort zu verändern, musst Du den Login Name auf der rechten, oberen Ecke des Bildschirms anklicken.</Text>
+      <Block>
+        <Line>Mit besten Grüsse,</Line>
+        <Line>@@Admin_First_Name@@ @@Admin_Last_Name@@</Line>
+        <Line>CaseTracker System Manager</Line>
+      </Block>
+    </Message>
+  </Email>
+  <Email Name="new-password-by-user" Lang="de">
+    <Subject>Veränderung Deines CaseTracker Benutzerkontos</Subject>
+    <Message>
+      <Text>Dein neues Passwort für das Case Tracker Login lautet : @@Password@@</Text>
+      <Text>Nutze dieses Passwort ab sofort !</Text>
+      <Text>Um das Passwort zu verändern, musst Du den Login Name auf der rechten, oberen Ecke des Bildschirms anklicken.</Text>
+      <Text>Dies ist eine Systemmitteilung. Bitte nicht beantworten.</Text>
+    </Message>
+  </Email>
+</Emails>

@@ -1,0 +1,21 @@
+<site:view xmlns:site="http://oppidoc.com/oppidum/site" xmlns="http://www.w3.org/1999/xhtml">
+  <site:content>
+    <fieldset class="bubble">
+      <legend>Documents à télécharger</legend>
+      <p><a href="guidelines/calendar">Dates à retenir en 2018</a></p>
+      <p><a href="guidelines/regulation">Règlement Platinn</a></p>
+      <p><a href="guidelines/roadmap">The smeE-MPOWER Practice Guide</a></p>
+    </fieldset>
+    <fieldset class="bubble">
+      <legend>Utilisation de l'application</legend>
+      <p>Pour utiliser l'application CaseTracker Platinn vous devez configurer votre navigateur web pour :</p>
+      <ul>
+        <li>accepter les cookies</li>
+        <li>activer Javascript</li>
+      </ul>
+      <p>Notez que si vous laissez une fenêtre ouverte trop longtemps sans interaction avec le serveur (habituellement au bout de 30 minutes) alors votre session expirera et l'application vous signalera que vous n'avez pas les autorisations nécessaires lors de toute nouvelle action. Dans ce cas rechargez la page pour vous identifier à nouveau.</p>
+      <p>Si la situation précédente se produit avec une fenêtre contenant un document que vous n'avez pas encore sauvegardé, vous pouvez ouvrir en parallèle une nouvelle fenêtre pour vous identifier auprès de l'application tout en gardant le première fenêtre ouverte. Une fois reconnu à nouveau par l'application vous pourrez alors revenir sur la première fenêtre pour sauvegarder le document. Dans tous les cas il est préférable de sauvegarder les documents en cours d'édition avant de vous absenter !</p>
+      <p>L'application est conçue pour le navigateur web <b>Firefox</b>, utilisez ce navigateur avant de signaler tout dysfonctionnement.</p>
+    </fieldset>
+  </site:content>
+</site:view>

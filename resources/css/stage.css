@@ -1,0 +1,126 @@
+/* Module level CSS for stage */
+
+form.c-search {
+  background: #9EC0D9;  /* rgb(142,176,201); #8EB0C9 */
+  border: 1px solid #dddddd;
+  position: relative;   /* trick because of border */
+  left: -5px;
+  width: 942px;
+  padding: 4px 4px 10px 4px;
+}
+
+div.c-stage {
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+          border: solid 1px #DDDDDD;
+          padding: 0 4px;
+        }
+
+div.c-stage.c-center {
+  margin-left: 5px;
+}
+
+div.c-stage.c-last {
+  margin-left: 5px;
+  width: 245px;
+}
+
+div.c-stage > h4 {
+  font-size: 16px;
+  font-weight: normal;
+  margin-bottom: 20px;
+  color: rgb(0,69,99);
+  border-bottom: solid 1px #DDD;
+}
+
+div.c-search-menu {
+  margin-top: 20px;
+}
+
+input.c-input-nb { /* same as select below */
+  width: 136px;
+}
+
+span.c-legacy:after {
+  opacity: 0.5;
+  content: " (L)";
+  color: red;
+}
+
+input.date {
+  width: 6em;
+}
+
+input.date[disabled] {
+  color: lightgray;
+  font-style: italic;
+}
+
+span.date { /* FIXME: replace with 'input' plugin */
+  border: 1px solid #CCCCCC;
+  border-radius: 4px 4px 4px 4px;
+  color: #555555;
+  font-size: 14px;
+  padding: 4px 6px;
+  width: 8em !important;
+  background: white;
+  margin-left: 5px;
+}
+
+#xt-date-datepicker {
+ width: 8em;
+}
+
+/* Bootstrap customization (customization of grid metrics to use table to draw borders) */
+
+.control-label {
+  width: 60px !important;
+}
+.controls {
+  margin-left: 70px !important;
+}
+select {
+  max-width: 150px;
+  width: 150px;
+}
+legend {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: rgb(0,69,99);
+}
+fieldset.subset {
+  margin-bottom: 0;
+  padding:0;
+}
+fieldset.subset legend {
+ font-size: 14px;
+}
+div.a-label {
+  color: #004563;
+}
+label, input, button, select, textarea, span.date, span.a-label {
+  font-size: 12px !important;
+  line-height: 18px !important;
+}
+fieldset.subset label, fieldset.subset select {
+  font-size: 10px;
+}
+.form-horizontal .control-label {
+  padding-top: 0;
+}
+legend + .control-group {
+  margin-top: 10px;
+}
+legend.subset {
+  font-size: 14px;
+  line-height: 30px;
+  /*margin-bottom: 8px;*/
+}
+legend.subset + .control-group {
+  margin-top: 10px;
+}
+.form-horizontal fieldset.subset .control-group {
+    margin-bottom: 10px;
+}
+

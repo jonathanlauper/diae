@@ -1,0 +1,264 @@
+<GlobalInformation>
+  <Description Lang="de">
+    <Selector Name="CaseWorkflowStatus" W="10">
+      <Option>
+        <Value>1</Value>
+        <Name>Aktiver Fall</Name>
+      </Option>
+      <Option Type="final">
+        <Value>10</Value>
+        <Name>Kein Coaching</Name>
+      </Option>
+      <Option Type="final">
+        <Value>12</Value>
+        <Name>Abgeschlossen</Name>
+      </Option>
+    </Selector>
+    <Selector Name="ActivityWorkflowStatus" W="10">
+      <Option>
+        <Value>1</Value>
+        <Name>Coach Wahl</Name>
+      </Option>
+      <Option>
+        <Value>2</Value>
+        <Name>Coaching Antrag</Name>
+      </Option>
+      <Option>
+        <Value>3</Value>
+        <Name>Stellungnahme</Name>
+      </Option>
+      <Option>
+        <Value>4</Value>
+        <Name>Entscheidung Antrag</Name>
+      </Option>
+      <Option>
+        <Value>5</Value>
+        <Name>Abschlussbericht</Name>
+      </Option>
+      <!-- <Option Deprecated="legacy">
+        <Value>6</Value>
+        <Name>KAM report</Name>
+      </Option> -->
+      <Option>
+        <Value>7</Value>
+        <Name>Genehmigung Abschlussbericht</Name>
+      </Option>
+      <Option Group="feedback">
+        <Value>80</Value>
+        <Name>Feedback Prozess</Name>
+      </Option>
+      <Option Group="feedback">
+        <Value>81</Value>
+        <Name>Feedback Ergebnisse</Name>
+      </Option>
+      <Option Group="feedback" Focus="none">
+        <Value>82</Value>
+        <Name>Kein Feedback</Name>
+      </Option>
+      <Option Type="final">
+        <Value>9</Value>
+        <Name>Abgelehnt</Name>
+      </Option>
+      <Option Type="final">
+        <Value>10</Value>
+        <Name>Abgeschlossen</Name>
+      </Option>
+      <Option Type="final" Group="feedback">
+        <Value>11</Value>
+        <Name>Evaluiert</Name>
+      </Option>
+    </Selector>
+    <Selector Name="Services" Test="Services">
+      <Description>Coaching services</Description>
+      <Option>
+        <Value>2</Value>
+        <Name>Geschäftsentwicklung</Name>
+      </Option>
+      <Option>
+        <Value>1</Value>
+        <Name>Organisation</Name>
+      </Option>
+      <Option>
+        <Value>3</Value>
+        <Name>Finanzierung</Name>
+      </Option>
+      <Option>
+        <Value>4</Value>
+        <Name>Kooperation</Name>
+      </Option>
+    </Selector>
+    <Selector Name="Sizes">
+      <Description>Enterprise size</Description>
+      <Option>
+        <Value>1</Value>
+        <Name>Mikro (1-9 Mitarbeiter)</Name>
+      </Option>
+      <Option>
+        <Value>2</Value>
+        <Name>Klein (10-49 Mitarbeiter)</Name>
+      </Option>
+      <Option>
+        <Value>3</Value>
+        <Name>Mittel (50-249 Mitarbeiter)</Name>
+      </Option>
+      <Option>
+        <Value>4</Value>
+        <Name>Gross (250 Mitarbeiter und mehr)</Name>
+      </Option>
+      <Option>
+        <Value>5</Value>
+        <Name>Sonstige</Name>
+      </Option>
+    </Selector>
+    <Selector Name="Phases">
+      <Option>
+        <Value>1</Value>
+        <Name>I</Name>
+      </Option>
+      <Option>
+        <Value>2</Value>
+        <Name>II</Name>
+      </Option>
+      <Option>
+        <Value>3</Value>
+        <Name>III</Name>
+      </Option>
+      <Option>
+        <Value>4</Value>
+        <Name>IV</Name>
+      </Option>
+    </Selector>
+    <Selector Name="PartnerTypes" Value="Id" Label="Name">
+      <Option>
+        <Value>1</Value>
+        <Name>Industriepartner</Name>
+      </Option>
+      <Option>
+        <Value>2</Value>
+        <Name>Akademischer Partner</Name>
+      </Option>
+      <Option>
+        <Value>3</Value>
+        <Name>Sonstige Partner</Name>
+      </Option>
+    </Selector>
+    <Selector Name="PartnerRoles" Value="Id" Label="Name">
+      <Option>
+        <Value>2</Value>
+        <Name>Kunde</Name>
+      </Option>
+      <Option>
+        <Value>9</Value>
+        <Name>Distributor</Name>
+      </Option>
+      <Option>
+        <Value>5</Value>
+        <Name>Lieferant</Name>
+      </Option>
+      <Option>
+        <Value>4</Value>
+        <Name>Fabrikant</Name>
+      </Option>
+      <Option>
+        <Value>7</Value>
+        <Name>F&amp;E</Name>
+      </Option>
+      <Option>
+        <Value>6</Value>
+        <Name>Investor</Name>
+      </Option>
+      <Option>
+        <Value>10</Value>
+        <Name>Public support</Name>
+      </Option>
+      <Option>
+        <Value>1</Value>
+        <Name>Andere</Name>
+      </Option>
+      <!-- <Option>
+        <Value>3</Value>
+        <Name>Pilotkunde</Name>
+      </Option>
+      <Option>
+        <Value>8</Value>
+        <Name>Spezialist</Name>
+      </Option> -->
+    </Selector>
+    <Selector Name="Genders">
+      <Option>
+        <Value>M</Value>
+        <Name>M</Name>
+      </Option>
+      <Option>
+        <Value>F</Value>
+        <Name>F</Name>
+      </Option>
+    </Selector>
+    <Selector Name="ActivityTypes">
+      <Option>
+        <Value>11</Value>
+        <Name>Organisation I</Name>
+      </Option>
+      <Option>
+        <Value>12</Value>
+        <Name>Organisation II</Name>
+      </Option>
+      <Option>
+        <Value>13</Value>
+        <Name>Organisation III</Name>
+      </Option>
+      <Option>
+        <Value>14</Value>
+        <Name>Organisation IV</Name>
+      </Option>
+      <Option>
+        <Value>21</Value>
+        <Name>Geschäftsentwickung I</Name>
+      </Option>
+      <Option>
+        <Value>22</Value>
+        <Name>Geschäftsentwicklung II</Name>
+      </Option>
+      <Option>
+        <Value>23</Value>
+        <Name>Geschäftsentwicklung III</Name>
+      </Option>
+      <Option>
+        <Value>24</Value>
+        <Name>Geschäftsentwicklung IV</Name>
+      </Option>
+      <Option>
+        <Value>31</Value>
+        <Name>Finanzierung I</Name>
+      </Option>
+      <Option>
+        <Value>32</Value>
+        <Name>Finanzierung II</Name>
+      </Option>
+      <Option>
+        <Value>33</Value>
+        <Name>Finanzierung III</Name>
+      </Option>
+      <Option>
+        <Value>34</Value>
+        <Name>Finanzierung IV</Name>
+      </Option>
+      <Option>
+        <Value>41</Value>
+        <Name>Kooperation I</Name>
+      </Option>
+      <Option>
+        <Value>42</Value>
+        <Name>Kooperation II</Name>
+      </Option>
+      <Option>
+        <Value>43</Value>
+        <Name>Kooperation III</Name>
+      </Option>
+      <Option>
+        <Value>44</Value>
+        <Name>Kooperation IV</Name>
+      </Option>
+    </Selector>
+  </Description>
+</GlobalInformation>

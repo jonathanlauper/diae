@@ -1,0 +1,442 @@
+<GlobalInformation>
+  <Description Lang="de">
+    <Selector Name="Functions">
+      <Description>User's functions with associated database roles</Description>
+      <Option>
+        <Value>1</Value>
+        <Name>Systemmanager</Name>
+        <Brief>SysAdmin</Brief>
+      </Option>
+      <Option>
+        <Value>2</Value>
+        <Name>Service Verantwortlicher</Name>
+        <Brief>Service</Brief>
+      </Option>
+      <Option>
+        <Value>3</Value>
+        <Name>Verantwortlicher Kantonale Antenne</Name>
+        <Brief>Region</Brief>
+      </Option>
+      <Option>
+        <Value>4</Value>
+        <Name>Coach</Name>
+        <Brief>Coach</Brief>
+      </Option>
+      <Option>
+        <Value>5</Value>
+        <Name>KAM (Key Account Manager)</Name>
+        <Brief>KAM</Brief>
+      </Option>
+      <Option>
+        <Value>6</Value>
+        <Name>Kontaktperson Unternehmen</Name>
+        <Brief>Cie</Brief>
+      </Option>
+      <Option>
+        <Value>7</Value>
+        <Name>AdminEntscheid</Name>
+        <Brief>Decision</Brief>
+      </Option>
+      <Option>
+        <Value>8</Value>
+        <Name>AdminFinanzen</Name>
+        <Brief>Finance</Brief>
+      </Option>
+      <Option>
+        <Value>9</Value>
+        <Name>Beobachter</Name>
+        <Brief>Obs</Brief>
+      </Option>
+      <Option>
+        <Value>10</Value>
+        <Name>Vorstand</Name>
+        <Brief>Board</Brief>
+      </Option>
+      <Option>
+        <Value>11</Value>
+        <Name>InnovARC</Name>
+        <Brief>ARC</Brief>
+      </Option>
+      <Option>
+        <Value>12</Value>
+        <Name>AdminQualität</Name>
+        <Brief>Quality</Brief>
+      </Option>
+      <Option>
+        <Value>13</Value>
+        <Name>AdminPerformance</Name>
+        <Brief>Perf</Brief>
+      </Option>
+      <Option>
+        <Value>14</Value>
+        <Name>Initiator Fall</Name>
+        <Brief>Init</Brief>
+      </Option>
+      <Option>
+        <Value>99</Value>
+        <Name>Softwareentwickler</Name>
+        <Brief>Dev</Brief>
+      </Option>
+    </Selector>
+    <Selector Name="DecisionMakingAuthorities">
+      <Option>
+        <Value>1</Value>
+        <Name>Direktor</Name>
+      </Option>
+      <Option>
+        <Value>2</Value>
+        <Name>Vorstand</Name>
+      </Option>
+    </Selector>
+    <Selector Name="FundingSources">
+      <Option>
+        <Value>1</Value>
+        <Name>Fonds platinn - Westschweiz</Name>
+      </Option>
+      <Option>
+        <Value>2</Value>
+        <Name>Cash Kunde</Name>
+      </Option>
+      <Option>
+        <Value>3</Value>
+        <Name>Cash Investor</Name>
+      </Option>
+      <Option>
+        <Value>4</Value>
+        <Name>Sponsorship</Name>
+      </Option>
+      <Option>
+        <Value>5</Value>
+        <Name>Sonstige Quellen</Name>
+      </Option>
+      <Option>
+        <Value>6</Value>
+        <Name>Fonds InnovARC</Name>
+      </Option>
+      <Option>
+        <Value>7</Value>
+        <Name>Cash industriel InnovARC</Name>
+      </Option>
+      <Option>
+        <Value>8</Value>
+        <Name>Fonds platinn - Bern</Name>
+      </Option>
+    </Selector>
+    <Selector Name="ContactSources">
+      <Option>
+        <Value>1</Value>
+        <Name>Kantonale Antenne/KAM</Name>
+      </Option>
+      <!-- <Option>
+        <Value>3</Value>
+        <Name>Personal contacts</Name>
+      </Option> -->
+      <Option>
+        <Value>4</Value>
+        <Name>Coach</Name>
+      </Option>
+      <Option>
+        <Value>2</Value>
+        <Name>Kundenanfrage</Name>
+      </Option>
+      <Option>
+        <Value>5</Value>
+        <Name>Hochschule</Name>
+      </Option>
+      <Option>
+        <Value>10</Value>
+        <Name>Wirtschaftsförderung</Name>
+      </Option>
+      <Option>
+        <Value>6</Value>
+        <Name>Geschäftspartner</Name>
+      </Option>
+      <!-- <Option>
+        <Value>7</Value>
+        <Name>Events</Name>
+      </Option> -->
+      <!-- <Option>
+        <Value>8</Value>
+        <Name>Publications</Name>
+      </Option> -->
+      <Option>
+        <Value>11</Value>
+        <Name>Alp ICT</Name>
+      </Option>
+      <Option>
+        <Value>12</Value>
+        <Name>CleantechAlps</Name>
+      </Option>
+      <Option>
+        <Value>13</Value>
+        <Name>BioAlps</Name>
+      </Option>
+      <Option>
+        <Value>14</Value>
+        <Name>Micronarc</Name>
+      </Option>
+      <Option>
+        <Value>15</Value>
+        <Name>Alliance</Name>
+      </Option>
+      <Option>
+        <Value>9</Value>
+        <Name>InnovARC</Name>
+      </Option>
+      <Option>
+        <Value>16</Value>
+        <Name>Andere Instrumente/Programme</Name>
+      </Option>
+      <Option>
+        <Value>17</Value>
+        <Name>Sonstige Quelle</Name>
+      </Option>
+    </Selector>
+    <Selector Name="CantonalAntennas">
+      <Option>
+        <Value>BE</Value>
+        <Name>Antenne BE</Name>
+      </Option>
+      <Option>
+        <Value>FR</Value>
+        <Name>Antenne FR</Name>
+      </Option>
+      <Option>
+        <Value>JU</Value>
+        <Name>Antenne JU</Name>
+      </Option>
+      <Option>
+        <Value>GE</Value>
+        <Name>Antenne GE</Name>
+      </Option>
+      <Option>
+        <Value>NE</Value>
+        <Name>Antenne NE</Name>
+      </Option>
+      <Option>
+        <Value>VS</Value>
+        <Name>Antenne VS</Name>
+      </Option>
+      <Option>
+        <Value>VD</Value>
+        <Name>Antenne VD</Name>
+      </Option>
+    </Selector>
+    <Selector Name="Regions">
+      <Group>
+        <Value>CH</Value>
+        <Name>Switzerland</Name>
+        <Selector>
+          <Option>
+            <Value>AI</Value>
+            <Name>Appenzell Innerrhoden</Name>
+          </Option>
+          <Option>
+            <Value>AG</Value>
+            <Name>Aargau</Name>
+          </Option>
+          <Option>
+            <Value>AR</Value>
+            <Name>Appenzell Ausserrhoden</Name>
+          </Option>
+          <Option>
+            <Value>BE</Value>
+            <Name>Berne</Name>
+          </Option>
+          <Option>
+            <Value>BL</Value>
+            <Name>Basel-Land</Name>
+          </Option>
+          <Option>
+            <Value>BS</Value>
+            <Name>Basel-Stadt</Name>
+          </Option>
+          <Option>
+            <Value>FR</Value>
+            <Name>Freiburg</Name>
+          </Option>
+          <Option>
+            <Value>GE</Value>
+            <Name>Genf</Name>
+          </Option>
+          <Option>
+            <Value>GL</Value>
+            <Name>Glarus</Name>
+          </Option>
+          <Option>
+            <Value>GR</Value>
+            <Name>Graubünden</Name>
+          </Option>
+          <Option>
+            <Value>JU</Value>
+            <Name>Jura</Name>
+          </Option>
+          <Option>
+            <Value>LU</Value>
+            <Name>Luzern</Name>
+          </Option>
+          <Option>
+            <Value>NE</Value>
+            <Name>Neuenburg</Name>
+          </Option>
+          <Option>
+            <Value>NW</Value>
+            <Name>Nidwalden</Name>
+          </Option>
+          <Option>
+            <Value>OW</Value>
+            <Name>Obwalden</Name>
+          </Option>
+          <Option>
+            <Value>SG</Value>
+            <Name>St. Gallen</Name>
+          </Option>
+          <Option>
+            <Value>SH</Value>
+            <Name>Schaffhausen</Name>
+          </Option>
+          <Option>
+            <Value>SO</Value>
+            <Name>Solothurn</Name>
+          </Option>
+          <Option>
+            <Value>SZ</Value>
+            <Name>Schwytz</Name>
+          </Option>
+          <Option>
+            <Value>TG</Value>
+            <Name>Thurgau</Name>
+          </Option>
+          <Option>
+            <Value>TI</Value>
+            <Name>Tessin</Name>
+          </Option>
+          <Option>
+            <Value>UR</Value>
+            <Name>Uri</Name>
+          </Option>
+          <Option>
+            <Value>VD</Value>
+            <Name>Waadt</Name>
+          </Option>
+          <Option>
+            <Value>VS</Value>
+            <Name>Wallis</Name>
+          </Option>
+          <Option>
+            <Value>ZH</Value>
+            <Name>Zürich</Name>
+          </Option>
+          <Option>
+            <Value>--</Value>
+            <Name>Andere</Name>
+          </Option>
+        </Selector>
+      </Group>
+    </Selector>
+    <Selector Name="CollaborativeEntities">
+      <Option>
+        <Value>1</Value>
+        <Name>Association platinn</Name>
+      </Option>
+      <Option>
+        <Value>2</Value>
+        <Name>Antenne BE</Name>
+      </Option>
+      <Option>
+        <Value>3</Value>
+        <Name>Antenne FR</Name>
+      </Option>
+      <Option>
+        <Value>4</Value>
+        <Name>Antenne GE</Name>
+      </Option>
+      <Option>
+        <Value>5</Value>
+        <Name>Antenne NE</Name>
+      </Option>
+      <Option>
+        <Value>6</Value>
+        <Name>Antenne VD</Name>
+      </Option>
+      <Option>
+        <Value>7</Value>
+        <Name>Antenne VS</Name>
+      </Option>
+      <Option>
+        <Value>8</Value>
+        <Name>Antenne JU</Name>
+      </Option>
+    </Selector>
+    <!-- TODO: implement @AliasFor -->
+    <Selector Name="AdministrativeEntities" AliasFor="CollaborativeEntities">
+      <Option>
+        <Value>1</Value>
+        <Name>Association platinn</Name>
+      </Option>
+      <Option>
+        <Value>2</Value>
+        <Name>Antenne BE</Name>
+      </Option>
+      <Option>
+        <Value>3</Value>
+        <Name>Antenne FR</Name>
+      </Option>
+      <Option>
+        <Value>4</Value>
+        <Name>Antenne GE</Name>
+      </Option>
+      <Option>
+        <Value>5</Value>
+        <Name>Antenne NE</Name>
+      </Option>
+      <Option>
+        <Value>6</Value>
+        <Name>Antenne VD</Name>
+      </Option>
+      <Option>
+        <Value>7</Value>
+        <Name>Antenne VS</Name>
+      </Option>
+      <Option>
+        <Value>8</Value>
+        <Name>Antenne JU</Name>
+      </Option>
+    </Selector>
+    <!-- TODO: implement @AliasFor -->
+    <Selector Name="SubmissionOrigins" AliasFor="CollaborativeEntities">
+      <Option>
+        <Value>1</Value>
+        <Name>Association platinn</Name>
+      </Option>
+      <Option>
+        <Value>2</Value>
+        <Name>Antenne BE</Name>
+      </Option>
+      <Option>
+        <Value>3</Value>
+        <Name>Antenne FR</Name>
+      </Option>
+      <Option>
+        <Value>4</Value>
+        <Name>Antenne GE</Name>
+      </Option>
+      <Option>
+        <Value>5</Value>
+        <Name>Antenne NE</Name>
+      </Option>
+      <Option>
+        <Value>6</Value>
+        <Name>Antenne VD</Name>
+      </Option>
+      <Option>
+        <Value>7</Value>
+        <Name>Antenne VS</Name>
+      </Option>
+      <Option>
+        <Value>8</Value>
+        <Name>Antenne JU</Name>
+      </Option>
+    </Selector>
+  </Description>
+</GlobalInformation>
