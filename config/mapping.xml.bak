@@ -230,24 +230,24 @@
         </item>
       </collection>
 
-    </collection>
       -->
     <item resource="$2" collection="pages/images">
-      <access>
-        <rule action="GET" role="all"/>
-      </access>
-      <model src="xcm:modules/images/image.xql"/>
-      <variant name="GET" format="jpeg"/>
-      <variant name="GET" format="jpg"/>
-      <variant name="GET" format="png"/>
-      <variant name="GET" format="gif"/>
-    </item>
-    <action name="POST">
-      <model src="xcm:modules/images/upload.xql">
-        <param name="group" value="users"/>
-        <param name="max-size" value="400x400"/>
-      </model>
-    </action>
+        <access>
+          <rule action="GET" role="all"/>
+        </access>
+        <model src="xcm:modules/images/image.xql"/>
+        <variant name="GET" format="jpeg"/>
+        <variant name="GET" format="jpg"/>
+        <variant name="GET" format="png"/>
+        <variant name="GET" format="gif"/>
+      </item>
+      <action name="POST">
+        <model src="xcm:modules/images/upload.xql">
+          <param name="group" value="users"/>
+          <param name="max-size" value="400x400"/>
+        </model>
+      </action>
+    </collection>
     
     <collection name="docs" method="POST" resource="ocr">
       <item method="POST">

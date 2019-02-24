@@ -13,8 +13,14 @@
     <Template>templates/annex</Template>
   </Formular>
   <!-- Entities -->
-  
-  
+  <Formular>
+    <Name>Algorithms</Name>
+    <Form>forms/collection</Form>
+  </Formular>
+  <Formular>
+    <Name>Collections</Name>
+    <Form>forms/algorithm</Form>
+  </Formular>  
   <Formular>
     <Name>Person</Name>
     <Form>forms/person</Form>

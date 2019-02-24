@@ -57,15 +57,32 @@ let $lang := string($cmd/@lang)
 let $trail := string($cmd/@trail)
 
 let $base := annex:get-coaching-base-collection-uri($cmd)
-let $image := fn:collection($globals:ocr-uri)/OCR/Images/Image
-let $file-uri := concat($trail,'/images', '/', $image[0])
+let $collections := fn:collection($globals:ocr-uri)/Collections/Collection
+let $images := fn:collection($globals:ocr-uri)/Collections/Images/Image
+
 
 return
-   <Page skin="formulars">
+   <Page>
       <Content>
-        <Title Level="1" loc="ocr-creation.window.title">Recognition</Title>
+        <Title Level="1" loc="ocr-creation.window.title">Selection</Title>
+       {
+        for $collection in $collections
+            return 
+                <Collection>
+                     <Name>{$collection/Name/text()}</Name>
+                     <Count>{count($collection/Images/Image)}</Count>  
+                    {
+                     for $image in $collection/Images/Image
+                         let $t := concat($trail,'/images', '-', $collection/Name ,'-', $image )
+                            return  
+                                <Image>
+                                    <Ref>{replace($t, '\.', '_')}</Ref>
+                                    <Name>{$image}</Name>
+                                </Image>
+                    }
+                    
+                </Collection>
+       }
         
-        <Image id="orig_image"><Ref>{$file-uri}</Ref></Image>
-        <Recognition/>
       </Content>
     </Page>

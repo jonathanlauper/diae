@@ -1,3 +1,4 @@
+var testing12345;
 var currentImage;
     var currentFile;
     var identifier;

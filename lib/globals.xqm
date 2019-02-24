@@ -38,6 +38,8 @@ declare variable $globals:accounts-uri := '/db/sites/diae/accounts/accounts.xml'
 (:OCR Test :)
 declare variable $globals:ocr-uri := '/db/sites/diae/pages';
 
+(:Collections:)
+declare variable $globals:col-uri := '/db/sites/diae/pages/images/collections.xml';
 
 (: MUST be aligned with xcm/lib/globals.xqm :)
 declare variable $globals:xcm-name := 'xcm';

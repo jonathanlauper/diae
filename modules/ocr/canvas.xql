@@ -58,14 +58,99 @@ let $trail := string($cmd/@trail)
 
 let $base := annex:get-coaching-base-collection-uri($cmd)
 let $image := fn:collection($globals:ocr-uri)/OCR/Images/Image
-let $file-uri := concat($trail,'/images', '/', $image[0])
+(:let $file-uri := concat($trail,'/images', '/', $image[0]):)
+
+let $collections := fn:collection($globals:ocr-uri)/Collections
+let $images := fn:collection($globals:ocr-uri)/Collections/Images/Image
+
+let $t := replace($trail, '-', '/')
+let $actual := replace($t, '_', '.')
+let $split := tokenize($actual, '/')
+
+
+
+
+let $col := $collections//Collection/Name[. eq $split[3]]/parent::Collection
+let $t := $col//Ref[. eq $split[4]]/parent::Image
+let $nextImg := if(empty($t/following-sibling::*[1])) then
+                $t/parent::Images/Image[1]
+            else
+                $t/following-sibling::*[1]
+
+
+let $prevImg := if(empty($t/preceding-sibling::*[1])) then
+                    $t/parent::Images/Image[last()]
+                else
+                    $t/preceding-sibling::*[1]
+                    
+                    
+let $v := $collections//Collection/Name[. eq $split[3]]/parent::Collection    
+let $nextCol := if(empty($v/following-sibling::*[1])) then
+                    $v/parent::Collections//Name[1]
+                else
+                    $v/following-sibling::*[1]/Name
+                    
+                    
+(:
+
+let $f := $collections//Collection/Name[. eq $nextCol[1]]/parent::Collection
+let $first := $f/Images/Image[1]
+
+
+
+
+
+
+let $x := "hello"
+return ($document//w[. eq $x]/following-sibling::w)[1]
+
+            <NextCol >{concat($split[1],'/',$split[2],'-',$nextCol,'-', replace($first, '\.', '_')) }</NextCol>
+            <PrevCol >{concat($split[1],'/',$split[2],'-',$split[3],'-', replace($prevImg, '\.', '_')) }</PrevCol>
+                        <Next id="next_image">{concat($split[1],'/',$split[2],'-',$split[3],'-', replace($nextImg, '\.', '_')) }</Next>
+            <Prev id="prev_image">{concat($split[1],'/',$split[2],'-',$split[3],'-', replace($prevImg, '\.', '_')) }</Prev>
+            replace($t, '\.', '_')
+:)
 
 return
    <Page skin="formulars">
       <Content>
         <Title Level="1" loc="ocr-creation.window.title">Recognition</Title>
         
-        <Image id="orig_image"><Ref>{$file-uri}</Ref></Image>
-        <Recognition/>
+        <Image id="orig_image">
+            <Ref>{$actual}</Ref>
+            
+
+            
+    
+        </Image>
+        
+ 
+        <Collection>
+               {
+        for $collection in $collections/Collection
+            return 
+                <Name>{$collection/Name/node()}</Name>
+
+       }
+       </Collection>
+       <Images>
+       {
+       for $collection in $collections/Collection
+            return
+                <Collection>
+                    <Name>{$collection/Name/node()}</Name>
+                {for $image in $collection/Images/Image
+                     let $t := concat($trail,'/images', '-', $collection/Name ,'-', $image )
+                        return  
+                            <Ref>{$image/Ref/node()}</Ref>
+    
+    
+                }   
+                </Collection>
+       }
+       </Images>              
+      <Recognition/>
+       
+       
       </Content>
     </Page>

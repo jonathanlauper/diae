@@ -17,7 +17,7 @@ xquery version "1.0";
 import module namespace request="http://exist-db.org/xquery/request";
 import module namespace oppidum = "http://oppidoc.com/oppidum/util" at "../../../oppidum/lib/util.xqm";
 import module namespace globals = "http://oppidoc.com/ns/xcm/globals" at "../../lib/globals.xqm";
-import module namespace template = "http://oppidoc.com/ns/ctracker/template" at "../../lib/template.xqm";
+import module namespace template = "http://oppidoc.com/ns/diae/template" at "../../lib/template.xqm";
 import module namespace access = "http://oppidoc.com/ns/xcm/access" at "../../../xcm/lib/access.xqm";
 import module namespace user = "http://oppidoc.com/ns/xcm/user" at "../../../xcm/lib/user.xqm";
 import module namespace ajax = "http://oppidoc.com/ns/xcm/ajax" at "../../../xcm/lib/ajax.xqm";
